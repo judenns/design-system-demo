@@ -1,30 +1,6 @@
 # template-0
 
-A modern, lightweight web application starter template featuring a comprehensive design system, reusable UI components, and best practices for web development. Built with semantic HTML5, modern CSS3 with custom properties, and vanilla JavaScript.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- A modern web browser
-- A local development server (optional but recommended)
-
-### Installation
-
-1. Clone or download this project
-2. Open `index.html` in your browser, or
-3. Use a development server:
-
-   ```bash
-   # Using Python
-   python3 -m http.server 8000
-
-   # Using Node.js live-server
-   npx live-server --port=3000
-
-   # Using PHP
-   php -S localhost:8000
-   ```
+A demo for testing figma mcp with claude code using theme-3 design.
 
 ## 📁 Project Structure
 
