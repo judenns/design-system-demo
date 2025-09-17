@@ -1,27 +1,808 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Project</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/components/components.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Your New Project</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Place to Remember</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/components/components.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="container">
+      <div class="nav">
+        <div class="nav__logo">
+          <img src="images/logo.svg" alt="FirstPlace" width="120" />
+        </div>
+        <div class="nav__menu">
+          <!-- Navigation menu would go here -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">A Place<br />to Remember</h1>
+
+        <div class="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Find an obituary"
+          />
+          <div class="search__icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.5 25C20.299 25 25 20.299 25 14.5C25 8.70101 20.299 4 14.5 4C8.70101 4 4 8.70101 4 14.5C4 20.299 8.70101 25 14.5 25Z"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21.925 21.925L28 28"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="hero-card mt-lg">
+          <div class="hero-card__icon">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 42C33.9411 42 42 33.9411 42 24C42 14.0589 33.9411 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9411 14.0589 42 24 42Z"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M24 14V24L30 30"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="hero-card__content">
+            <h3 class="hero-card__title">Immediate Need</h3>
+            <p class="hero-card__description">
+              A loved one has passed or is about to pass.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-card mt-md">
+          <div class="hero-card__icon">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M38 12H10C7.79086 12 6 13.7909 6 16V36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V16C42 13.7909 40.2091 12 38 12Z"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M32 40V8C32 6.93913 31.5786 5.92172 30.8284 5.17157C30.0783 4.42143 29.0609 4 28 4H20C18.9391 4 17.9217 4.42143 17.1716 5.17157C16.4214 5.92172 16 6.93913 16 8V40"
+                stroke="#6075A4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="hero-card__content">
+            <h3 class="hero-card__title">Plan for the future</h3>
+            <p class="hero-card__description">
+              Planning a funeral or cremation - made easy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__image">
+        <!-- This will be added with CSS background -->
+      </div>
     </header>
-    
+
     <main>
-        <p>Your project is ready to go!</p>
+      <!-- Features Section -->
+      <section class="section bg-brand-lightest">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Our Services</p>
+            <h2 class="section-heading__title">
+              A time to honor, comfort and heal
+            </h2>
+          </div>
+
+          <div class="grid grid--3-col">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-card__icon-wrapper">
+                <div class="feature-card__icon-bg"></div>
+                <div class="feature-card__icon">
+                  <img
+                    src="images/hands-icon.png"
+                    alt="Hands Icon"
+                    width="180"
+                    height="180"
+                  />
+                </div>
+              </div>
+              <h3 class="feature-card__title">One-Stop Convenience</h3>
+              <p class="feature-card__description">
+                Everything you need to plan, arrange, and manage memorial
+                services in one simple platform.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+              <div class="feature-card__icon-wrapper">
+                <div class="feature-card__icon-bg"></div>
+                <div class="feature-card__icon">
+                  <img
+                    src="images/flowers-icon.png"
+                    alt="Flowers Icon"
+                    width="180"
+                    height="180"
+                  />
+                </div>
+              </div>
+              <h3 class="feature-card__title">
+                Create Beautiful, Lasting Tributes and Memories
+              </h3>
+              <p class="feature-card__description">
+                Share memories, photos, and stories that celebrate the unique
+                life and legacy of your loved one.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+              <div class="feature-card__icon-wrapper">
+                <div class="feature-card__icon-bg"></div>
+                <div class="feature-card__icon">
+                  <img
+                    src="images/book-icon.png"
+                    alt="Book Icon"
+                    width="180"
+                    height="180"
+                  />
+                </div>
+              </div>
+              <h3 class="feature-card__title">No Hidden Costs or Complexity</h3>
+              <p class="feature-card__description">
+                Transparent pricing and simple-to-understand services ensure you
+                know exactly what to expect without surprises or pressure.
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center mt-lg">
+            <a href="#" class="btn btn--primary">View All Services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Our Locations</p>
+            <h2 class="section-heading__title">
+              The perfect place to hold a meaningful and unique ceremony
+            </h2>
+          </div>
+
+          <div class="services-showcase">
+            <div class="services-showcase__images">
+              <img
+                src="images/house.png"
+                alt="Chapel"
+                class="services-showcase__image services-showcase__image--active"
+              />
+              <img
+                src="images/room.jpg"
+                alt="Reception Hall"
+                class="services-showcase__image"
+              />
+              <img
+                src="images/main-image.jpg"
+                alt="Memorial Garden"
+                class="services-showcase__image"
+              />
+            </div>
+
+            <div class="services-showcase__nav">
+              <button
+                class="services-showcase__dot services-showcase__dot--active"
+              ></button>
+              <button class="services-showcase__dot"></button>
+              <button class="services-showcase__dot"></button>
+            </div>
+
+            <a href="#" class="btn btn--secondary-outline mt-lg"
+              >Explore Our Locations</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="section testimonial-section">
+        <div class="container">
+          <div class="testimonial-header">
+            <div class="testimonial-header__line"></div>
+            <h3 class="testimonial-header__title">
+              Real Stories from Real People
+            </h3>
+            <div class="testimonial-header__line"></div>
+          </div>
+
+          <div class="testimonial">
+            <blockquote class="testimonial__quote">
+              "My family wishes to thank you for guiding us through the planning
+              and overseeing the memorial service for our husband and father.
+              Your careful, professional planning and execution of the service,
+              both in the Chapel and at the gravesite was deeply appreciated."
+            </blockquote>
+            <cite class="testimonial__author">— Vanessa B.</cite>
+            <div class="testimonial__stars">
+              <span class="testimonial__star">★</span>
+              <span class="testimonial__star">★</span>
+              <span class="testimonial__star">★</span>
+              <span class="testimonial__star">★</span>
+              <span class="testimonial__star">★</span>
+            </div>
+
+            <div class="testimonial__navigation">
+              <button
+                class="testimonial__nav-button testimonial__nav-button--prev"
+              >
+                <span class="sr-only">Previous testimonial</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="#6075A4"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <span class="testimonial__counter">1 of 5</span>
+              <button
+                class="testimonial__nav-button testimonial__nav-button--next"
+              >
+                <span class="sr-only">Next testimonial</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="#6075A4"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <a href="#" class="btn btn--secondary-outline testimonial__cta"
+              >Read More Testimonial</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- News & Events Section -->
+      <section class="section news-section bg-brand-lightest">
+        <div class="container">
+          <h2 class="news-section__title">News & Events</h2>
+
+          <div class="news-grid">
+            <!-- News Item 1 -->
+            <div class="news-card">
+              <img
+                src="images/Photo.jpg"
+                alt="Event"
+                class="news-card__image"
+              />
+              <div class="news-card__meta">
+                <span class="news-card__tag">EVENT</span>
+                <span class="news-card__date">JUN 10, 2023</span>
+              </div>
+              <h3 class="news-card__title">We'll take care of every detail</h3>
+              <p class="news-card__description">
+                We provide funeral & cemetery arrangements and strive to make
+                each step of the process seamless and customized to your needs.
+              </p>
+              <a href="#" class="news-card__link">Learn More</a>
+            </div>
+
+            <!-- News Item 2 -->
+            <div class="news-card">
+              <img
+                src="images/Photo-2.jpg"
+                alt="Event"
+                class="news-card__image"
+              />
+              <div class="news-card__meta">
+                <span class="news-card__tag">EVENT</span>
+                <span class="news-card__date">JUN 10, 2023</span>
+              </div>
+              <h3 class="news-card__title">
+                Creative Ways to Honor a Loved One
+              </h3>
+              <p class="news-card__description">
+                We provide funeral & cemetery arrangements and strive to make
+                each step of the process seamless and customized to your needs.
+              </p>
+              <a href="#" class="news-card__link">Learn More</a>
+            </div>
+
+            <!-- News Item 3 -->
+            <div class="news-card">
+              <img
+                src="images/Photo-3.jpg"
+                alt="Event"
+                class="news-card__image"
+              />
+              <div class="news-card__meta">
+                <span class="news-card__tag">EVENT</span>
+                <span class="news-card__date">JUN 10, 2023</span>
+              </div>
+              <h3 class="news-card__title">Why the Memorial Service Matters</h3>
+              <p class="news-card__description">
+                We provide funeral & cemetery arrangements and strive to make
+                each step of the process seamless and customized to your needs.
+              </p>
+              <a href="#" class="news-card__link">Learn More</a>
+            </div>
+          </div>
+
+          <div class="news-section__cta">
+            <a href="#" class="btn btn--primary">See All News & Events</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plan Section -->
+      <section class="section plan-section">
+        <div class="container">
+          <div class="plan-content">
+            <h2 class="plan-content__title">
+              Plan for the future,
+              <span class="plan-content__title--highlight">today</span>
+            </h2>
+            <p class="plan-content__description">
+              By planning your funeral, you can make sure your life is
+              celebrated the way you want, and give your loved ones the
+              peace-of-mind they need when the time comes.
+            </p>
+            <div class="plan-content__buttons">
+              <a href="#" class="btn btn--primary">Start Planning Online</a>
+              <a href="#" class="btn btn--secondary-outline"
+                >Request Your Free Guide</a
+              >
+            </div>
+          </div>
+          <div class="plan-decoration">
+            <img
+              src="images/flowers 256.png"
+              alt="Decorative flowers"
+              class="plan-decoration__image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Need Help Section -->
+      <section class="section help-section bg-brand">
+        <div class="container">
+          <div class="help-content">
+            <div class="help-info">
+              <h2 class="help-title">Need help?</h2>
+              <p class="help-description">
+                You can reach us 24/7/365 at
+                <strong><u>(810) 231-3700</u></strong>
+              </p>
+              <a href="#" class="btn btn--secondary-fill btn--contact"
+                >CONTACT US</a
+              >
+              <div class="help-social">
+                <a href="#" class="help-social__link">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.5 16.25V13.75C22.5 12.8 23.3 12.5 23.75 12.5H25V10H22.5C20.6875 10 19.375 11.75 19.375 13.75V16.25H16.875V18.75H19.375V27.5H22.5V18.75H25L26.25 16.25H22.5Z"
+                      fill="white"
+                    />
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="39"
+                      height="39"
+                      rx="19.5"
+                      stroke="white"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="help-social__link">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28.75 13.75C28.125 14.0625 27.4375 14.25 26.75 14.375C27.5 13.9375 28.0625 13.25 28.3125 12.375C27.625 12.8125 26.875 13.125 26.0625 13.3125C25.375 12.5625 24.4375 12.1875 23.4375 12.1875C21.375 12.1875 19.75 14.0625 19.75 16.25C19.75 16.5625 19.75 16.875 19.875 17.125C16.75 17 14 15.4375 12.125 13.0625C11.8125 13.625 11.625 14.3125 11.625 15C11.625 16.3125 12.3125 17.5 13.3125 18.1875C12.75 18.1875 12.1875 18 11.6875 17.75V17.8125C11.6875 19.75 12.9375 21.375 14.625 21.75C14.3125 21.8125 14 21.875 13.625 21.875C13.375 21.875 13.125 21.875 12.9375 21.8125C13.375 23.375 14.75 24.5 16.375 24.5C15.0625 25.5625 13.4375 26.1875 11.625 26.1875C11.3125 26.1875 11.0625 26.1875 10.75 26.125C12.375 27.25 14.3125 27.875 16.375 27.875C23.4375 27.875 27.25 22 27.25 16.9375C27.25 16.75 27.25 16.625 27.25 16.4375C28 15.9375 28.625 15.25 29.125 14.5C28.4375 14.8125 27.625 15 26.75 15.125L28.75 13.75Z"
+                      fill="white"
+                    />
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="39"
+                      height="39"
+                      rx="19.5"
+                      stroke="white"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="help-locations">
+              <!-- Location Card 1 -->
+              <div class="location-card">
+                <h3 class="location-card__title">Storyland Funeral Home</h3>
+                <div class="location-card__contact">
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6667 11.28V13.2933C14.6674 13.4716 14.6294 13.6479 14.5554 13.81C14.4814 13.972 14.373 14.1159 14.2385 14.2307C14.1041 14.3455 13.9466 14.4285 13.7774 14.4742C13.6082 14.5199 13.4316 14.5272 13.2587 14.4953C11.1454 14.1671 9.14324 13.3053 7.41732 12.0053C5.8023 10.8258 4.4602 9.31565 3.4867 7.5C2.44887 5.58054 1.8389 3.37366 1.70732 1.08C1.68515 0.868893 1.70701 0.655971 1.77213 0.456056C1.83725 0.256142 1.94454 0.0740424 2.08906 -0.0796733C2.23357 -0.233389 2.41209 -0.353958 2.60864 -0.433686C2.80519 -0.513413 3.01571 -0.550279 3.22732 -0.54L5.66732 -0.54C6.0469 -0.544377 6.4148 -0.412267 6.70795 -0.167533C7.00109 0.0772018 7.20211 0.418516 7.2787 0.793334C7.41945 1.47133 7.62681 2.13536 7.89867 2.77333C8.01129 3.03347 8.04035 3.32347 7.98209 3.60179C7.92384 3.88012 7.78108 4.13333 7.57334 4.33L6.39867 5.66667C7.29338 7.52851 8.72222 9.11622 10.48 10.1333L11.6547 8.79333C11.829 8.5568 12.0504 8.39315 12.2935 8.32804C12.5366 8.26294 12.7919 8.29816 13.0187 8.42667C13.5704 8.73832 14.1546 8.97787 14.76 9.14C15.0786 9.22932 15.3635 9.4546 15.5554 9.77339C15.7472 10.0922 15.8344 10.4769 15.8 10.8533L14.6667 11.28Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>(810) 231-3700</span>
+                  </div>
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 8.66666C7.65133 8.66666 7.30533 8.56 7 8.35999C6.69467 8.15999 6.44733 7.87333 6.28667 7.53332C6.126 7.19332 6.06 6.81332 6.09867 6.43332C6.13733 6.05332 6.27933 5.69332 6.51333 5.39999C6.74733 5.10666 7.06 4.89999 7.414 4.79999C7.76867 4.69999 8.14333 4.70666 8.494 4.81999C8.84467 4.93332 9.15067 5.14666 9.374 5.43332C9.59733 5.71999 9.72667 6.06666 9.74 6.42666C9.75333 6.93332 9.55333 7.42666 9.19333 7.79999C8.83333 8.17332 8.42667 8.39999 8 8.39999V8.66666ZM8 -6.66713e-05C6.89867 -6.66713e-05 5.82667 0.293327 4.91333 0.84666C3.99933 1.39999 3.27867 2.19999 2.84067 3.15999C2.40267 4.11999 2.26533 5.19332 2.44667 6.22666C2.628 7.25999 3.12 8.20666 3.85733 8.93999L8 13.0667L12.1427 8.93999C12.88 8.20666 13.372 7.25999 13.5533 6.22666C13.7347 5.19332 13.5973 4.11999 13.1593 3.15999C12.7213 2.19999 12.0007 1.39999 11.0867 0.84666C10.1733 0.293327 9.10133 -6.66713e-05 8 -6.66713e-05Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>1222 Garden Avenue Atlanta, GA 30301</span>
+                  </div>
+                </div>
+                <a href="#" class="location-card__link"
+                  >EXPLORE LOCATION
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.5 3.5L17 10L10.5 16.5"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17 10H3"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Location Card 2 -->
+              <div class="location-card">
+                <h3 class="location-card__title">Storyland Cemetery</h3>
+                <div class="location-card__contact">
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6667 11.28V13.2933C14.6674 13.4716 14.6294 13.6479 14.5554 13.81C14.4814 13.972 14.373 14.1159 14.2385 14.2307C14.1041 14.3455 13.9466 14.4285 13.7774 14.4742C13.6082 14.5199 13.4316 14.5272 13.2587 14.4953C11.1454 14.1671 9.14324 13.3053 7.41732 12.0053C5.8023 10.8258 4.4602 9.31565 3.4867 7.5C2.44887 5.58054 1.8389 3.37366 1.70732 1.08C1.68515 0.868893 1.70701 0.655971 1.77213 0.456056C1.83725 0.256142 1.94454 0.0740424 2.08906 -0.0796733C2.23357 -0.233389 2.41209 -0.353958 2.60864 -0.433686C2.80519 -0.513413 3.01571 -0.550279 3.22732 -0.54L5.66732 -0.54C6.0469 -0.544377 6.4148 -0.412267 6.70795 -0.167533C7.00109 0.0772018 7.20211 0.418516 7.2787 0.793334C7.41945 1.47133 7.62681 2.13536 7.89867 2.77333C8.01129 3.03347 8.04035 3.32347 7.98209 3.60179C7.92384 3.88012 7.78108 4.13333 7.57334 4.33L6.39867 5.66667C7.29338 7.52851 8.72222 9.11622 10.48 10.1333L11.6547 8.79333C11.829 8.5568 12.0504 8.39315 12.2935 8.32804C12.5366 8.26294 12.7919 8.29816 13.0187 8.42667C13.5704 8.73832 14.1546 8.97787 14.76 9.14C15.0786 9.22932 15.3635 9.4546 15.5554 9.77339C15.7472 10.0922 15.8344 10.4769 15.8 10.8533L14.6667 11.28Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>(810) 231-3700</span>
+                  </div>
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 8.66666C7.65133 8.66666 7.30533 8.56 7 8.35999C6.69467 8.15999 6.44733 7.87333 6.28667 7.53332C6.126 7.19332 6.06 6.81332 6.09867 6.43332C6.13733 6.05332 6.27933 5.69332 6.51333 5.39999C6.74733 5.10666 7.06 4.89999 7.414 4.79999C7.76867 4.69999 8.14333 4.70666 8.494 4.81999C8.84467 4.93332 9.15067 5.14666 9.374 5.43332C9.59733 5.71999 9.72667 6.06666 9.74 6.42666C9.75333 6.93332 9.55333 7.42666 9.19333 7.79999C8.83333 8.17332 8.42667 8.39999 8 8.39999V8.66666ZM8 -6.66713e-05C6.89867 -6.66713e-05 5.82667 0.293327 4.91333 0.84666C3.99933 1.39999 3.27867 2.19999 2.84067 3.15999C2.40267 4.11999 2.26533 5.19332 2.44667 6.22666C2.628 7.25999 3.12 8.20666 3.85733 8.93999L8 13.0667L12.1427 8.93999C12.88 8.20666 13.372 7.25999 13.5533 6.22666C13.7347 5.19332 13.5973 4.11999 13.1593 3.15999C12.7213 2.19999 12.0007 1.39999 11.0867 0.84666C10.1733 0.293327 9.10133 -6.66713e-05 8 -6.66713e-05Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>1222 Garden Avenue Atlanta, GA 30301</span>
+                  </div>
+                </div>
+                <a href="#" class="location-card__link"
+                  >EXPLORE LOCATION
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.5 3.5L17 10L10.5 16.5"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17 10H3"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Location Card 3 -->
+              <div class="location-card">
+                <h3 class="location-card__title">Storyland Florist</h3>
+                <div class="location-card__contact">
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6667 11.28V13.2933C14.6674 13.4716 14.6294 13.6479 14.5554 13.81C14.4814 13.972 14.373 14.1159 14.2385 14.2307C14.1041 14.3455 13.9466 14.4285 13.7774 14.4742C13.6082 14.5199 13.4316 14.5272 13.2587 14.4953C11.1454 14.1671 9.14324 13.3053 7.41732 12.0053C5.8023 10.8258 4.4602 9.31565 3.4867 7.5C2.44887 5.58054 1.8389 3.37366 1.70732 1.08C1.68515 0.868893 1.70701 0.655971 1.77213 0.456056C1.83725 0.256142 1.94454 0.0740424 2.08906 -0.0796733C2.23357 -0.233389 2.41209 -0.353958 2.60864 -0.433686C2.80519 -0.513413 3.01571 -0.550279 3.22732 -0.54L5.66732 -0.54C6.0469 -0.544377 6.4148 -0.412267 6.70795 -0.167533C7.00109 0.0772018 7.20211 0.418516 7.2787 0.793334C7.41945 1.47133 7.62681 2.13536 7.89867 2.77333C8.01129 3.03347 8.04035 3.32347 7.98209 3.60179C7.92384 3.88012 7.78108 4.13333 7.57334 4.33L6.39867 5.66667C7.29338 7.52851 8.72222 9.11622 10.48 10.1333L11.6547 8.79333C11.829 8.5568 12.0504 8.39315 12.2935 8.32804C12.5366 8.26294 12.7919 8.29816 13.0187 8.42667C13.5704 8.73832 14.1546 8.97787 14.76 9.14C15.0786 9.22932 15.3635 9.4546 15.5554 9.77339C15.7472 10.0922 15.8344 10.4769 15.8 10.8533L14.6667 11.28Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>(810) 231-3700</span>
+                  </div>
+                  <div class="location-card__item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 8.66666C7.65133 8.66666 7.30533 8.56 7 8.35999C6.69467 8.15999 6.44733 7.87333 6.28667 7.53332C6.126 7.19332 6.06 6.81332 6.09867 6.43332C6.13733 6.05332 6.27933 5.69332 6.51333 5.39999C6.74733 5.10666 7.06 4.89999 7.414 4.79999C7.76867 4.69999 8.14333 4.70666 8.494 4.81999C8.84467 4.93332 9.15067 5.14666 9.374 5.43332C9.59733 5.71999 9.72667 6.06666 9.74 6.42666C9.75333 6.93332 9.55333 7.42666 9.19333 7.79999C8.83333 8.17332 8.42667 8.39999 8 8.39999V8.66666ZM8 -6.66713e-05C6.89867 -6.66713e-05 5.82667 0.293327 4.91333 0.84666C3.99933 1.39999 3.27867 2.19999 2.84067 3.15999C2.40267 4.11999 2.26533 5.19332 2.44667 6.22666C2.628 7.25999 3.12 8.20666 3.85733 8.93999L8 13.0667L12.1427 8.93999C12.88 8.20666 13.372 7.25999 13.5533 6.22666C13.7347 5.19332 13.5973 4.11999 13.1593 3.15999C12.7213 2.19999 12.0007 1.39999 11.0867 0.84666C10.1733 0.293327 9.10133 -6.66713e-05 8 -6.66713e-05Z"
+                        fill="#6075A4"
+                      />
+                    </svg>
+                    <span>1222 Garden Avenue Atlanta, GA 30301</span>
+                  </div>
+                </div>
+                <a href="#" class="location-card__link"
+                  >EXPLORE LOCATION
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.5 3.5L17 10L10.5 16.5"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17 10H3"
+                      stroke="#6075A4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 Your Project</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-grid__column">
+            <h4 class="footer-title">OBITUARIES</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Obituaries Search</a></li>
+              <li>
+                <a href="#" class="footer-link">Obituary Notifications</a>
+              </li>
+              <li><a href="#" class="footer-link">Upcoming Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid__column">
+            <h4 class="footer-title">FLOWERS & GIFTS</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Shop Flowers</a></li>
+              <li><a href="#" class="footer-link">Gift Baskets & Food</a></li>
+              <li><a href="#" class="footer-link">Memorial Gifts</a></li>
+              <li><a href="#" class="footer-link">Memorial Jewelry</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid__column">
+            <h4 class="footer-title">WHAT WE DO</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Overview</a></li>
+              <li><a href="#" class="footer-link">Funerals & Cremation</a></li>
+              <li><a href="#" class="footer-link">Cemetery Options</a></li>
+              <li><a href="#" class="footer-link">Financing Solutions</a></li>
+              <li><a href="#" class="footer-link">Veteran's Services</a></li>
+              <li><a href="#" class="footer-link">Immediate Need</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid__column">
+            <h4 class="footer-title">RESOURCES</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Overview</a></li>
+              <li><a href="#" class="footer-link">Helpful Guides</a></li>
+              <li><a href="#" class="footer-link">Funerals</a></li>
+              <li><a href="#" class="footer-link">Cremation</a></li>
+              <li><a href="#" class="footer-link">Cemetery</a></li>
+              <li><a href="#" class="footer-link">Veterans</a></li>
+              <li><a href="#" class="footer-link">Planning Ahead</a></li>
+              <li><a href="#" class="footer-link">Grief & Healing</a></li>
+              <li><a href="#" class="footer-link">Customs & Traditions</a></li>
+              <li><a href="#" class="footer-link">Other Resources</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid__column">
+            <h4 class="footer-title">PLAN AHEAD</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Overview</a></li>
+              <li><a href="#" class="footer-link">Why Plan</a></li>
+              <li><a href="#" class="footer-link">Planning FAQs</a></li>
+              <li><a href="#" class="footer-link">Pre-Planning Guide</a></li>
+              <li><a href="#" class="footer-link">Planning Resources</a></li>
+              <li>
+                <a href="#" class="footer-link">Start Planning Online Now</a>
+              </li>
+              <li><a href="#" class="footer-link">Free Webinars</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid__column">
+            <h4 class="footer-title">ABOUT US</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Overview</a></li>
+              <li><a href="#" class="footer-link">News & Events</a></li>
+              <li><a href="#" class="footer-link">Reviews</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
+              <li><a href="#" class="footer-link">Locations</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-utility">
+          <div class="footer-utility__links">
+            <a href="#" class="footer-utility__link">PAY ONLINE</a>
+            <a href="#" class="footer-utility__link">GENERAL PRICE LIST</a>
+          </div>
+          <div class="footer-utility__contrast">
+            <a href="#" class="footer-utility__link">INCREASE CONTRAST</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            Copyright © 2023 Storyland Funeral Home and Cemetery, All Rights
+            Reserved.
+          </p>
+          <ul class="footer-legal">
+            <li>
+              <a href="#" class="footer-legal-link">Terms & Conditions</a>
+            </li>
+            <li><a href="#" class="footer-legal-link">Cookie Policy</a></li>
+            <li><a href="#" class="footer-legal-link">Privacy Policy</a></li>
+            <li>
+              <a href="design-system.html" class="footer-legal-link"
+                >Design System</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-branding">
+          <p class="footer-branding__text">
+            Made with ❤️
+            <a href="#" class="footer-branding__link">funeralOne</a>
+          </p>
+        </div>
+      </div>
     </footer>
-    
+
     <script src="scripts/main.js"></script>
-</body>
+  </body>
 </html>

@@ -17,16 +17,16 @@
   --neutral-900: #171717;
   
   /* Brand Colors (50-900) */
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --brand-200: #bfdbfe;
-  --brand-300: #93c5fd;
-  --brand-400: #60a5fa;
-  --brand-500: #3b82f6;
-  --brand-600: #2563eb;
-  --brand-700: #1d4ed8;
-  --brand-800: #1e40af;
-  --brand-900: #1e3a8a;
+  --brand-50: #f5f6f9;
+  --brand-100: #ebeef4;
+  --brand-200: #d7dce9;
+  --brand-300: #c3cadf;
+  --brand-400: #a9b3d0;
+  --brand-500: #8f9cc2;
+  --brand-600: #6075a4;
+  --brand-700: #455376;
+  --brand-800: #2e4155;
+  --brand-900: #1a2638;
   
   /* Success Colors (50-900) */
   --success-50: #ecfdf5;
@@ -69,10 +69,13 @@
      =================== */
   
   /* Text Colors */
-  --txt-dark: #111111;
-  --txt-default: #444444;
-  --txt-light: #888888;
-  --txt-brand: var(--brand-600);
+  --txt-dark: #2e4155;
+  --txt-default: #5b647b;
+  --txt-light: #7e879a;
+  --txt-brand: #6075a4;
+  --txt-brand-dark: #455376;
+  --txt-white: #ffffff;
+  --txt-brand-support: #f9efe4;
   --txt-success: var(--success-600);
   --txt-error: var(--error-600);
   --txt-warning: var(--warning-600);
@@ -80,18 +83,21 @@
   
   /* Background Colors */
   --bg-default: #ffffff;
-  --bg-brand: var(--brand-600);
+  --bg-brand: #6075a4;
   --bg-white: #ffffff;
-  --bg-brand-light: var(--brand-50);
+  --bg-brand-light: var(--brand-100);
+  --bg-brand-lightest: #f5f6f9;
+  --bg-brand-support: #f9efe4; /* Yellow background for icons */
   --bg-success: var(--success-600);
   --bg-warning: var(--warning-600);
   --bg-error: var(--error-600);
   --bg-light: var(--neutral-50);
   
   /* Border Colors */
-  --bd-default: var(--neutral-300);
+  --bd-default: #cacdd3;
   --bd-light: var(--neutral-200);
-  --bd-brand: var(--brand-600);
+  --bd-dark: #a4a9b7;
+  --bd-brand: #6075a4;
   --bd-disable: var(--neutral-300);
   --bd-success: var(--success-600);
   --bd-error: var(--error-600);
@@ -99,17 +105,17 @@
   --bd-white: #ffffff;
   
   /* Typography - Font Sizes */
-  --fs-h1: 2.5rem;
-  --fs-h2: 2rem;
-  --fs-h3: 1.5rem;
-  --fs-h4: 1.25rem;
-  --fs-h5: 1.125rem;
-  --fs-h6: 1rem;
-  --fs-default: 1rem;
-  --fs-large: 1.125rem;
-  --fs-small: 0.875rem;
-  --fs-caption: 0.75rem;
-  --fs-label: 0.875rem;
+  --fs-h1: 6rem; /* 96px */
+  --fs-h2: 4.5rem; /* 72px */
+  --fs-h3: 3.5rem; /* 56px */
+  --fs-h4: 2.75rem; /* 44px */
+  --fs-h5: 2rem; /* 32px */
+  --fs-h6: 1.5rem; /* 24px */
+  --fs-default: 1.25rem; /* 20px */
+  --fs-large: 2rem; /* 32px */
+  --fs-small: 1rem; /* 16px */
+  --fs-caption: 0.875rem; /* 14px */
+  --fs-label: 1.125rem; /* 18px */
   
   /* Typography - Font Weights */
   --fw-default: 400;
@@ -121,24 +127,35 @@
   --fw-black: 900;
   
   /* Font Family */
-  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-family-base: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   
   /* Typography Font Families */
-  --heading-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --body-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --display-font: 'Georgia', 'Times New Roman', serif;
+  --heading-font: 'Playfair Display', Georgia, serif;
+  --body-font: 'Jost', system-ui, sans-serif;
+  --display-font: 'Playfair Display', Georgia, serif;
   
   /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  --space-0: 0;
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 2.5rem; /* 40px */
+  --space-2xl: 4rem; /* 64px */
+  --space-3xl: 5rem; /* 80px */
+  --space-4xl: 7.5rem; /* 120px */
+
+  /* Component Spacing */
+  --component-spacing-sm: 1rem; /* 16px */
+  --component-spacing-md: 1.5rem; /* 24px */
+  --component-spacing-lg: 2rem; /* 32px */
+
+  /* Button Spacing */
+  --button-gap: 2rem; /* 32px */
   
   /* Border Radius */
+  --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
