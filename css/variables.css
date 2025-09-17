@@ -1,0 +1,158 @@
+/* CSS Custom Properties (Variables) */
+:root {
+  /* ===================
+     PRIMITIVE VARIABLES
+     =================== */
+  
+  /* Neutral Colors (50-900) */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  
+  /* Brand Colors (50-900) */
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+  
+  /* Success Colors (50-900) */
+  --success-50: #ecfdf5;
+  --success-100: #d1fae5;
+  --success-200: #a7f3d0;
+  --success-300: #6ee7b7;
+  --success-400: #34d399;
+  --success-500: #10b981;
+  --success-600: #059669;
+  --success-700: #047857;
+  --success-800: #065f46;
+  --success-900: #064e3b;
+  
+  /* Warning Colors (50-900) */
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-200: #fde68a;
+  --warning-300: #fcd34d;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+  --warning-800: #92400e;
+  --warning-900: #78350f;
+  
+  /* Error Colors (50-900) */
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-200: #fecaca;
+  --error-300: #fca5a5;
+  --error-400: #f87171;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+  --error-800: #991b1b;
+  --error-900: #7f1d1d;
+  
+  /* ===================
+     SEMANTIC VARIABLES
+     =================== */
+  
+  /* Text Colors */
+  --txt-dark: #111111;
+  --txt-default: #444444;
+  --txt-light: #888888;
+  --txt-brand: var(--brand-600);
+  --txt-success: var(--success-600);
+  --txt-error: var(--error-600);
+  --txt-warning: var(--warning-600);
+  --txt-disable: var(--neutral-400);
+  
+  /* Background Colors */
+  --bg-default: #ffffff;
+  --bg-brand: var(--brand-600);
+  --bg-white: #ffffff;
+  --bg-brand-light: var(--brand-50);
+  --bg-success: var(--success-600);
+  --bg-warning: var(--warning-600);
+  --bg-error: var(--error-600);
+  --bg-light: var(--neutral-50);
+  
+  /* Border Colors */
+  --bd-default: var(--neutral-300);
+  --bd-light: var(--neutral-200);
+  --bd-brand: var(--brand-600);
+  --bd-disable: var(--neutral-300);
+  --bd-success: var(--success-600);
+  --bd-error: var(--error-600);
+  --bd-warning: var(--warning-600);
+  --bd-white: #ffffff;
+  
+  /* Typography - Font Sizes */
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
+  --fs-h5: 1.125rem;
+  --fs-h6: 1rem;
+  --fs-default: 1rem;
+  --fs-large: 1.125rem;
+  --fs-small: 0.875rem;
+  --fs-caption: 0.75rem;
+  --fs-label: 0.875rem;
+  
+  /* Typography - Font Weights */
+  --fw-default: 400;
+  --fw-italic: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+  
+  /* Font Family */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Typography Font Families */
+  --heading-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --body-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --display-font: 'Georgia', 'Times New Roman', serif;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}

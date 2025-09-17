@@ -1,0 +1,16 @@
+/* Main Styles */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-default);
+  font-weight: var(--fw-default);
+  color: var(--txt-default);
+  background-color: var(--bg-default);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
