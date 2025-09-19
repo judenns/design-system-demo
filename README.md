@@ -130,6 +130,17 @@ Transform your Figma designs into production-ready code with simple natural lang
 | `get_metadata` | Extract specifications | Colors, spacing, typography, dimensions |
 | `get_variable_defs` | Access design tokens | Figma variables → CSS custom properties |
 
+### Documentation-First Workflow
+
+**Context7 MCP Integration** ensures reliable, current code generation:
+
+1. **📚 Get Latest Docs** - Context7 fetches up-to-date, version-specific documentation
+2. **🎨 View Figma Design** - Extract visual specifications and requirements
+3. **✅ Generate Verified Code** - All APIs and patterns validated against official documentation
+4. **🔧 Adapt to System** - Transform to use project's design system variables
+
+**Result**: Zero hallucinated APIs, zero outdated code, 100% reliable implementation.
+
 ### Integration Benefits
 
 - **Design Accuracy**: Pixel-perfect implementation with exact measurements and colors
@@ -157,7 +168,7 @@ This comprehensive documentation covers:
 This project uses 4 specialized Claude Code agents that work together to maintain consistency and quality:
 
 ### 🎨 Front-End Agent
-**Enforces design system consistency** - Ensures all components use established CSS variables, follow BEM naming, and integrate with Figma designs.
+**Documentation-first development** - Uses Context7 to get up-to-date documentation before any code generation. NO hallucinated APIs, NO outdated patterns. Ensures design system consistency with verified, current code.
 
 ### 🔗 Figma Integration Agent
 **Handles Figma MCP workflows** - Extracts designs, syncs design tokens, and maintains pixel-perfect consistency between Figma and code.

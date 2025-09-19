@@ -18,9 +18,11 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 - **Tools Available**: `get_screenshot`, `get_code`, `get_metadata`, `get_variable_defs`
 - **Usage**: Always reference Figma designs before implementing new components
 
-### Context7 MCP (Available)
-- **Purpose**: Access latest documentation for libraries and frameworks
-- **Usage**: Use for CSS patterns, accessibility guidelines, and best practices
+### Context7 MCP (Documentation-First Priority)
+- **Purpose**: Access up-to-date, version-specific documentation and code examples straight from the source
+- **Priority**: ALWAYS use before code generation - NO hallucinated APIs, NO outdated patterns
+- **Workflow**: `resolve-library-id` → `get-library-docs` → validate → implement
+- **Usage**: CSS patterns, accessibility guidelines, framework APIs, best practices
 
 ## Development Commands
 
@@ -81,13 +83,18 @@ When adding new functionality:
 
 ## Figma MCP Workflow
 
-### **Standard Design-to-Code Process**:
-1. **View Design**: Use `get_screenshot` to see the component
-2. **Extract Specs**: Use `get_metadata` for measurements, colors, spacing
-3. **Get Variables**: Use `get_variable_defs` to sync design tokens
-4. **Generate Base Code**: Use `get_code` for initial implementation
-5. **Adapt to System**: Modify generated code to use our design system variables
-6. **Test & Validate**: Ensure accessibility and responsive behavior
+### **Standard Design-to-Code Process** (Documentation-First):
+1. **Documentation Research**: Use Context7 to get latest, version-specific documentation
+   - Verify all APIs, methods, and patterns exist in current version
+   - Get official examples and implementation guidelines
+2. **View Design**: Use `get_screenshot` to see the component
+3. **Extract Specs**: Use `get_metadata` for measurements, colors, spacing
+4. **Get Variables**: Use `get_variable_defs` to sync design tokens
+5. **Generate Verified Code**: Use `get_code` with documentation validation
+   - Cross-reference all code against Context7 documentation
+   - Replace any undocumented or deprecated patterns
+6. **Adapt to System**: Modify generated code to use our design system variables
+7. **Test & Validate**: Ensure accessibility and responsive behavior
 
 ### **Component Implementation Rules**:
 - **Always** check existing components first
@@ -101,9 +108,13 @@ When adding new functionality:
 
 ### **Front-End Agent Guidelines**
 - **Trigger**: Design system work, UI component implementation
+- **Documentation-First Rule**: MUST use Context7 before any code generation
+  - Verify all APIs and methods exist in current documentation
+  - Get official examples and patterns from source
+  - NO assumptions, NO hallucinated code, NO outdated patterns
 - **Constraints**: Must use established variables and classes
 - **Validation**: Must ask before creating new design system elements
-- **MCP Usage**: Should leverage Context7 for documentation lookups
+- **MCP Priority**: Context7 (documentation) → Figma MCP (design) → Implementation
 
 ### **Figma Integration Agent Guidelines**
 - **Trigger**: Figma MCP workflows, design token synchronization

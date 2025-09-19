@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@context7/mcp-server"],
+      "disabled": false
+    },
+    "figma-dev-mode-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@figma/mcp-server@latest"],
+      "disabled": false
+    }
+  }
+}
