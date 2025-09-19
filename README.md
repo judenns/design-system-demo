@@ -2,6 +2,11 @@
 
 A demo for testing figma mcp with claude code using theme-3 design.
 
+## 🚀 Live Demo
+
+- **[Homepage](https://demo-mcp-eight.vercel.app/)** - Generated with Figma MCP and Claude using our established design system variables
+- **[Design System Styleguide](https://demo-mcp-eight.vercel.app/design-system.html)** - Generated with Figma MCP and Claude Code
+
 ## 📚 Documentation
 
 - **[Design System Overview](docs/design-system.md)** - Complete design system reference with CSS architecture, component library, and development workflow
