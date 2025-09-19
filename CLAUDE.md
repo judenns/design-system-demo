@@ -1,76 +1,217 @@
-# CLAUDE.md
+# CLAUDE.md - Enhanced Configuration for Figma MCP Showcase
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with this repository.
 
 ## Project Overview
 
-This is a modern web application starter template featuring:
+**Template-0** is a Claude Code CLI + Figma MCP showcase project featuring:
 
-- Vanilla HTML5, CSS3, and JavaScript (no build system required)
-- Comprehensive design system with CSS custom properties
-- Pre-built, accessible UI components
-- BEM naming convention for CSS classes
+- **Core Purpose**: Demonstrate rapid design-to-code workflows using Claude Code with Figma MCP integration
+- **Architecture**: Vanilla HTML5, CSS3, JavaScript (no build system for rapid prototyping)
+- **Design System**: Comprehensive token-based system with CSS custom properties
+- **Component Library**: Pre-built, accessible UI components following BEM methodology
+
+## MCP Integration Setup
+
+### Figma MCP Configuration
+- **Status**: ✅ Configured in `.claude/settings.local.json`
+- **Tools Available**: `get_screenshot`, `get_code`, `get_metadata`, `get_variable_defs`
+- **Usage**: Always reference Figma designs before implementing new components
+
+### Context7 MCP (Available)
+- **Purpose**: Access latest documentation for libraries and frameworks
+- **Usage**: Use for CSS patterns, accessibility guidelines, and best practices
 
 ## Development Commands
 
-This is a static web project with no build system. To run locally:
-
 ```bash
-# Using Python
+# Quick local server (recommended for demos)
 python3 -m http.server 8000
 
-# Using Node.js live-server
-npx live-server --port=3000
+# With live reload for development
+npx live-server --port=3000 --open=/index.html
 
-# Using PHP
-php -S localhost:8000
+# Test design system components
+npx live-server --port=3000 --open=/design-system.html
 ```
 
-## Code Architecture
+## CSS Architecture (Updated)
 
-### CSS Architecture
+**File Structure**:
+```
+css/
+├── reset.css              # Modern CSS reset
+├── variables.css           # Design tokens (colors, typography, spacing)
+├── main.css               # Base styles and page-specific layout
+└── components/
+    ├── index.css          # Component imports (loaded in HTML)
+    ├── buttons.css        # Button variants and states
+    ├── forms.css          # Form elements (input, select, checkbox, etc.)
+    ├── cards.css          # Card variants (basic, feature, product, etc.)
+    ├── alerts.css         # Alerts, badges, status indicators
+    ├── search.css         # Search components and variants
+    ├── headings.css       # Section headings, breadcrumbs
+    ├── layout.css         # Layout utilities (grid, flex, containers)
+    └── utilities.css      # Helper classes and utilities
+```
 
-The project follows a modular CSS approach with clear separation of concerns:
+## Design System Constraints (CRITICAL)
 
-- **reset.css**: Modern CSS reset based on Andy Bell's reset
-- **variables.css**: All design tokens (colors, typography, spacing) as CSS custom properties
-- **components/components.css**: Reusable UI component styles (buttons, cards, forms, alerts, badges)
-- **main.css**: Base styles and layout
+### **ALWAYS USE EXISTING SYSTEM**
+- **Colors**: Only use semantic variables (`--txt-brand`, `--bg-light`, etc.)
+- **Spacing**: Only use spacing scale (`--space-xs` through `--space-3xl`)
+- **Typography**: Only use defined font sizes (`--fs-h1` through `--fs-caption`)
+- **Components**: Extend existing components, don't create from scratch
 
-### Component System
+### **Component Selection Guide**
+When adding new functionality:
 
-Components follow BEM naming convention (`.block__element--modifier`):
+1. **Interactive Elements** → Extend `buttons.css` or `forms.css`
+2. **Content Containers** → Extend `cards.css`
+3. **Feedback/Status** → Extend `alerts.css`
+4. **Navigation/Search** → Extend `search.css` or `headings.css`
+5. **Layout Needs** → Use `layout.css` utilities
+6. **Quick Styling** → Use `utilities.css` classes
 
-- Buttons: `.btn`, `.btn--primary`, `.btn--sm`
-- Cards: `.card`, `.card__header`, `.card__body`, `.card__footer`
-- Forms: `.input`, `.label`, `.input--error`
-- Alerts: `.alert`, `.alert--success`
-- Badges: `.badge`, `.badge--warning`
+### **BEM Naming Enforcement**
+- Block: `.component-name`
+- Element: `.component-name__element`
+- Modifier: `.component-name--modifier`
+- **Never** use nested selectors deeper than 2 levels
 
-### Design System
+## Figma MCP Workflow
 
-Two-layer color system:
+### **Standard Design-to-Code Process**:
+1. **View Design**: Use `get_screenshot` to see the component
+2. **Extract Specs**: Use `get_metadata` for measurements, colors, spacing
+3. **Get Variables**: Use `get_variable_defs` to sync design tokens
+4. **Generate Base Code**: Use `get_code` for initial implementation
+5. **Adapt to System**: Modify generated code to use our design system variables
+6. **Test & Validate**: Ensure accessibility and responsive behavior
 
-1. Primitive variables: Raw color scales (50-900 shades)
-2. Semantic variables: Purpose-driven tokens that reference primitives
+### **Component Implementation Rules**:
+- **Always** check existing components first
+- **Always** use semantic CSS variables
+- **Always** include hover, focus, disabled states
+- **Always** add ARIA attributes for accessibility
+- **Always** test keyboard navigation
+- **Always** ensure responsive behavior
 
-Key semantic variables:
+## Agent Integration
 
-- Text: `--txt-default`, `--txt-dark`, `--txt-light`, `--txt-brand`
-- Backgrounds: `--bg-default`, `--bg-brand`, `--bg-light`
-- Borders: `--bd-default`, `--bd-light`, `--bd-brand`
-- Spacing: `--space-xs` through `--space-3xl`
+### **Front-End Agent Guidelines**
+- **Trigger**: Design system work, UI component implementation
+- **Constraints**: Must use established variables and classes
+- **Validation**: Must ask before creating new design system elements
+- **MCP Usage**: Should leverage Context7 for documentation lookups
 
-### JavaScript Structure
+### **Figma Integration Agent Guidelines**
+- **Trigger**: Figma MCP workflows, design token synchronization
+- **Focus**: Seamless design-to-code workflows using MCP tools
+- **Responsibility**: Maintain consistency between Figma and CSS
 
-- **main.js**: Application initialization and event handlers
-- Uses vanilla JavaScript (ES6+) with no dependencies
-- Modular functions for initialization, event handling, and utilities
+### **Doc-Writer Agent Guidelines**
+- **Trigger**: Documentation updates, changelog maintenance
+- **Scope**: Update design-system.md, component examples, README
+- **Format**: Follow established documentation structure
 
-## Key Development Notes
+### **QA Agent Guidelines**
+- **Trigger**: Quality assurance, accessibility validation
+- **Focus**: Ensure code quality, accessibility compliance, design system consistency
+- **Standards**: WCAG 2.1 AA, responsive design, performance optimization
 
-- **No build tools**: Project runs directly in the browser without compilation
-- **Component composition**: Combine existing components rather than creating new ones
-- **CSS variables only**: Use semantic CSS variables, never primitive values directly
-- **Accessibility first**: All components include ARIA attributes and keyboard navigation
-- **BEM methodology**: Maintain consistent naming for new components
+## File Organization Rules
+
+### **HTML Files**
+- `index.html`: Main landing page
+- `design-system.html`: Component showcase/documentation
+- Additional pages: Follow same structure and imports
+
+### **CSS Import Order** (Critical)
+```html
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/components/index.css" />
+<link rel="stylesheet" href="css/main.css" />
+```
+
+### **JavaScript Structure**
+- `scripts/main.js`: Core initialization and utilities
+- Keep vanilla JS approach for simplicity
+- Use ES6+ features but ensure browser compatibility
+- Modular functions for reusability
+
+## Quality Standards
+
+### **Code Quality**
+- **Semantic HTML**: Proper landmarks, headings hierarchy
+- **CSS Specificity**: Keep low, use classes over IDs
+- **JavaScript**: Unobtrusive, progressive enhancement
+- **Performance**: Optimize images, minimal HTTP requests
+
+### **Accessibility Standards**
+- **WCAG 2.1 AA Compliance**: Minimum standard
+- **Keyboard Navigation**: All interactive elements
+- **Screen Reader Support**: Proper ARIA labels
+- **Color Contrast**: 4.5:1 minimum for normal text
+
+### **Responsive Design**
+- **Mobile-First**: Start with mobile, enhance for desktop
+- **Breakpoints**: Use consistent breakpoints across components
+- **Touch Targets**: Minimum 44x44px for interactive elements
+- **Content Priority**: Ensure mobile content hierarchy
+
+## Demo/Showcase Guidelines
+
+When using this project for demonstrations:
+
+1. **Start with Figma**: Always show the design first
+2. **Use Natural Language**: Demonstrate Claude Code's natural language interface
+3. **Show MCP Integration**: Highlight the design-to-code workflow
+4. **Emphasize Consistency**: Point out how new components follow existing patterns
+5. **Demonstrate Speed**: Show how quickly prototypes can be built
+6. **Highlight Quality**: Show built-in accessibility and responsiveness
+
+## Common Patterns
+
+### **Adding a New Component**
+```
+1. "Show me the [component] from our Figma design"
+2. "Generate CSS for this component using our design system variables"
+3. "Make sure it follows our BEM naming convention"
+4. "Add hover and focus states"
+5. "Test with keyboard navigation"
+```
+
+### **Updating Design Tokens**
+```
+1. "Extract all color variables from our Figma design system"
+2. "Update variables.css with the new tokens"
+3. "Show me which components use the old colors"
+4. "Update the affected components"
+```
+
+### **Creating Page Layouts**
+```
+1. "Show me the [page] design from Figma"
+2. "Create the HTML structure using our existing components"
+3. "Use our layout utilities for responsive behavior"
+4. "Ensure semantic HTML and accessibility"
+```
+
+## Troubleshooting
+
+### **Common Issues**
+- **MCP Connection**: Check `.claude/settings.local.json` permissions
+- **CSS Conflicts**: Verify import order in HTML
+- **Design System Drift**: Always validate against `variables.css`
+- **Accessibility Issues**: Test with keyboard and screen reader
+
+### **Debugging Steps**
+1. Check browser dev tools for CSS issues
+2. Validate HTML structure and semantics
+3. Test component states (hover, focus, disabled)
+4. Verify responsive behavior across breakpoints
+5. Run accessibility audit tools
+
+This setup enables rapid, consistent, and maintainable design-to-code workflows while showcasing the power of Claude Code CLI with Figma MCP integration.

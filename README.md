@@ -147,54 +147,38 @@ This comprehensive documentation covers:
 - Troubleshooting common issues
 - Integration with this project's design system
 
-## 🤖 Project Agents
+## 🤖 Specialized Agents
 
-This project includes specialized Claude Code agents for different development tasks:
+This project uses 4 specialized Claude Code agents that work together to maintain consistency and quality:
 
-### Front-End Agent
+### 🎨 Front-End Agent
+**Enforces design system consistency** - Ensures all components use established CSS variables, follow BEM naming, and integrate with Figma designs.
 
-**Purpose**: Specializes in front-end development and design system work
+### 🔗 Figma Integration Agent
+**Handles Figma MCP workflows** - Extracts designs, syncs design tokens, and maintains pixel-perfect consistency between Figma and code.
 
-**What it does**:
-- Builds design system components and web pages
-- Converts Figma designs to HTML/CSS code
-- Creates responsive layouts with accessibility built-in
-- Uses established codebase patterns and design tokens
-- Integrates with Context7 MCP for latest documentation
+### 📝 Doc-Writer Agent
+**Maintains all documentation** - Updates design system docs, creates component examples, and keeps guides current.
 
-**Usage**:
+### ✅ QA Agent
+**Validates quality standards** - Checks accessibility, performance, design system compliance, and responsive behavior.
+
+### How to Use
+
+**Natural Language** - Just describe what you need:
 ```
-"Help me implement this button component from Figma using our design system"
-"Create a responsive card layout following our CSS variables"
-"Build a navigation menu that matches our accessibility standards"
-```
-
-### Doc-Writer Agent
-
-**Purpose**: Handles all documentation updates and maintenance
-
-**What it does**:
-- Updates design system documentation
-- Maintains project changelog
-- Creates usage guidelines and examples
-- Manages README and guide files
-- Organizes documentation structure
-
-**Usage**:
-```
-"Update the design system docs with new color variables"
-"Create a changelog entry for the new component library"
-"Write usage examples for the card component"
+"Create a pricing card from the Figma design"
+"Update the color variables to match Figma"
+"Document the new search component"
+"Check if this component meets accessibility standards"
 ```
 
-### How to Use Project Agents
+**Agent Coordination** - Agents work together automatically:
+- **Design → Code**: Figma Integration Agent + Front-End Agent
+- **Quality → Docs**: QA Agent + Doc-Writer Agent
+- **Complete Workflow**: All agents collaborate as needed
 
-Simply describe your task and Claude will automatically activate the appropriate agent, or you can specifically request an agent:
-- Frontend work → Front-End Agent activates
-- Documentation tasks → Doc-Writer Agent activates
-- Complex tasks → Multiple agents may collaborate
-
-The agents follow this project's coding standards, design system conventions, and documentation structure automatically.
+The agents automatically maintain your design system standards, coding conventions, and quality requirements.
 
 ## 🤝 Contributing
 
