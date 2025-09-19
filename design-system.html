@@ -21,616 +21,263 @@
       <header class="ds-header">
         <h1 class="ds-title">f1Connect Theme 3 - Design System</h1>
         <p class="ds-description">
-          A comprehensive guide to typography, colors, and UI components
+          Compact reference for typography, colors, variables, and components
         </p>
       </header>
 
-      <!-- Typography Section -->
+      <!-- Design Tokens Section -->
       <section class="ds-section">
-        <h2 class="ds-section-title">Typography</h2>
+        <h2 class="ds-section-title">Design Tokens</h2>
 
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Headings</h3>
-          <div class="ds-example">
-            <h1>Heading 1 (96px)</h1>
-            <p class="ds-code">
-              &lt;h1&gt;Heading 1&lt;/h1&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h1); font-weight: var(--fw-default);
-            </p>
+        <div class="ds-grid">
+          <div class="ds-card">
+            <h3>Typography Sizes</h3>
+            <div class="ds-token-list">
+              <div class="ds-token"><code>--fs-h1</code> = 6rem (96px)</div>
+              <div class="ds-token"><code>--fs-h2</code> = 4.5rem (72px)</div>
+              <div class="ds-token"><code>--fs-h3</code> = 3.5rem (56px)</div>
+              <div class="ds-token"><code>--fs-h4</code> = 2.75rem (44px)</div>
+              <div class="ds-token"><code>--fs-h5</code> = 2rem (32px)</div>
+              <div class="ds-token"><code>--fs-h6</code> = 1.5rem (24px)</div>
+              <div class="ds-token"><code>--fs-large</code> = 2rem (32px)</div>
+              <div class="ds-token"><code>--fs-default</code> = 1.25rem (20px)</div>
+              <div class="ds-token"><code>--fs-small</code> = 1rem (16px)</div>
+              <div class="ds-token"><code>--fs-caption</code> = 0.875rem (14px)</div>
+            </div>
           </div>
-          <div class="ds-example">
-            <h2>Heading 2 (72px)</h2>
-            <p class="ds-code">
-              &lt;h2&gt;Heading 2&lt;/h2&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h2); font-weight: var(--fw-default);
-            </p>
+
+          <div class="ds-card">
+            <h3>Font Weights</h3>
+            <div class="ds-token-list">
+              <div class="ds-token"><code>--fw-default</code> = 400</div>
+              <div class="ds-token"><code>--fw-medium</code> = 500</div>
+              <div class="ds-token"><code>--fw-semibold</code> = 600</div>
+              <div class="ds-token"><code>--fw-bold</code> = 700</div>
+              <div class="ds-token"><code>--fw-extrabold</code> = 800</div>
+              <div class="ds-token"><code>--fw-black</code> = 900</div>
+            </div>
           </div>
-          <div class="ds-example">
-            <h3>Heading 3 (56px)</h3>
-            <p class="ds-code">
-              &lt;h3&gt;Heading 3&lt;/h3&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h3); font-weight: var(--fw-default);
-            </p>
+
+          <div class="ds-card">
+            <h3>Spacing Scale</h3>
+            <div class="ds-token-list">
+              <div class="ds-token"><code>--space-xs</code> = 0.5rem (8px)</div>
+              <div class="ds-token"><code>--space-sm</code> = 1rem (16px)</div>
+              <div class="ds-token"><code>--space-md</code> = 1.5rem (24px)</div>
+              <div class="ds-token"><code>--space-lg</code> = 2rem (32px)</div>
+              <div class="ds-token"><code>--space-xl</code> = 2.5rem (40px)</div>
+              <div class="ds-token"><code>--space-2xl</code> = 4rem (64px)</div>
+              <div class="ds-token"><code>--space-3xl</code> = 5rem (80px)</div>
+            </div>
           </div>
-          <div class="ds-example">
-            <h4>Heading 4 (44px)</h4>
-            <p class="ds-code">
-              &lt;h4&gt;Heading 4&lt;/h4&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h4); font-weight: var(--fw-default);
-            </p>
-          </div>
-          <div class="ds-example">
-            <h5>Heading 5 (32px)</h5>
-            <p class="ds-code">
-              &lt;h5&gt;Heading 5&lt;/h5&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h5); font-weight: var(--fw-default);
-            </p>
-          </div>
-          <div class="ds-example">
-            <h6>Heading 6 (24px)</h6>
-            <p class="ds-code">
-              &lt;h6&gt;Heading 6&lt;/h6&gt; | font-family: var(--heading-font);
-              font-size: var(--fs-h6); font-weight: var(--fw-default);
-            </p>
+
+          <div class="ds-card">
+            <h3>Border Radius</h3>
+            <div class="ds-token-list">
+              <div class="ds-token"><code>--radius-sm</code> = 0.25rem</div>
+              <div class="ds-token"><code>--radius-md</code> = 0.5rem</div>
+              <div class="ds-token"><code>--radius-lg</code> = 0.75rem</div>
+              <div class="ds-token"><code>--radius-xl</code> = 1rem</div>
+              <div class="ds-token"><code>--radius-full</code> = 9999px</div>
+            </div>
           </div>
         </div>
 
         <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Body Text</h3>
-          <div class="ds-example">
-            <p class="body-large">
-              Body Large (32px) - This text style is used for prominent
-              paragraphs and featured content.
-            </p>
-            <p class="ds-code">
-              &lt;p class="body-large"&gt;Body Large&lt;/p&gt; | font-family:
-              var(--body-font); font-size: var(--fs-large); font-weight:
-              var(--fw-default);
-            </p>
-          </div>
-          <div class="ds-example">
-            <p class="body-default">
-              Body Default (20px) - This is the standard paragraph text used
-              throughout the application. It provides good readability on both
-              desktop and mobile devices.
-            </p>
-            <p class="ds-code">
-              &lt;p&gt;Body Default&lt;/p&gt; | font-family: var(--body-font);
-              font-size: var(--fs-default); font-weight: var(--fw-default);
-            </p>
-          </div>
-          <div class="ds-example">
-            <p class="body-small">
-              Body Small (16px) - This smaller text is used for secondary
-              information, captions, and supporting content.
-            </p>
-            <p class="ds-code">
-              &lt;p class="body-small"&gt;Body Small&lt;/p&gt; | font-family:
-              var(--body-font); font-size: var(--fs-small); font-weight:
-              var(--fw-default);
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Links & Special Text</h3>
-          <div class="ds-example">
-            <a href="#" class="link-default">Default Link</a>
-            <p class="ds-code">
-              &lt;a href="#" class="link-default"&gt;Default Link&lt;/a&gt; |
-              font-family: var(--body-font); font-size: var(--fs-default);
-              font-weight: var(--fw-semibold); color: var(--txt-brand);
-            </p>
-          </div>
-          <div class="ds-example">
-            <a href="#" class="link-small">Small Link</a>
-            <p class="ds-code">
-              &lt;a href="#" class="link-small"&gt;Small Link&lt;/a&gt; |
-              font-family: var(--body-font); font-size: var(--fs-small);
-              font-weight: var(--fw-semibold); color: var(--txt-brand);
-            </p>
-          </div>
-          <div class="ds-example">
-            <p class="text-label">Label Text (18px - Uppercase)</p>
-            <p class="ds-code">
-              &lt;p class="text-label"&gt;Label Text&lt;/p&gt; | font-family:
-              var(--body-font); font-size: var(--fs-label); font-weight:
-              var(--fw-bold); text-transform: uppercase; letter-spacing: 1.8px;
-            </p>
+          <h3 class="ds-subsection-title">Typography Examples</h3>
+          <div class="ds-type-scale">
+            <div class="ds-type-item"><h1>H1 - Main Title</h1><code>--fs-h1 (96px)</code></div>
+            <div class="ds-type-item"><h2>H2 - Section Title</h2><code>--fs-h2 (72px)</code></div>
+            <div class="ds-type-item"><h3>H3 - Subsection</h3><code>--fs-h3 (56px)</code></div>
+            <div class="ds-type-item"><h4>H4 - Component Title</h4><code>--fs-h4 (44px)</code></div>
+            <div class="ds-type-item"><h5>H5 - Small Heading</h5><code>--fs-h5 (32px)</code></div>
+            <div class="ds-type-item"><h6>H6 - Micro Heading</h6><code>--fs-h6 (24px)</code></div>
+            <div class="ds-type-item"><p class="body-large">Body Large - Featured content</p><code>--fs-large (32px)</code></div>
+            <div class="ds-type-item"><p>Body Default - Standard text</p><code>--fs-default (20px)</code></div>
+            <div class="ds-type-item"><p class="body-small">Body Small - Secondary content</p><code>--fs-small (16px)</code></div>
           </div>
         </div>
       </section>
 
       <!-- Colors Section -->
       <section class="ds-section">
-        <h2 class="ds-section-title">Semantic Colors</h2>
+        <h2 class="ds-section-title">Color System</h2>
 
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Text Colors</h3>
-          <div class="ds-color-grid">
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-dark"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-dark</p>
-                <p class="ds-color-desc">Primary headings, bold text</p>
-                <p class="ds-code">var(--txt-dark)</p>
+        <div class="ds-grid">
+          <!-- Text Colors -->
+          <div class="ds-card">
+            <h3>Text Colors</h3>
+            <div class="ds-color-compact">
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-txt-dark"></div>
+                <div><code>--txt-dark</code><br><small>#2e4155</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-default"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-default</p>
-                <p class="ds-color-desc">Body text, regular content</p>
-                <p class="ds-code">var(--txt-default)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-txt-default"></div>
+                <div><code>--txt-default</code><br><small>#5b647b</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-light"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-light</p>
-                <p class="ds-color-desc">Secondary text, subtitles</p>
-                <p class="ds-code">var(--txt-light)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-txt-light"></div>
+                <div><code>--txt-light</code><br><small>#7e879a</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-brand"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-brand</p>
-                <p class="ds-color-desc">Branded text, links, focus</p>
-                <p class="ds-code">var(--txt-brand)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-txt-brand"></div>
+                <div><code>--txt-brand</code><br><small>#6075a4</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-brand-dark"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-brand-dark</p>
-                <p class="ds-color-desc">Dark branded text, hover</p>
-                <p class="ds-code">var(--txt-brand-dark)</p>
-              </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-txt-white"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">txt-white</p>
-                <p class="ds-color-desc">Text on dark backgrounds</p>
-                <p class="ds-code">var(--txt-white)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-txt-brand-dark"></div>
+                <div><code>--txt-brand-dark</code><br><small>#455376</small></div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Background Colors</h3>
-          <div class="ds-color-grid">
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-default"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-default</p>
-                <p class="ds-color-desc">Default page background</p>
-                <p class="ds-code">var(--bg-default)</p>
+          <!-- Background Colors -->
+          <div class="ds-card">
+            <h3>Background Colors</h3>
+            <div class="ds-color-compact">
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bg-default"></div>
+                <div><code>--bg-default</code><br><small>#ffffff</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-white"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-white</p>
-                <p class="ds-color-desc">White backgrounds, cards</p>
-                <p class="ds-code">var(--bg-white)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bg-brand"></div>
+                <div><code>--bg-brand</code><br><small>#6075a4</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-brand"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-brand</p>
-                <p class="ds-color-desc">Primary brand background</p>
-                <p class="ds-code">var(--bg-brand)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bg-brand-light"></div>
+                <div><code>--bg-brand-light</code><br><small>--brand-100</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-brand-light"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-brand-light</p>
-                <p class="ds-color-desc">Light brand background</p>
-                <p class="ds-code">var(--bg-brand-light)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bg-brand-lightest"></div>
+                <div><code>--bg-brand-lightest</code><br><small>#f5f6f9</small></div>
               </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-brand-lightest"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-brand-lightest</p>
-                <p class="ds-color-desc">Lightest brand background</p>
-                <p class="ds-code">var(--bg-brand-lightest)</p>
-              </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bg-light"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bg-light</p>
-                <p class="ds-color-desc">Light neutral background</p>
-                <p class="ds-code">var(--bg-light)</p>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bg-light"></div>
+                <div><code>--bg-light</code><br><small>--neutral-50</small></div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Border Colors</h3>
-          <div class="ds-color-grid">
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bd-default"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bd-default</p>
-                <p class="ds-color-desc">Default border color</p>
-                <p class="ds-code">var(--bd-default)</p>
+          <!-- Border Colors -->
+          <div class="ds-card">
+            <h3>Border Colors</h3>
+            <div class="ds-color-compact">
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bd-default"></div>
+                <div><code>--bd-default</code><br><small>#cacdd3</small></div>
+              </div>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bd-light"></div>
+                <div><code>--bd-light</code><br><small>--neutral-200</small></div>
+              </div>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bd-brand"></div>
+                <div><code>--bd-brand</code><br><small>#6075a4</small></div>
+              </div>
+              <div class="ds-color-row">
+                <div class="ds-color-swatch bg-bd-error"></div>
+                <div><code>--bd-error</code><br><small>--error-600</small></div>
               </div>
             </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bd-light"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bd-light</p>
-                <p class="ds-color-desc">Light border color</p>
-                <p class="ds-code">var(--bd-light)</p>
-              </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bd-brand"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bd-brand</p>
-                <p class="ds-color-desc">Brand border color</p>
-                <p class="ds-code">var(--bd-brand)</p>
-              </div>
-            </div>
-            <div class="ds-color-item">
-              <div class="ds-color-swatch bg-bd-error"></div>
-              <div class="ds-color-info">
-                <p class="ds-color-name">bd-error</p>
-                <p class="ds-color-desc">Error border color</p>
-                <p class="ds-code">var(--bd-error)</p>
-              </div>
+          </div>
+
+          <!-- Brand Palette -->
+          <div class="ds-card">
+            <h3>Brand Palette</h3>
+            <div class="ds-palette">
+              <div class="ds-palette-swatch" style="background: #f5f6f9;"><small>50</small></div>
+              <div class="ds-palette-swatch" style="background: #ebeef4;"><small>100</small></div>
+              <div class="ds-palette-swatch" style="background: #d7dce9;"><small>200</small></div>
+              <div class="ds-palette-swatch" style="background: #c3cadf;"><small>300</small></div>
+              <div class="ds-palette-swatch" style="background: #a9b3d0;"><small>400</small></div>
+              <div class="ds-palette-swatch" style="background: #8f9cc2;"><small>500</small></div>
+              <div class="ds-palette-swatch" style="background: #6075a4; color: white;"><small>600</small></div>
+              <div class="ds-palette-swatch" style="background: #455376; color: white;"><small>700</small></div>
+              <div class="ds-palette-swatch" style="background: #2e4155; color: white;"><small>800</small></div>
+              <div class="ds-palette-swatch" style="background: #1a2638; color: white;"><small>900</small></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Button Section -->
+      <!-- Components Section -->
       <section class="ds-section">
-        <h2 class="ds-section-title">Buttons</h2>
+        <h2 class="ds-section-title">UI Components</h2>
 
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Primary Buttons</h3>
-          <div class="ds-example">
-            <button class="btn btn--primary">Primary Button</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--primary"&gt;Primary
-              Button&lt;/button&gt;
-            </p>
-          </div>
-          <div class="ds-example">
-            <button class="btn btn--primary" disabled>Primary Disabled</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--primary" disabled&gt;Primary
-              Disabled&lt;/button&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Secondary Buttons</h3>
-          <div class="ds-example">
-            <button class="btn btn--secondary-fill">Secondary Fill</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--secondary-fill"&gt;Secondary
-              Fill&lt;/button&gt;
-            </p>
-          </div>
-          <div class="ds-example">
-            <button class="btn btn--secondary-outline">
-              Secondary Outline
-            </button>
-            <p class="ds-code">
-              &lt;button class="btn btn--secondary-outline"&gt;Secondary
-              Outline&lt;/button&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Button with Icons</h3>
-          <div class="ds-example">
-            <button class="btn btn--primary btn--icon-right">
-              Next Step
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 5L14 10L9 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <p class="ds-code">
-              &lt;button class="btn btn--primary btn--icon-right"&gt;Next Step
-              &lt;svg&gt;...&lt;/svg&gt;&lt;/button&gt;
-            </p>
-          </div>
-          <div class="ds-example">
-            <button class="btn btn--secondary-outline btn--icon-left">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11 5L6 10L11 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Previous Step
-            </button>
-            <p class="ds-code">
-              &lt;button class="btn btn--secondary-outline
-              btn--icon-left"&gt;&lt;svg&gt;...&lt;/svg&gt; Previous
-              Step&lt;/button&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Other Button Variants</h3>
-          <div class="ds-example">
-            <button class="btn btn--white">White Button</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--white"&gt;White Button&lt;/button&gt;
-            </p>
-          </div>
-          <div class="ds-example ds-dark-bg">
-            <button class="btn btn--white-outline">White Outline</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--white-outline"&gt;White
-              Outline&lt;/button&gt;
-            </p>
-          </div>
-          <div class="ds-example">
-            <button class="btn btn--link">Link Button</button>
-            <p class="ds-code">
-              &lt;button class="btn btn--link"&gt;Link Button&lt;/button&gt;
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Input Section -->
-      <section class="ds-section">
-        <h2 class="ds-section-title">Form Elements</h2>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Text Inputs</h3>
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="input-default" class="label">Label</label>
-              <input
-                type="text"
-                id="input-default"
-                class="input"
-                placeholder="Placeholder text"
-              />
+        <div class="ds-grid">
+          <!-- Buttons -->
+          <div class="ds-card">
+            <h3>Buttons</h3>
+            <div class="ds-component-demo">
+              <button class="btn btn--primary">Primary</button>
+              <button class="btn btn--secondary-fill">Secondary</button>
+              <button class="btn btn--secondary-outline">Outline</button>
+              <button class="btn btn--link">Link</button>
+              <button class="btn btn--primary" disabled>Disabled</button>
             </div>
-            <p class="ds-code">
-              &lt;label for="input-id" class="label"&gt;Label&lt;/label&gt;<br />&lt;input
-              type="text" id="input-id" class="input" placeholder="Placeholder
-              text"&gt;
-            </p>
+            <div class="ds-code-compact">
+              <code>.btn.btn--primary</code><br>
+              <code>.btn.btn--secondary-fill</code><br>
+              <code>.btn.btn--secondary-outline</code>
+            </div>
           </div>
 
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="input-focus" class="label">Label</label>
-              <input
-                type="text"
-                id="input-focus"
-                class="input input--focus"
-                placeholder="Placeholder text"
-              />
-            </div>
-            <p class="ds-code">
-              &lt;label for="input-id" class="label"&gt;Label&lt;/label&gt;<br />&lt;input
-              type="text" id="input-id" class="input input--focus"
-              placeholder="Placeholder text"&gt;
-            </p>
-          </div>
-
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="input-filled" class="label">Label</label>
-              <input
-                type="text"
-                id="input-filled"
-                class="input input--filled"
-                value="Input with value"
-              />
-            </div>
-            <p class="ds-code">
-              &lt;label for="input-id" class="label"&gt;Label&lt;/label&gt;<br />&lt;input
-              type="text" id="input-id" class="input input--filled" value="Input
-              with value"&gt;
-            </p>
-          </div>
-
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="input-error" class="label">Label</label>
-              <input
-                type="text"
-                id="input-error"
-                class="input input--error"
-                value="Invalid input"
-              />
-              <p class="input-error-message">Helper text (Error message)</p>
-            </div>
-            <p class="ds-code">
-              &lt;label for="input-id" class="label"&gt;Label&lt;/label&gt;<br />&lt;input
-              type="text" id="input-id" class="input input--error"
-              value="Invalid input"&gt;<br />&lt;p
-              class="input-error-message"&gt;Helper text (Error
-              message)&lt;/p&gt;
-            </p>
-          </div>
-
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="input-disabled" class="label">Label</label>
-              <input
-                type="text"
-                id="input-disabled"
-                class="input"
-                placeholder="Placeholder text"
-                disabled
-              />
-            </div>
-            <p class="ds-code">
-              &lt;label for="input-id" class="label"&gt;Label&lt;/label&gt;<br />&lt;input
-              type="text" id="input-id" class="input" placeholder="Placeholder
-              text" disabled&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Text Areas</h3>
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="textarea-default" class="label"
-                >Default Textarea</label
-              >
-              <textarea
-                id="textarea-default"
-                class="textarea"
-                placeholder="Enter longer text here..."
-              ></textarea>
-            </div>
-            <p class="ds-code">
-              &lt;label for="textarea-id" class="label"&gt;Default
-              Textarea&lt;/label&gt;<br />&lt;textarea id="textarea-id"
-              class="textarea" placeholder="Enter longer text
-              here..."&gt;&lt;/textarea&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Select Dropdowns</h3>
-          <div class="ds-example">
-            <div class="input-group">
-              <label for="select-default" class="label">Default Select</label>
-              <select id="select-default" class="select">
-                <option value="" disabled selected>Select an option</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-              </select>
-            </div>
-            <p class="ds-code">
-              &lt;label for="select-id" class="label"&gt;Default
-              Select&lt;/label&gt;<br />&lt;select id="select-id"
-              class="select"&gt;...&lt;/select&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Checkboxes & Radio Buttons</h3>
-          <div class="ds-example">
-            <div class="checkbox-group">
-              <input type="checkbox" id="checkbox1" class="checkbox" />
-              <label for="checkbox1" class="checkbox-label"
-                >Checkbox Option</label
-              >
-            </div>
-            <p class="ds-code">
-              &lt;input type="checkbox" id="checkbox1" class="checkbox"&gt;<br />&lt;label
-              for="checkbox1" class="checkbox-label"&gt;Checkbox
-              Option&lt;/label&gt;
-            </p>
-          </div>
-
-          <div class="ds-example">
-            <div class="radio-group">
-              <input
-                type="radio"
-                id="radio1"
-                name="radio-group"
-                class="radio"
-              />
-              <label for="radio1" class="radio-label">Radio Option 1</label>
-            </div>
-            <div class="radio-group">
-              <input
-                type="radio"
-                id="radio2"
-                name="radio-group"
-                class="radio"
-              />
-              <label for="radio2" class="radio-label">Radio Option 2</label>
-            </div>
-            <p class="ds-code">
-              &lt;input type="radio" id="radio1" name="radio-group"
-              class="radio"&gt;<br />&lt;label for="radio1"
-              class="radio-label"&gt;Radio Option 1&lt;/label&gt;
-            </p>
-          </div>
-        </div>
-
-        <div class="ds-subsection">
-          <h3 class="ds-subsection-title">Search Input</h3>
-          <div class="ds-example">
-            <div class="search">
-              <div class="search__icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
-                    stroke="#6075A4"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M19 19L14.65 14.65"
-                    stroke="#6075A4"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+          <!-- Form Elements -->
+          <div class="ds-card">
+            <h3>Form Elements</h3>
+            <div class="ds-component-demo">
+              <div class="input-group">
+                <label class="label">Input Label</label>
+                <input type="text" class="input" placeholder="Placeholder" />
               </div>
-              <input type="text" class="search__input" placeholder="Search" />
+              <div class="checkbox-group">
+                <input type="checkbox" id="cb1" class="checkbox" />
+                <label for="cb1" class="checkbox-label">Checkbox</label>
+              </div>
             </div>
-            <p class="ds-code">
-              &lt;div class="search"&gt;<br />
-              &lt;div class="search__icon"&gt;...&lt;/div&gt;<br />
-              &lt;input type="text" class="search__input"
-              placeholder="Search"&gt;<br />&lt;/div&gt;
-            </p>
+            <div class="ds-code-compact">
+              <code>.input-group > .label + .input</code><br>
+              <code>.checkbox-group > .checkbox + .checkbox-label</code>
+            </div>
+          </div>
+
+          <!-- Search Component -->
+          <div class="ds-card">
+            <h3>Search</h3>
+            <div class="ds-component-demo">
+              <div class="search">
+                <div class="search__icon">
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="#6075A4" stroke-width="1.5"/>
+                    <path d="M19 19L14.65 14.65" stroke="#6075A4" stroke-width="1.5"/>
+                  </svg>
+                </div>
+                <input type="text" class="search__input" placeholder="Search" />
+              </div>
+            </div>
+            <div class="ds-code-compact">
+              <code>.search > .search__icon + .search__input</code>
+            </div>
+          </div>
+
+          <!-- Status Elements -->
+          <div class="ds-card">
+            <h3>Input States</h3>
+            <div class="ds-component-demo">
+              <input type="text" class="input" placeholder="Default" />
+              <input type="text" class="input input--focus" placeholder="Focused" />
+              <input type="text" class="input input--error" value="Error state" />
+              <input type="text" class="input" placeholder="Disabled" disabled />
+            </div>
+            <div class="ds-code-compact">
+              <code>.input</code><br>
+              <code>.input.input--focus</code><br>
+              <code>.input.input--error</code>
+            </div>
           </div>
         </div>
       </section>
+
     </div>
 
     <script>
