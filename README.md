@@ -2,6 +2,11 @@
 
 A demo for testing figma mcp with claude code using theme-3 design.
 
+## 📚 Documentation
+
+- **[Design System Overview](docs/design-system.md)** - Complete design system reference with CSS architecture, component library, and development workflow
+- **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** - Complete Figma MCP integration guide
+
 ## 📁 Project Structure
 
 ```
@@ -87,10 +92,6 @@ css/
 - Modular approach for scalability
 - ES6+ features and modern practices
 
-## 📚 Documentation
-
-- **[Design System Guide](docs/design-system.md)** - Complete design system reference with CSS architecture, component library, and development workflow
-- **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** - Complete Figma MCP integration guide
 
 ## 🔄 Figma MCP Integration
 
