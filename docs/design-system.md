@@ -1,318 +1,257 @@
-# Design System Documentation
+# Design System & Component Reference
 
-A comprehensive guide to the design tokens, patterns, and principles that ensure consistency and maintainability across the project. This document provides detailed information on how to use and implement the design system in your development workflow.
+A consolidated guide to our current design system tokens and components. This document serves as a reference when building new UI elements.
 
-## Color System
+## Design System
 
-Our color system is built on two layers:
-1. **Primitive variables**: Raw color values organized in scales
+### Color System
+
+Our color system has two layers:
+1. **Primitive variables**: Raw color scales (50-900)
 2. **Semantic variables**: Purpose-driven tokens that reference primitives
-
-### Primitive Variables
-
-Color scales from 50 (lightest) to 900 (darkest), providing flexibility and consistency across the UI.
-
-#### Neutral Colors
-```css
---neutral-50: #fafafa
---neutral-100: #f5f5f5
---neutral-200: #e5e5e5
---neutral-300: #d4d4d4
---neutral-400: #a3a3a3
---neutral-500: #737373
---neutral-600: #525252
---neutral-700: #404040
---neutral-800: #262626
---neutral-900: #171717
-```
-
-#### Brand Colors (Blue)
-```css
---brand-50: #eff6ff
---brand-500: #3b82f6
---brand-600: #2563eb (Primary brand color)
---brand-900: #1e3a8a
-```
-
-#### Utility Colors
-- **Success**: Green scale for positive actions
-- **Warning**: Amber scale for cautionary messages  
-- **Error**: Red scale for errors and destructive actions
-
-### Semantic Variables
 
 #### Text Colors
 ```css
---txt-dark: #111111      /* Headings, emphasis */
---txt-default: #444444   /* Body text, default */
---txt-light: #888888     /* Secondary text */
---txt-brand: Brand color /* Links, brand elements */
---txt-disable: Muted     /* Disabled states */
+--txt-dark: #2e4155;        /* Primary headings, bold text */
+--txt-default: #5b647b;     /* Body text, regular content */
+--txt-light: #7e879a;       /* Secondary text, subtitles */
+--txt-brand: #6075a4;       /* Branded text, links */
+--txt-brand-dark: #455376;  /* Dark branded text, hover states */
+--txt-white: #ffffff;       /* Text on dark backgrounds */
+--txt-success: var(--success-600); /* Success messages */
+--txt-error: var(--error-600);     /* Error messages */
+--txt-warning: var(--warning-600); /* Warning messages */
+--txt-disable: var(--neutral-400); /* Disabled text */
 ```
 
 #### Background Colors
 ```css
---bg-default: #ffffff    /* Main background */
---bg-brand: Brand color  /* Brand backgrounds */
---bg-light: Light gray   /* Subtle backgrounds */
+--bg-default: #ffffff;           /* Default page background */
+--bg-white: #ffffff;             /* White backgrounds, cards */
+--bg-brand: #6075a4;             /* Primary brand background */
+--bg-brand-light: var(--brand-100);    /* Light brand background */
+--bg-brand-lightest: #f5f6f9;    /* Lightest brand background */
+--bg-light: var(--neutral-50);   /* Light neutral background */
+--bg-success: var(--success-600); /* Success background */
+--bg-warning: var(--warning-600); /* Warning background */
+--bg-error: var(--error-600);     /* Error background */
 ```
 
 #### Border Colors
 ```css
---bd-default: Default    /* Standard borders */
---bd-light: Light gray   /* Subtle borders */
---bd-brand: Brand color  /* Focus, active states */
+--bd-default: #cacdd3;         /* Default border color */
+--bd-light: var(--neutral-200); /* Light border color */
+--bd-dark: #a4a9b7;            /* Dark border color */
+--bd-brand: #6075a4;           /* Brand border color */
+--bd-error: var(--error-600);   /* Error border color */
+--bd-success: var(--success-600); /* Success border color */
+--bd-warning: var(--warning-600); /* Warning border color */
+--bd-white: #ffffff;            /* White border color */
 ```
 
-## Typography
+### Typography
 
-### Font Sizes
+#### Font Families
 ```css
---fs-h1: 2.5rem     /* Main headings */
---fs-h2: 2rem       /* Section headings */
---fs-h3: 1.5rem     /* Subsection headings */
---fs-h4: 1.25rem    /* Card titles */
---fs-h5: 1.125rem   /* Small headings */
---fs-h6: 1rem       /* Minimal headings */
---fs-default: 1rem  /* Body text */
---fs-large: 1.125rem /* Emphasized text */
---fs-small: 0.875rem /* Secondary text */
---fs-caption: 0.75rem /* Captions, labels */
---fs-label: 0.875rem  /* Form labels */
+--heading-font: 'Playfair Display', Georgia, serif;
+--body-font: 'Jost', system-ui, sans-serif;
+--display-font: 'Playfair Display', Georgia, serif;
 ```
 
-### Font Weights
+#### Font Sizes
 ```css
---fw-default: 400    /* Normal text */
---fw-medium: 500     /* Slightly emphasized */
---fw-semibold: 600   /* Headings, buttons */
---fw-bold: 700       /* Strong emphasis */
---fw-extrabold: 800  /* Heavy emphasis */
---fw-black: 900      /* Maximum weight */
+--fs-h1: 6rem;      /* 96px - Main headings */
+--fs-h2: 4.5rem;    /* 72px - Section headings */
+--fs-h3: 3.5rem;    /* 56px - Subsection headings */
+--fs-h4: 2.75rem;   /* 44px - Card titles */
+--fs-h5: 2rem;      /* 32px - Small headings */
+--fs-h6: 1.5rem;    /* 24px - Minimal headings */
+--fs-default: 1.25rem; /* 20px - Body text */
+--fs-large: 2rem;     /* 32px - Emphasized text */
+--fs-small: 1rem;     /* 16px - Secondary text */
+--fs-caption: 0.875rem; /* 14px - Captions, labels */
+--fs-label: 1.125rem;  /* 18px - Form labels */
 ```
 
-## Spacing System
-
+#### Font Weights
 ```css
---space-xs: 0.25rem   /* 4px - Tight spacing */
---space-sm: 0.5rem    /* 8px - Small spacing */
---space-md: 1rem      /* 16px - Base spacing */
---space-lg: 1.5rem    /* 24px - Medium spacing */
---space-xl: 2rem      /* 32px - Large spacing */
---space-2xl: 3rem     /* 48px - Extra large */
---space-3xl: 4rem     /* 64px - Maximum */
+--fw-default: 400;    /* Normal text */
+--fw-italic: 400;     /* Italic text */
+--fw-medium: 500;     /* Slightly emphasized */
+--fw-semibold: 600;   /* Headings, buttons */
+--fw-bold: 700;       /* Strong emphasis */
+--fw-extrabold: 800;  /* Heavy emphasis */
+--fw-black: 900;      /* Maximum weight */
 ```
 
-## Border Radius
-
-```css
---radius-sm: 0.25rem  /* Subtle rounding */
---radius-md: 0.5rem   /* Standard rounding */
---radius-lg: 0.75rem  /* Prominent rounding */
---radius-xl: 1rem     /* Large rounding */
---radius-full: 9999px /* Pills, circles */
-```
-
-## Shadows
+### Spacing
 
 ```css
---shadow-sm: Subtle shadow
---shadow-md: Standard shadow
---shadow-lg: Prominent shadow
---shadow-xl: Dramatic shadow
+--space-0: 0;          /* Zero spacing */
+--space-xs: 0.5rem;    /* 8px - Tight spacing */
+--space-sm: 1rem;      /* 16px - Small spacing */
+--space-md: 1.5rem;    /* 24px - Medium spacing */
+--space-lg: 2rem;      /* 32px - Large spacing */
+--space-xl: 2.5rem;    /* 40px - Extra large */
+--space-2xl: 4rem;     /* 64px - Double extra large */
+--space-3xl: 5rem;     /* 80px - Triple extra large */
+--space-4xl: 7.5rem;   /* 120px - Maximum spacing */
 ```
 
-## Implementation Best Practices
-
-### Component Development
-
-#### Do's
-- ✅ Always use semantic variables in components (e.g., `var(--txt-default)`)
-- ✅ Maintain consistent spacing rhythm using the spacing scale
-- ✅ Follow the established color hierarchy for visual consistency
-- ✅ Use appropriate font weights to establish clear hierarchy
-- ✅ Test color combinations for WCAG AA compliance
-- ✅ Use CSS custom properties for all design tokens
-- ✅ Follow BEM naming convention for component classes
-- ✅ Ensure components are responsive and adapt to different screen sizes
-- ✅ Provide appropriate hover, focus, and active states for interactive elements
-
-#### Don'ts
-- ❌ Never use primitive variables directly in components
-- ❌ Avoid creating custom colors outside the system
-- ❌ Don't mix spacing units (always use rem-based values)
-- ❌ Never use arbitrary font sizes outside the scale
-- ❌ Don't hardcode color values in CSS
-- ❌ Avoid using `!important` declarations
-- ❌ Don't create new components when existing ones can be modified or extended
-- ❌ Don't override design system values without documentation
-
-### Theming & Customization
-
-The design system supports easy theming by overriding CSS custom properties:
+### Border Radius
 
 ```css
-/* Example: Dark theme implementation */
-:root[data-theme="dark"] {
-  --bg-default: var(--neutral-900);
-  --txt-default: var(--neutral-100);
-  --bd-default: var(--neutral-700);
-}
+--radius-sm: 0.25rem;  /* Subtle rounding */
+--radius-md: 0.5rem;   /* Standard rounding */
+--radius-lg: 0.75rem;  /* Prominent rounding */
+--radius-xl: 1rem;     /* Large rounding */
+--radius-full: 9999px; /* Pills, circles */
 ```
 
-### Using Design Tokens in Your Components
-
-This design system is built on a two-layer architecture of tokens:
-
-1. **Primitive tokens**: Raw values organized in scales (neutral-50 to neutral-900)
-2. **Semantic tokens**: Purpose-specific variables that reference primitives
-
-Always use semantic tokens in your components:
+### Shadows
 
 ```css
-/* Component Example: Card */
-.card {
-  background-color: var(--bg-white); /* Semantic variable */
-  color: var(--txt-default); /* Semantic variable */
-  border: 1px solid var(--bd-light); /* Semantic variable */
-  border-radius: var(--radius-md); /* Semantic variable */
-  padding: var(--space-md); /* Semantic variable */
-  box-shadow: var(--shadow-sm); /* Semantic variable */
-}
-
-.card__title {
-  font-size: var(--fs-h5); /* Semantic variable */
-  font-weight: var(--fw-semibold); /* Semantic variable */
-  margin-bottom: var(--space-sm); /* Semantic variable */
-}
+--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Standard shadow */
+--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1); /* Prominent shadow */
+--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1); /* Dramatic shadow */
 ```
 
-### Extending the Design System
+## Component Library
 
-When creating new components, follow these steps:
+### Buttons
 
-1. **Analyze requirements**: Determine if an existing component can be modified
-2. **Use BEM methodology**: Structure your CSS using Block, Element, Modifier pattern
-3. **Reference semantic tokens**: Use established variables for consistency
-4. **Document variations**: Create and document all necessary component variants
-5. **Test accessibility**: Ensure WCAG AA compliance for all components
-6. **Validate responsiveness**: Test on multiple screen sizes
+**Variants**: primary, secondary, outline, ghost
+**Sizes**: sm, default, lg
+**States**: normal, hover, disabled
 
-#### Example: Creating a New Component
+```html
+<button class="btn btn--primary">Primary Button</button>
+<button class="btn btn--secondary">Secondary Button</button>
+<button class="btn btn--outline">Outline Button</button>
+<button class="btn btn--ghost">Ghost Button</button>
 
-```css
-/* New Component: Feature Card */
-.feature-card { /* Block */
-  background-color: var(--bg-brand-lightest);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
+<button class="btn btn--primary btn--sm">Small</button>
+<button class="btn btn--primary">Default</button>
+<button class="btn btn--primary btn--lg">Large</button>
 
-.feature-card__icon { /* Element */
-  width: 48px;
-  height: 48px;
-  color: var(--txt-brand);
-}
-
-.feature-card__title { /* Element */
-  font-size: var(--fs-h6);
-  font-weight: var(--fw-bold);
-  color: var(--txt-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.feature-card__description { /* Element */
-  font-size: var(--fs-default);
-  color: var(--txt-default);
-}
-
-.feature-card--highlighted { /* Modifier */
-  background-color: var(--bg-brand);
-  color: var(--txt-white);
-}
-
-.feature-card--highlighted .feature-card__title {
-  color: var(--txt-white);
-}
-
-.feature-card--highlighted .feature-card__description {
-  color: var(--txt-white);
-}
+<button class="btn btn--primary" disabled>Disabled</button>
 ```
 
-## Accessibility Standards
+### Cards
 
-### Color Contrast
-- ✅ All text/background combinations meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
-- ✅ Interactive elements maintain 3:1 contrast ratio against backgrounds
-- ✅ Error states use multiple indicators (color + icon + text)
+**Variants**: standard (with header/footer), simple (body only)
 
-### Visual Design
-- ✅ Focus states have clear visual indicators (minimum 2px outline)
-- ✅ Text remains readable at all specified sizes (minimum 14px for body text)
-- ✅ Color is never the sole indicator of state or meaning
-- ✅ All interactive elements have minimum 44x44px touch targets
+```html
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">Card Title</h3>
+  </div>
+  <div class="card__body">
+    <p>Card content goes here...</p>
+  </div>
+  <div class="card__footer">
+    <button class="btn btn--primary">Action</button>
+  </div>
+</div>
 
-### Testing Checklist
-- [ ] Test with keyboard navigation only
-- [ ] Verify screen reader compatibility
-- [ ] Check color contrast ratios
-- [ ] Test with browser zoom at 200%
-- [ ] Validate focus order is logical
-- [ ] Ensure responsive behavior on mobile devices
-- [ ] Test touch targets are at least 44x44px
-- [ ] Verify animations respect reduced motion preferences
-- [ ] Test across supported browsers
-- [ ] Validate HTML markup with W3C validator
-
-## Integration with Figma
-
-This design system is synchronized with Figma design files through Claude Code's Figma MCP integration. This allows developers to directly access design assets, components, and variables from Figma.
-
-### Accessing Figma Design Resources
-
-With Claude Code, you can:
-
-1. **View design screenshots** directly from Figma
-2. **Extract component code** based on Figma designs
-3. **Access design metadata** for accurate implementation
-4. **Get design variables** to ensure consistency
-
-### Design-to-Code Workflow
-
-Follow this workflow to implement designs from Figma:
-
-1. **Reference the design**: Ask Claude to view the specific Figma component or screen
-2. **Understand the structure**: Review the component hierarchy and relationships
-3. **Extract design tokens**: Identify colors, spacing, typography used in the design
-4. **Implement using semantic variables**: Use the design system's variables that correspond to the design
-5. **Validate against design**: Compare your implementation with the original design
-
-### Example Workflow
-
-```
-// 1. View the design component
-User: Show me the card component from Figma
-
-// 2. Get component code
-User: Generate HTML and CSS for this card component
-
-// 3. Access design variables
-User: What colors and spacing are used in this design?
-
-// 4. Implement using semantic variables
-User: How do I implement this using our design system variables?
+<div class="card">
+  <div class="card__body">
+    <h3>Simple Card</h3>
+    <p>Just body content, no header or footer.</p>
+  </div>
+</div>
 ```
 
-## Performance Considerations
+### Forms
 
-The design system is optimized for performance with these features:
+**Elements**: inputs, labels
+**States**: normal, error, disabled, required
 
-- **CSS custom properties**: Enables runtime theming without JavaScript
-- **Minimal specificity**: Reduces CSS conflicts and improves rendering performance
-- **Efficient selectors**: Uses BEM to avoid deeply nested selectors
-- **No dependencies**: Zero external runtime dependencies
-- **Optimized assets**: SVG icons and optimized fonts for minimal loading time
+```html
+<label class="label" for="email">Email Address</label>
+<input class="input" type="email" id="email">
+
+<label class="label label--required" for="name">Full Name</label>
+<input class="input" type="text" id="name" required>
+
+<label class="label" for="password">Password</label>
+<input class="input input--error" type="password" id="password">
+<p class="text-error">Password is required</p>
+
+<label class="label" for="disabled">Disabled Field</label>
+<input class="input" type="text" id="disabled" disabled value="Cannot edit">
+```
+
+### Alerts
+
+**Variants**: success, warning, error, info
+**Styles**: with title, simple
+
+```html
+<div class="alert alert--success">
+  <div class="alert__title">Success!</div>
+  <p>Your changes have been saved.</p>
+</div>
+
+<div class="alert alert--warning">
+  <div class="alert__title">Warning</div>
+  <p>Please review your information.</p>
+</div>
+
+<div class="alert alert--error">
+  <div class="alert__title">Error</div>
+  <p>Something went wrong. Please try again.</p>
+</div>
+
+<div class="alert alert--info">
+  <div class="alert__title">Information</div>
+  <p>Here's some helpful information.</p>
+</div>
+
+<div class="alert alert--success">
+  <p>Operation completed successfully!</p>
+</div>
+```
+
+### Badges
+
+**Variants**: primary, success, warning, error
+
+```html
+<span class="badge badge--primary">Primary</span>
+<span class="badge badge--success">Success</span>
+<span class="badge badge--warning">Warning</span>
+<span class="badge badge--error">Error</span>
+```
+
+## Design Principles
+
+1. **Always use semantic variables**, not raw color values
+2. **Follow BEM naming convention** for all components
+3. **Use established spacing** from the spacing scale
+4. **Maintain consistent typography** using the type scale
+5. **Ensure all components are accessible** with proper ARIA and focus states
+6. **Create responsive designs** that work on all screen sizes
+
+## Component Construction Rules
+
+When building new components:
+
+1. Use existing **semantic variables** for consistency
+2. Follow **BEM methodology** (.block__element--modifier)
+3. Include **all interactive states** (hover, focus, active, disabled)
+4. Use **consistent spacing** from the spacing scale
+5. Provide **appropriate ARIA attributes** for accessibility
+6. Test with **keyboard navigation** and **screen readers**
+7. Verify **color contrast** meets WCAG AA standards
+8. Ensure **touch targets** are at least 44×44px
+
+## Figma Integration
+
+Our design system is synchronized with Figma. Use Claude Code's Figma MCP tools to:
+
+1. View component screenshots: `get_screenshot`
+2. Generate implementation code: `get_code`
+3. Extract exact specifications: `get_metadata`
+4. Access design tokens and variables: `get_variable_defs`

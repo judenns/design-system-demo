@@ -30,174 +30,15 @@ template-0/
 
 This project features a comprehensive, scalable design system built on CSS custom properties:
 
-### Color System
+### Key Features
 
-- **Primitive variables**: Complete color scales (50-900 shades) for:
-  - Neutral palette (grays for UI elements)
-  - Brand colors (primary blue scale)
-  - Utility colors (success/green, warning/amber, error/red)
-- **Semantic variables**: Purpose-driven color tokens for:
-  - Text hierarchy (dark, default, light, brand, disabled)
-  - Backgrounds (default, brand, light variations)
-  - Borders (default, light, brand/focus states)
+- **Two-layer color system**: Primitive color scales (50-900 shades) and semantic variables for consistent usage
+- **Typography system**: 10 predefined font sizes with 6 weight options
+- **Spacing scale**: Consistent rem-based spacing from xs (0.5rem) to 4xl (7.5rem)
+- **Component library**: Pre-built, accessible UI components (buttons, cards, forms, alerts, badges)
+- **BEM naming convention**: Structured CSS class naming for maintainability
 
-#### Color Variables List
-
-**Text Colors:**
-```css
---txt-dark: #2e4155;        /* Primary headings, bold text */
---txt-default: #5b647b;     /* Body text, regular content */
---txt-light: #7e879a;       /* Secondary text, subtitles */
---txt-brand: #6075a4;       /* Branded text, links */
---txt-brand-dark: #455376;  /* Dark branded text, hover states */
---txt-white: #ffffff;       /* Text on dark backgrounds */
---txt-success: var(--success-600); /* Success messages */
---txt-error: var(--error-600);     /* Error messages */
---txt-warning: var(--warning-600); /* Warning messages */
---txt-disable: var(--neutral-400); /* Disabled text */
-```
-
-**Background Colors:**
-```css
---bg-default: #ffffff;           /* Default page background */
---bg-white: #ffffff;             /* White backgrounds, cards */
---bg-brand: #6075a4;             /* Primary brand background */
---bg-brand-light: var(--brand-100);    /* Light brand background */
---bg-brand-lightest: #f5f6f9;    /* Lightest brand background */
---bg-light: var(--neutral-50);   /* Light neutral background */
---bg-success: var(--success-600); /* Success background */
---bg-warning: var(--warning-600); /* Warning background */
---bg-error: var(--error-600);     /* Error background */
-```
-
-**Border Colors:**
-```css
---bd-default: #cacdd3;         /* Default border color */
---bd-light: var(--neutral-200); /* Light border color */
---bd-dark: #a4a9b7;            /* Dark border color */
---bd-brand: #6075a4;           /* Brand border color */
---bd-error: var(--error-600);   /* Error border color */
---bd-success: var(--success-600); /* Success border color */
---bd-warning: var(--warning-600); /* Warning border color */
---bd-white: #ffffff;            /* White border color */
-```
-
-### Typography & Spacing
-
-- **Typography system**: 10 predefined font sizes (h1-h6, default, large, small, caption, label)
-- **Font weights**: 6 weight options (default to black)
-- **Spacing scale**: Consistent rem-based spacing from xs (0.25rem) to 3xl (4rem)
-
-#### Typography Variables List
-
-**Font Families:**
-```css
---heading-font: 'Playfair Display', Georgia, serif;
---body-font: 'Jost', system-ui, sans-serif;
---display-font: 'Playfair Display', Georgia, serif;
-```
-
-**Font Sizes:**
-```css
---fs-h1: 6rem;      /* 96px - Main headings */
---fs-h2: 4.5rem;    /* 72px - Section headings */
---fs-h3: 3.5rem;    /* 56px - Subsection headings */
---fs-h4: 2.75rem;   /* 44px - Card titles */
---fs-h5: 2rem;      /* 32px - Small headings */
---fs-h6: 1.5rem;    /* 24px - Minimal headings */
---fs-default: 1.25rem; /* 20px - Body text */
---fs-large: 2rem;     /* 32px - Emphasized text */
---fs-small: 1rem;     /* 16px - Secondary text */
---fs-caption: 0.875rem; /* 14px - Captions, labels */
---fs-label: 1.125rem;  /* 18px - Form labels */
-```
-
-**Font Weights:**
-```css
---fw-default: 400;    /* Normal text */
---fw-italic: 400;     /* Italic text */
---fw-medium: 500;     /* Slightly emphasized */
---fw-semibold: 600;   /* Headings, buttons */
---fw-bold: 700;       /* Strong emphasis */
---fw-extrabold: 800;  /* Heavy emphasis */
---fw-black: 900;      /* Maximum weight */
-```
-
-**Spacing Scale:**
-```css
---space-0: 0;          /* Zero spacing */
---space-xs: 0.5rem;    /* 8px - Tight spacing */
---space-sm: 1rem;      /* 16px - Small spacing */
---space-md: 1.5rem;    /* 24px - Medium spacing */
---space-lg: 2rem;      /* 32px - Large spacing */
---space-xl: 2.5rem;    /* 40px - Extra large */
---space-2xl: 4rem;     /* 64px - Double extra large */
---space-3xl: 5rem;     /* 80px - Triple extra large */
---space-4xl: 7.5rem;   /* 120px - Maximum spacing */
-```
-
-### How to Use the Design System
-
-1. **Reference semantic variables** in your CSS rather than using primitive values directly:
-   ```css
-   /* DO */
-   .element {
-     color: var(--txt-default);
-     background-color: var(--bg-light);
-   }
-
-   /* DON'T */
-   .element {
-     color: #444444;
-     background-color: #fafafa;
-   }
-   ```
-
-2. **Maintain consistent spacing** using the spacing scale:
-   ```css
-   .container {
-     padding: var(--space-md);
-     margin-bottom: var(--space-lg);
-     gap: var(--space-sm);
-   }
-   ```
-
-3. **Follow BEM naming convention** for component creation:
-   ```css
-   .component {}
-   .component__element {}
-   .component--modifier {}
-   ```
-
-4. **Use existing components** whenever possible instead of creating new ones.
-
-5. **Extend the design system** by creating new components that follow the established patterns.
-
-See `docs/design-system.md` for complete variable reference and usage guidelines.
-
-## 🧩 Components
-
-Pre-built, accessible UI components ready for production:
-
-### Interactive Components
-
-- **Buttons**: 4 variants (primary, secondary, outline, ghost) with 3 sizes (sm, default, lg)
-- **Forms**: Styled inputs with labels, validation states (error, success), and required field indicators
-- **Badges**: Colored status indicators for categorization and labeling
-
-### Layout Components
-
-- **Cards**: Flexible content containers with optional header, body, and footer sections
-- **Alerts**: 4 types (success, warning, error, info) with title and message support
-
-### Features
-
-- All components follow accessibility best practices (ARIA attributes, keyboard navigation)
-- Consistent hover, focus, and disabled states
-- Built with semantic HTML and BEM naming convention
-- Fully customizable through CSS variables
-
-See `docs/components.md` for complete implementation examples and customization guide.
+See `docs/design-system.md` for complete variable reference and usage guidelines, and `docs/components.md` for component implementation examples.
 
 ## 🛠️ Development
 
@@ -222,108 +63,63 @@ See `docs/components.md` for complete implementation examples and customization 
 
 ## 📚 Documentation
 
-- `docs/design-system.md` - Design system guidelines
-- `docs/components.md` - Component library documentation
+- `docs/design-system.md` - Design system guidelines and CSS variables reference
+- `docs/components.md` - Component library documentation and usage examples
+- `docs/figma-mcp-guide.md` - **Complete Figma MCP integration guide**
 
-## 🔄 Claude Code with Figma MCP Integration
+## 🔄 Figma MCP Integration
 
-This project supports Claude Code's Figma MCP integration, allowing you to work seamlessly with Figma designs in your development workflow.
+This project showcases Claude Code's powerful Figma MCP integration, enabling seamless design-to-development workflows with pixel-perfect accuracy.
 
-### What is Figma MCP?
+### Quick Start
 
-Figma MCP (Model Context Protocol) is a powerful integration that allows Claude Code to directly access Figma design files, extract design tokens, view components, and generate code based on Figma designs.
+Transform your Figma designs into production-ready code with simple natural language commands:
 
-### Installation and Setup
+```
+"Show me the button component from Figma"
+"Generate CSS for this card component using our design system"
+"Extract all color variables from our Figma design tokens"
+"Implement this hero section with responsive behavior"
+```
 
-1. **Install Claude Code CLI**:
-   ```bash
-   # Using npm
-   npm install -g @anthropic/claude-code
+### Key Features
 
-   # Or using yarn
-   yarn global add @anthropic/claude-code
-   ```
+- **🎯 Direct Figma Access**: View screenshots, extract metadata, and generate code directly from Figma
+- **⚡ Design Token Sync**: Automatically sync Figma variables with CSS custom properties
+- **🔧 Smart Code Generation**: Generate HTML/CSS that follows your project's patterns and conventions
+- **📱 Responsive Implementation**: Create mobile-first layouts based on Figma responsive designs
+- **🎨 Component Extraction**: Convert Figma components to production-ready code with accessibility built-in
 
-2. **Authenticate Claude Code**:
-   ```bash
-   claude-code auth login
-   ```
+### Available MCP Tools
 
-3. **Connect Figma MCP Server**:
-   ```bash
-   claude-code mcp connect figma-dev-mode-mcp-server
-   ```
+| Tool | Purpose | Example Usage |
+|------|---------|---------------|
+| `get_screenshot` | View Figma designs | Screenshot of specific components or frames |
+| `get_code` | Generate implementation | CSS, HTML, React code from Figma components |
+| `get_metadata` | Extract specifications | Colors, spacing, typography, dimensions |
+| `get_variable_defs` | Access design tokens | Figma variables → CSS custom properties |
 
-4. **Set up Figma Dev Mode**:
-   - Open your Figma file
-   - Click on the "Dev Mode" button in the top-right corner
-   - Follow the prompts to enable Dev Mode for your file
-   - Copy the Dev Mode URL provided
+### Integration Benefits
 
-5. **Link Your Figma File**:
-   ```bash
-   claude-code mcp configure figma-dev-mode-mcp-server --dev-mode-url="your-figma-dev-mode-url"
-   ```
+- **Design Accuracy**: Pixel-perfect implementation with exact measurements and colors
+- **Speed**: Reduce design handoff time from hours to minutes
+- **Consistency**: Ensure design system compliance across all implementations
+- **Collaboration**: Bridge the gap between designers and developers
+- **Quality**: Maintain design fidelity while following development best practices
 
-### How to Use Figma MCP with Claude Code
+### Complete Documentation
 
-1. **View Figma Screenshots**: Claude can access and view screenshots from your Figma designs.
-   ```
-   /view-figma-screenshot [node-id]
-   ```
+For detailed setup instructions, workflow examples, troubleshooting, and advanced usage patterns, see the complete guide:
 
-2. **Get Component Code**: Extract code from Figma components to implement in your project.
-   ```
-   /get-figma-code [component-name]
-   ```
+**📖 [Figma MCP Integration Guide](docs/figma-mcp-guide.md)**
 
-3. **Access Design Metadata**: View information about Figma components, including properties and variants.
-   ```
-   /get-figma-metadata [node-id]
-   ```
-
-4. **Extract Design Variables**: Access Figma variables and design tokens for consistent implementation.
-   ```
-   /get-figma-variables
-   ```
-
-### Best Practices for Figma MCP Integration
-
-1. **Organize Your Figma File**:
-   - Use clear, descriptive names for components and frames
-   - Group related components logically
-   - Create a dedicated page for your design system components
-
-2. **Establish Component Naming Conventions**:
-   - Use consistent prefixes for component types (e.g., `btn-` for buttons)
-   - Include variant information in component names (e.g., `btn-primary`, `btn-secondary`)
-   - Follow a hierarchy for nested components (e.g., `card/card-header`, `card/card-body`)
-
-3. **Set Up Design Tokens in Figma**:
-   - Create variables for colors, typography, spacing, etc.
-   - Organize variables into collections that match your CSS structure
-   - Use semantic naming that aligns with your code (e.g., `--txt-default`, `--bg-brand`)
-
-4. **Link Design to Code**:
-   - Reference CSS class names in Figma component descriptions
-   - Document component behavior in Figma (hover states, animations, etc.)
-   - Include responsive behavior notes in your Figma file
-
-5. **Workflow Tips**:
-   - Start with high-level components first, then drill down to details
-   - Ask Claude to generate code for one component at a time
-   - Provide context about where the component will be used
-   - When troubleshooting, share both Figma screenshots and your current code
-   - Verify design token mappings between Figma and your CSS variables
-
-### Benefits of Figma MCP Integration
-
-- **Design Accuracy**: Implement designs with pixel-perfect accuracy by directly referencing Figma assets
-- **Efficiency**: Reduce the need for manual handoff between designers and developers
-- **Consistency**: Ensure consistent implementation of design tokens and components
-- **Collaboration**: Improve the workflow between design and development teams
-- **Version Control**: Track design changes and implement updates consistently
-- **Rapid Prototyping**: Quickly implement design changes with accurate code generation
+This comprehensive documentation covers:
+- Step-by-step setup and configuration
+- All four MCP tools with detailed examples
+- Complete design-to-code workflow demonstrations
+- Advanced usage patterns and best practices
+- Troubleshooting common issues
+- Integration with this project's design system
 
 ## 🤖 Claude Code Agents
 
