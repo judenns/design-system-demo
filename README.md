@@ -121,44 +121,54 @@ This comprehensive documentation covers:
 - Troubleshooting common issues
 - Integration with this project's design system
 
-## 🤖 Claude Code Agents
+## 🤖 Project Agents
 
-Claude Code provides specialized agents to help with development tasks. For this project, we have the front-end-friend agent available:
+This project includes specialized Claude Code agents for different development tasks:
 
-### Front-End-Friend Agent
+### Front-End Agent
 
-**What it does**: Specializes in front-end development tasks, including:
-- Converting designs to HTML/CSS code
-- Implementing responsive layouts
-- Creating and styling UI components
-- Optimizing front-end performance
-- Suggesting accessibility improvements
-- Resolving CSS styling issues
+**Purpose**: Specializes in front-end development and design system work
 
-**When to use it**: When you need assistance with:
-- Implementing design components
-- Styling and layout challenges
-- Responsive design implementation
-- CSS troubleshooting
-- Design system implementation
+**What it does**:
+- Builds design system components and web pages
+- Converts Figma designs to HTML/CSS code
+- Creates responsive layouts with accessibility built-in
+- Uses established codebase patterns and design tokens
+- Integrates with Context7 MCP for latest documentation
 
-**How to use it**: Simply describe your front-end task or problem, and Claude will activate the front-end-friend agent when appropriate. For example:
-
+**Usage**:
 ```
-"I need help creating a responsive navigation menu that follows our design system guidelines"
-
-"Can you help me implement this card component according to the design?"
-
-"I'm having trouble with the layout breaking on mobile devices"
+"Help me implement this button component from Figma using our design system"
+"Create a responsive card layout following our CSS variables"
+"Build a navigation menu that matches our accessibility standards"
 ```
 
-### Working with the Front-End-Friend Agent
+### Doc-Writer Agent
 
-- Be specific about the component or feature you need help with
-- Provide design references or screenshots when available
-- Mention specific design system tokens or components to utilize
-- Describe the responsive behavior you expect
-- For complex components, break down the request into smaller parts
+**Purpose**: Handles all documentation updates and maintenance
+
+**What it does**:
+- Updates design system documentation
+- Maintains project changelog
+- Creates usage guidelines and examples
+- Manages README and guide files
+- Organizes documentation structure
+
+**Usage**:
+```
+"Update the design system docs with new color variables"
+"Create a changelog entry for the new component library"
+"Write usage examples for the card component"
+```
+
+### How to Use Project Agents
+
+Simply describe your task and Claude will automatically activate the appropriate agent, or you can specifically request an agent:
+- Frontend work → Front-End Agent activates
+- Documentation tasks → Doc-Writer Agent activates
+- Complex tasks → Multiple agents may collaborate
+
+The agents follow this project's coding standards, design system conventions, and documentation structure automatically.
 
 ## 🤝 Contributing
 
