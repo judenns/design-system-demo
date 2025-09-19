@@ -32,6 +32,16 @@
   box-shadow: 0 0 0 2px var(--bg-default), 0 0 0 4px var(--bd-brand);
 }
 
+.btn:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--bg-default), 0 0 0 4px var(--bd-brand);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
 .btn:disabled {
   cursor: not-allowed;
   opacity: 0.4;
@@ -62,7 +72,7 @@
 }
 
 .btn--secondary-outline {
-  background-color: #ffffff;
+  background-color: var(--bg-default);
   color: var(--txt-brand);
   border-color: var(--bd-brand);
   min-width: max-content; /* Allow button to fit content properly */
@@ -73,7 +83,7 @@
 }
 
 .btn--white {
-  background-color: #ffffff;
+  background-color: var(--bg-default);
   color: var(--txt-brand);
   border-color: transparent;
 }
@@ -84,8 +94,8 @@
 
 .btn--white-outline {
   background-color: transparent;
-  color: #ffffff;
-  border-color: #ffffff;
+  color: var(--txt-white);
+  border-color: var(--bg-default);
 }
 
 .btn--white-outline:hover:not(:disabled) {
@@ -110,9 +120,9 @@
 /* Button Sizes */
 .btn--mobile {
   height: 60px;
-  padding: 20px 32px;
-  font-size: 18px;
-  letter-spacing: 0.72px;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--fs-small);
+  letter-spacing: 0.02em;
 }
 
 .btn--sm {

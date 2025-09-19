@@ -12,12 +12,12 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/components/components.css" />
+    <link rel="stylesheet" href="css/components/index.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/design-system.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
       <header class="ds-header">
         <h1 class="ds-title">f1Connect Theme 3 - Design System</h1>
         <p class="ds-description">
@@ -209,11 +209,11 @@
           <div class="ds-card">
             <h3>Buttons</h3>
             <div class="ds-component-demo">
-              <button class="btn btn--primary">Primary</button>
-              <button class="btn btn--secondary-fill">Secondary</button>
-              <button class="btn btn--secondary-outline">Outline</button>
-              <button class="btn btn--link">Link</button>
-              <button class="btn btn--primary" disabled>Disabled</button>
+              <button type="button" class="btn btn--primary">Primary</button>
+              <button type="button" class="btn btn--secondary-fill">Secondary</button>
+              <button type="button" class="btn btn--secondary-outline">Outline</button>
+              <button type="button" class="btn btn--link">Link</button>
+              <button type="button" class="btn btn--primary" disabled aria-disabled="true">Disabled</button>
             </div>
             <div class="ds-code-compact">
               <code>.btn.btn--primary</code><br>

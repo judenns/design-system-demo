@@ -518,8 +518,11 @@
   margin-bottom: var(--space-md);
 }
 
+/* Button Demo Specific */
 .ds-component-demo .btn {
   align-self: flex-start;
+  min-width: auto;
+  width: auto;
 }
 
 .ds-component-demo .input-group {
