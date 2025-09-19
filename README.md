@@ -38,7 +38,7 @@ This project features a comprehensive, scalable design system built on CSS custo
 - **Component library**: Pre-built, accessible UI components (buttons, cards, forms, alerts, badges)
 - **BEM naming convention**: Structured CSS class naming for maintainability
 
-See `docs/design-system.md` for complete variable reference and usage guidelines, and `docs/components.md` for component implementation examples.
+See **[Design System Guide](docs/design-system.md)** for complete variable reference and usage guidelines.
 
 ## 🛠️ Development
 
@@ -52,7 +52,7 @@ See `docs/design-system.md` for complete variable reference and usage guidelines
 
 2. **Follow established patterns**: BEM naming, accessibility, responsive design
 3. **Add JavaScript logic** in `scripts/` if needed
-4. **Update documentation** in `docs/design-system.md`
+4. **Update documentation** in **[Design System Guide](docs/design-system.md)**
 
 ### CSS Architecture
 
@@ -89,9 +89,8 @@ css/
 
 ## 📚 Documentation
 
-- `docs/design-system.md` - **Complete design system reference** with CSS architecture, component library, and development workflow
-- `docs/components.md` - Component usage examples and customization guide
-- `docs/figma-mcp-guide.md` - **Complete Figma MCP integration guide**
+- **[Design System Guide](docs/design-system.md)** - Complete design system reference with CSS architecture, component library, and development workflow
+- **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** - Complete Figma MCP integration guide
 
 ## 🔄 Figma MCP Integration
 

@@ -1,73 +1,37 @@
-# Figma MCP Integration with Claude Code
+# Figma + Claude Code Integration Guide
 
-Simple guide to using Figma's integration with Claude Code for seamless design-to-development workflows.
+Turn your Figma designs into working code with simple conversation - no complex setup needed!
 
-## Table of Contents
+## What This Does
 
-1. [Overview](#overview)
-2. [What is Figma MCP?](#what-is-figma-mcp)
-3. [Setup Guide](#setup-guide)
-4. [Using Figma MCP Tools](#using-figma-mcp-tools)
-5. [Quick Start](#quick-start)
-6. [Practical Examples](#practical-examples)
-7. [Best Practices](#best-practices)
-8. [Troubleshooting](#troubleshooting)
+Figma MCP lets you talk to Claude Code about your designs and get instant code. Instead of manually copying colors and measurements, just ask Claude to do it for you.
 
----
+**Benefits:**
+- Get exact colors, spacing, and sizes from Figma
+- Generate HTML/CSS code instantly
+- Keep designs and code perfectly in sync
+- Save hours of manual work
 
-## Overview
+## Quick Setup (3 Minutes)
 
-Figma MCP integration bridges the gap between design and development by allowing Claude Code to directly interact with Figma design files. This enables developers to extract components, analyze designs, access design tokens, and generate implementation-ready code directly from Figma sources.
-
-### Key Benefits
-
-- **🎯 Design Accuracy**: Implement designs with pixel-perfect precision
-- **⚡ Speed**: Reduce manual handoff time between design and development
-- **🔄 Consistency**: Ensure design system compliance and token accuracy
-- **🤝 Collaboration**: Improve designer-developer communication
-- **📐 Precision**: Access exact measurements, colors, and spacing values
-- **🔧 Automation**: Generate boilerplate code directly from designs
-
----
-
-## What is Figma MCP?
-
-Figma MCP (Model Context Protocol) is a standardized interface that enables Claude Code to communicate directly with Figma's Dev Mode API. This integration provides four core capabilities:
-
-### Core Capabilities
-
-**get_screenshot**: Get a visual reference of any Figma component or frame
-
-**get_code**: Generate implementation code (CSS, HTML, React) from Figma designs
-
-**get_metadata**: Extract exact design specifications like colors, spacing, and typography
-
-**get_variable_defs**: Access design tokens and variables from your Figma design system
-
----
-
-## Setup Guide
-
-### Simple Setup in 3 Steps
-
-**1. Enable Figma Dev Mode**
-- Open your Figma file in the browser
-- Click "Dev Mode" in the top-right corner (💻 icon)
-- Copy the Dev Mode URL from your browser address bar
-
-**2. Connect Claude Code to Figma**
-```bash
-# Connect the Figma MCP server
-claude-code mcp connect figma-dev-mode-mcp-server
-
-# Configure with your Figma Dev Mode URL
-claude-code mcp configure figma-dev-mode-mcp-server \
-  --dev-mode-url="https://www.figma.com/dev-mode/your-file-id"
+### Step 1: Open Figma in Dev Mode
+```
+1. Open your Figma file in a web browser
+2. Click the "Dev Mode" button (💻 icon) in the top-right
+3. Copy the URL from your browser address bar
 ```
 
-**3. Set Permissions**
+### Step 2: Connect Claude Code
+```bash
+# Connect to Figma (run once)
+claude-code mcp connect figma-dev-mode-mcp-server
 
-Create `.claude/settings.local.json` in your project with:
+# Add your Figma file URL
+claude-code mcp configure figma-dev-mode-mcp-server --dev-mode-url="YOUR_FIGMA_URL_HERE"
+```
+
+### Step 3: Enable Permissions
+Create a file called `.claude/settings.local.json` in your project:
 ```json
 {
   "permissions": {
@@ -81,295 +45,161 @@ Create `.claude/settings.local.json` in your project with:
 }
 ```
 
----
+## How to Use - Just Ask Claude!
 
-## Using Figma MCP Tools
-
-### How to Use Figma MCP Tools
-
-**1. View a Design Component (get_screenshot)**
-
-Get a visual reference of any Figma component by asking Claude:
+### View Your Designs
 ```
-"Show me the button component from our Figma design"
-"Let me see the hero section from our homepage design"
+"Show me the button component from Figma"
+// Claude will display a screenshot of your button design
+
+"Let me see the pricing card from our design system"
+// Claude shows you exactly what the card looks like
 ```
 
-**2. Generate Code (get_code)**
-
-Turn Figma designs into production-ready code by asking Claude:
+### Get Design Information
 ```
-"Generate HTML and CSS for this button component"
-"Create a React component for this card design"
-```
+"What colors are used in this component?"
+// Claude tells you: "This uses #6075a4 for the background and #ffffff for text"
 
-**3. Get Design Specs (get_metadata)**
-
-Extract exact measurements and properties by asking Claude:
-```
-"What are the dimensions and spacing used in this component?"
-"Tell me the exact colors and typography in this design"
+"What's the spacing and size of this button?"
+// Claude gives you: "24px padding, 80px height, 16px border radius"
 ```
 
-**4. Access Design Tokens (get_variable_defs)**
-
-Sync design system variables with your code by asking Claude:
+### Generate Code
 ```
-"Extract all color variables from our Figma design system"
-"Get the typography scale from our design system"
-```
+"Create HTML and CSS for this button"
+// Claude generates complete, copy-paste ready code
 
----
-
-## Quick Start
-
-Let's implement a button component from Figma in just 3 steps:
-
-**Step 1: View the Design**
-```
-You: Show me the primary button component from Figma
-
-Claude: [Shows the button component from your Figma file]
+"Turn this card design into a React component"
+// Claude builds a full React component with proper styling
 ```
 
-**Step 2: Generate Code**
+### Sync Design Tokens
 ```
-You: Generate CSS and HTML for this button using our design system variables
+"Extract all colors from our Figma design system"
+// Claude pulls all your color variables and formats them as CSS
 
-Claude: [Provides HTML/CSS implementation that uses your design tokens]
-```
-
-**Step 3: Refine Implementation**
-```
-You: Make sure the hover state matches the Figma prototype
-
-Claude: [Updates the code to include accurate hover effects]
+"Get the typography styles from Figma"
+// Claude creates CSS variables for all your text styles
 ```
 
-### Finding Design Elements
+## Complete Workflow Example
 
-You can refer to Figma elements in multiple ways:
-
-- By descriptive name: "Show me the primary button component"
-- By location: "Show the hero section on the homepage"
-- By frame name: "Show the card component from the Components page"
-
----
-
-## Practical Examples
-
-### Example 1: Implementing a Card Component
-
-**Convert a Figma card design to code:**
+Let's create a pricing card from Figma:
 
 ```
-You: I need to implement the product card component from Figma using our CSS variables.
+You: "Show me the pricing card from Figma"
+Claude: [Displays the card design]
 
-Claude: Let me help you with that. I'll first view the design and then create the code.
+You: "Create CSS for this card using our design system variables"
+Claude: [Generates HTML and CSS code that matches the design exactly]
 
-[Claude shows the card design and generates code that uses your CSS variables]
+You: "Make sure it works on mobile devices"
+Claude: [Adds responsive CSS for mobile compatibility]
 ```
 
-**What Claude provides:**
+**Result:** You get pixel-perfect code in under 2 minutes!
 
-```html
-<!-- Product Card Component -->
-<article class="product-card">
-  <div class="product-card__image">
-    <img src="product-image.jpg" alt="Product name" loading="lazy">
-    <span class="product-card__badge product-card__badge--new">New</span>
-  </div>
-  <div class="product-card__content">
-    <h3 class="product-card__title">Product Title</h3>
-    <p class="product-card__description">Product description text</p>
-    <div class="product-card__price">
-      <span class="product-card__price-current">$29.99</span>
-      <span class="product-card__price-original">$39.99</span>
-    </div>
-  </div>
-  <div class="product-card__actions">
-    <button class="btn btn--primary product-card__cta">Add to Cart</button>
-  </div>
-</article>
-```
+## What Each Command Does
 
-```css
-/* Product Card Styles */
-.product-card {
-  background-color: var(--bg-white);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--bd-light);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease;
-}
+**"Show me [component] from Figma"**
+- Takes a screenshot of your Figma design
+- Lets you see exactly what you're working with
+- Helps you reference the design while coding
 
-.product-card:hover {
-  box-shadow: var(--shadow-md);
-}
+**"Get the specifications for this component"**
+- Extracts exact measurements (width, height, padding, margins)
+- Gets precise colors (hex codes, RGB values)
+- Lists typography details (font size, weight, line height)
 
-/* More CSS styles... */
-```
+**"Generate code for this design"**
+- Creates HTML structure that matches the Figma layout
+- Writes CSS styles with exact colors and spacing
+- Includes hover states and responsive behavior
+- Uses your existing CSS variables when possible
 
-### Example 2: Syncing Design Tokens
-
-**Update your CSS variables from Figma:**
-
-```
-You: Extract all color variables from our Figma design system for our variables.css file.
-
-Claude: I'll get those colors and format them as CSS variables that match your existing naming conventions.
-
-[Claude extracts design tokens and generates CSS variables]
-```
-
-**What Claude provides:**
-
-```css
-/* Updated CSS Variables - Synced with Figma */
-
-/* Primitive Colors (from Figma Variables) */
-:root {
-  /* Neutral Scale */
-  --neutral-50: #fafafa;   /* Figma: neutral/50 */
-  --neutral-100: #f5f5f5;  /* Figma: neutral/100 */
-  --neutral-200: #e5e5e5;  /* Figma: neutral/200 */
-  --neutral-300: #d4d4d4;  /* Figma: neutral/300 */
-  --neutral-400: #a3a3a3;  /* Figma: neutral/400 */
-  --neutral-500: #737373;  /* Figma: neutral/500 */
-  --neutral-600: #525252;  /* Figma: neutral/600 */
-  --neutral-700: #404040;  /* Figma: neutral/700 */
-  --neutral-800: #262626;  /* Figma: neutral/800 */
-  --neutral-900: #171717;  /* Figma: neutral/900 */
-
-  /* Brand Scale */
-  --brand-50: #eff6ff;    /* Figma: brand/50 */
-  --brand-100: #dbeafe;   /* Figma: brand/100 */
-  /* More colors... */
-
-  /* Semantic Variables (mapped from Figma) */
-  --txt-dark: var(--neutral-900);      /* Figma: text/primary */
-  --txt-default: var(--neutral-700);   /* Figma: text/secondary */
-  --txt-light: var(--neutral-500);     /* Figma: text/tertiary */
-  --txt-brand: var(--brand-600);       /* Figma: text/brand */
-  /* More semantic variables... */
-}
-```
-
----
+**"Extract design tokens from Figma"**
+- Pulls all color variables from your Figma file
+- Gets typography scale (font sizes, weights)
+- Formats everything as CSS custom properties
+- Maintains your naming conventions
 
 ## Best Practices
 
-### For Figma Design Files
-
-**Name Components Clearly**
-- Use descriptive names: `btn/primary-large` instead of `Button Copy 2`
-- Organize components logically in frames and pages
-- Use Figma variants for different states and sizes
-
-**Structure Design Tokens**
-- Organize colors in logical collections
-- Set up typography styles with consistent naming
-- Create spacing and effect variables
-- Document usage guidelines directly in Figma
-
-### For Development
-
-**Map Design Tokens Consistently**
-- Create direct mappings between Figma and CSS variables
-- Use semantic naming in your CSS custom properties
-- Document the relationship between Figma and CSS variables
-
-**Implement Components Accurately**
-- Use exact measurements from Figma designs
-- Implement all interactive states (hover, focus, active)
-- Create responsive designs based on Figma breakpoints
-- Add accessibility features that may not be visible in designs
-
-**Verify Implementation**
-- Compare colors, typography, and spacing with Figma specs
-- Test responsive behavior across device sizes
-- Ensure animations match Figma prototypes
-- Validate that all variants are properly implemented
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-**"Node ID not found"**
-- Try using descriptive names instead of node IDs
-- Make sure your Figma file is accessible
-- Check that the Dev Mode URL is current
-- Reconfigure with: `claude-code mcp configure figma-dev-mode-mcp-server --dev-mode-url="your-url"`
-
-**"Permission denied" errors**
-- Check your `.claude/settings.local.json` file
-- Make sure all Figma MCP tools are in the allow list
-- Restart Claude Code if needed
-
-**Connection issues**
-- Check your internet connection
-- Restart the MCP server with:
-  ```
-  claude-code mcp disconnect figma-dev-mode-mcp-server
-  claude-code mcp connect figma-dev-mode-mcp-server
-  ```
-
-**Generated code doesn't match design**
-- Ask Claude to extract exact specifications first
-- Mention your design system variables
-- Provide more context about your needs
-- Ask for specific improvements
-
-### Quick Fixes
-
-**Check connection status:**
-```bash
-claude-code mcp status figma-dev-mode-mcp-server
+### In Figma
+```
+✅ Use clear names: "Button Primary Large" not "Rectangle 47"
+✅ Organize components in logical groups
+✅ Create consistent color and text styles
+✅ Use Figma variables for colors and spacing
 ```
 
-**Reconnect Figma:**
+### When Asking Claude
+```
+✅ Be specific: "the login button" not "that button"
+✅ Mention your design system: "using our CSS variables"
+✅ Ask for what you need: "make it responsive" or "add hover states"
+```
+
+## Common Issues & Solutions
+
+**Problem:** "Can't find that component"
+**Solution:** Use more specific names or describe the location:
+```
+Instead of: "Show me the button"
+Try: "Show me the primary button from the homepage design"
+```
+
+**Problem:** "Generated code doesn't match"
+**Solution:** Ask for specifications first:
+```
+"What are the exact colors and spacing in this design?"
+Then: "Generate code using those exact measurements"
+```
+
+**Problem:** "Connection not working"
+**Solution:** Check your setup:
 ```bash
+# Test the connection
+claude-code mcp status figma-dev-mode-mcp-server
+
+# Reconnect if needed
 claude-code mcp reconnect figma-dev-mode-mcp-server
 ```
 
-**Test connection:**
-```bash
-claude-code mcp test figma-dev-mode-mcp-server
-```
+## Quick Commands Reference
 
-### Help Resources
+**View Designs:**
+- "Show me the [component name] from Figma"
+- "Let me see the [page/section] design"
 
-- Claude Code docs: [docs.claude.ai/code](https://docs.claude.ai/code)
-- Figma Dev Mode: [help.figma.com/dev-mode](https://help.figma.com/dev-mode)
+**Get Information:**
+- "What colors are used in this component?"
+- "What are the dimensions and spacing?"
+- "Tell me about the typography in this design"
+
+**Generate Code:**
+- "Create HTML and CSS for this component"
+- "Build a React component from this design"
+- "Generate responsive CSS for this layout"
+
+**Sync Design System:**
+- "Extract all color variables from Figma"
+- "Get the typography scale from our design system"
+- "Update our CSS variables to match Figma"
+
+## Why This Works So Well
+
+**For Designers:** Your designs get implemented exactly as intended - no more "that's not what I designed" moments.
+
+**For Developers:** Skip the tedious measurement and color-picking work. Get accurate code instantly.
+
+**For Teams:** Perfect sync between design and code. Everyone stays on the same page.
+
+**For Projects:** Faster delivery, fewer bugs, consistent implementation across all components.
 
 ---
 
-## Quick Reference Guide
+**Need Help?** Just ask Claude: "Help me set up Figma integration" or "Show me how to extract colors from Figma"
 
-### Top 5 Figma MCP Commands
-
-1. **View a design:**
-   "Show me the [component name] from our Figma design"
-
-2. **Get specifications:**
-   "What are the exact colors and spacing used in this component?"
-
-3. **Generate code:**
-   "Create HTML and CSS for this component using our design system"
-
-4. **Extract design tokens:**
-   "Get all color variables from our Figma design system"
-
-5. **Compare with implementation:**
-   "Check if my CSS matches the Figma design"
-
----
-
-**Last Updated**: 2024-09-19
-**Version**: 1.1.0
-**Compatibility**: Claude Code CLI v1.0.0+, Figma Dev Mode API v1.0+
+**Last Updated:** September 2024
