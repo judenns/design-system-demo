@@ -1,0 +1,318 @@
+/* ===================
+   ALERT & BADGE COMPONENTS
+   =================== */
+
+/* Alert Component */
+.alert {
+  padding: var(--space-md);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.alert__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.alert__content {
+  flex-grow: 1;
+}
+
+.alert__title {
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-xs);
+  margin-top: 0;
+}
+
+.alert__message {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.alert__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+/* Alert Variants */
+.alert--success {
+  background-color: var(--success-50);
+  border-color: var(--success-200);
+  color: var(--success-800);
+}
+
+.alert--success .alert__icon {
+  color: var(--success-600);
+}
+
+.alert--warning {
+  background-color: var(--warning-50);
+  border-color: var(--warning-200);
+  color: var(--warning-800);
+}
+
+.alert--warning .alert__icon {
+  color: var(--warning-600);
+}
+
+.alert--error {
+  background-color: var(--error-50);
+  border-color: var(--error-200);
+  color: var(--error-800);
+}
+
+.alert--error .alert__icon {
+  color: var(--error-600);
+}
+
+.alert--info {
+  background-color: var(--brand-50);
+  border-color: var(--brand-200);
+  color: var(--brand-800);
+}
+
+.alert--info .alert__icon {
+  color: var(--brand-600);
+}
+
+/* Alert Dismissible */
+.alert--dismissible {
+  position: relative;
+  padding-right: calc(var(--space-md) + 24px);
+}
+
+.alert__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.alert__close:hover {
+  opacity: 1;
+}
+
+.alert__close:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Badge Component */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* Badge Variants */
+.badge--primary {
+  background-color: var(--brand-100);
+  color: var(--brand-800);
+}
+
+.badge--secondary {
+  background-color: var(--neutral-100);
+  color: var(--neutral-800);
+}
+
+.badge--success {
+  background-color: var(--success-100);
+  color: var(--success-800);
+}
+
+.badge--warning {
+  background-color: var(--warning-100);
+  color: var(--warning-800);
+}
+
+.badge--error {
+  background-color: var(--error-100);
+  color: var(--error-800);
+}
+
+.badge--info {
+  background-color: var(--brand-100);
+  color: var(--brand-800);
+}
+
+/* Badge Sizes */
+.badge--sm {
+  padding: calc(var(--space-xs) / 2) var(--space-xs);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+}
+
+.badge--lg {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-small);
+}
+
+/* Badge with Icon */
+.badge--icon {
+  gap: var(--space-xs);
+}
+
+.badge--icon .badge__icon {
+  width: 12px;
+  height: 12px;
+}
+
+.badge--sm.badge--icon .badge__icon {
+  width: 10px;
+  height: 10px;
+}
+
+.badge--lg.badge--icon .badge__icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Badge Outline Variants */
+.badge--outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+.badge--outline.badge--primary {
+  color: var(--brand-600);
+  border-color: var(--brand-600);
+}
+
+.badge--outline.badge--secondary {
+  color: var(--neutral-600);
+  border-color: var(--neutral-600);
+}
+
+.badge--outline.badge--success {
+  color: var(--success-600);
+  border-color: var(--success-600);
+}
+
+.badge--outline.badge--warning {
+  color: var(--warning-600);
+  border-color: var(--warning-600);
+}
+
+.badge--outline.badge--error {
+  color: var(--error-600);
+  border-color: var(--error-600);
+}
+
+/* Badge Dot (minimal variant) */
+.badge--dot {
+  padding: 4px;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.badge--dot.badge--sm {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  min-height: 6px;
+}
+
+.badge--dot.badge--lg {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+.status-indicator__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator--online .status-indicator__dot {
+  background-color: var(--success-500);
+}
+
+.status-indicator--offline .status-indicator__dot {
+  background-color: var(--neutral-400);
+}
+
+.status-indicator--busy .status-indicator__dot {
+  background-color: var(--error-500);
+}
+
+.status-indicator--away .status-indicator__dot {
+  background-color: var(--warning-500);
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-badge__indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--error-500);
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  border: 2px solid var(--bg-white);
+}
+
+.notification-badge__indicator--dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-width: 1px;
+}
+
+.notification-badge__indicator--large {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  font-size: 11px;
+  top: -6px;
+  right: -6px;
+}

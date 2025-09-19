@@ -1,0 +1,175 @@
+/* ===================
+   BUTTON COMPONENTS
+   =================== */
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 72px;
+  font-size: var(--fs-default); /* 20px */
+  font-weight: var(--fw-semibold); /* 600 */
+  font-family: var(--body-font);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  height: 80px;
+  line-height: 1.4;
+  min-width: max-content; /* Fit content but ensure minimum size */
+  width: auto; /* Allow button to resize based on content */
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--bg-default), 0 0 0 4px var(--bd-brand);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Button Variants */
+.btn--primary {
+  background-color: var(--bg-brand); /* #6075a4 */
+  color: var(--txt-white);
+  border-color: var(--bd-brand);
+  min-width: 330px; /* Set minimum width for primary buttons */
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--brand-700); /* #455376 */
+  border-color: var(--brand-700);
+}
+
+.btn--secondary-fill {
+  background-color: var(--brand-100); /* #ebeef4 */
+  color: var(--txt-brand);
+  border-color: transparent;
+  min-width: 330px; /* Set minimum width for secondary fill buttons */
+}
+
+.btn--secondary-fill:hover:not(:disabled) {
+  background-color: var(--brand-200); /* #d7dce9 */
+}
+
+.btn--secondary-outline {
+  background-color: #ffffff;
+  color: var(--txt-brand);
+  border-color: var(--bd-brand);
+  min-width: 330px; /* Set minimum width for secondary outline buttons */
+}
+
+.btn--secondary-outline:hover:not(:disabled) {
+  background-color: var(--bg-brand-lightest);
+}
+
+.btn--white {
+  background-color: #ffffff;
+  color: var(--txt-brand);
+  border-color: transparent;
+}
+
+.btn--white:hover:not(:disabled) {
+  background-color: var(--bg-brand-lightest);
+}
+
+.btn--white-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn--white-outline:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn--link {
+  background-color: transparent;
+  color: var(--txt-brand);
+  border-color: transparent;
+  padding: 0;
+  height: auto;
+  min-width: auto;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.btn--link:hover:not(:disabled) {
+  color: var(--txt-brand-dark);
+}
+
+/* Button Sizes */
+.btn--mobile {
+  height: 60px;
+  padding: 20px 32px;
+  font-size: 18px;
+  letter-spacing: 0.72px;
+}
+
+.btn--sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--fs-small);
+  border-radius: var(--radius-md);
+  height: auto;
+  min-width: auto;
+}
+
+.btn--md {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--fs-default);
+  border-radius: var(--radius-md);
+  height: auto;
+  min-width: auto;
+}
+
+.btn--lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--fs-default);
+  border-radius: var(--radius-lg);
+  height: auto;
+}
+
+.btn--round {
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+/* Button Icons */
+.btn--icon-left svg,
+.btn--icon-right svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn--icon-only {
+  padding: 0;
+  width: 80px;
+  min-width: auto;
+}
+
+.btn--icon-only svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+    min-width: 100%; /* Override min-width on mobile */
+    padding: 20px 32px; /* Smaller padding on mobile */
+  }
+
+  .btn + .btn {
+    margin-top: var(--space-sm);
+  }
+}

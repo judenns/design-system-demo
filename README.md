@@ -44,16 +44,42 @@ See `docs/design-system.md` for complete variable reference and usage guidelines
 
 ### Adding New Components
 
-1. Create component styles in `css/components/`
-2. Add JavaScript logic in `scripts/`
-3. Document usage in `docs/components.md`
+1. **Choose the right CSS file** in `css/components/` based on component type:
+   - Interactive elements → `buttons.css` or `forms.css`
+   - Content containers → `cards.css`
+   - Feedback/status → `alerts.css`
+   - Layout utilities → `layout.css`
+
+2. **Follow established patterns**: BEM naming, accessibility, responsive design
+3. **Add JavaScript logic** in `scripts/` if needed
+4. **Update documentation** in `docs/design-system.md`
 
 ### CSS Architecture
 
-- **reset.css**: Modern CSS reset
-- **variables.css**: Design tokens and CSS custom properties
-- **components.css**: UI component styles
-- **main.css**: Base styles and layout
+Modular CSS structure for better maintainability:
+
+```
+css/
+├── reset.css              # Modern CSS reset
+├── variables.css           # Design tokens and CSS custom properties
+├── main.css               # Base styles and page-specific layout
+└── components/
+    ├── index.css          # Component imports (loaded in HTML)
+    ├── buttons.css        # Button variants and states
+    ├── forms.css          # Form elements (input, select, checkbox, etc.)
+    ├── cards.css          # Card variants (basic, feature, product, etc.)
+    ├── alerts.css         # Alerts, badges, status indicators
+    ├── search.css         # Search components and variants
+    ├── headings.css       # Section headings, breadcrumbs
+    ├── layout.css         # Layout utilities (grid, flex, containers)
+    └── utilities.css      # Helper classes and utilities
+```
+
+**Benefits**:
+- 🔧 **Maintainable**: Each component type is isolated
+- 📦 **Modular**: Components can be loaded independently
+- 🎯 **Organized**: Easy to find and modify specific styles
+- 🚀 **Scalable**: New components follow established patterns
 
 ### JavaScript Structure
 
@@ -63,8 +89,8 @@ See `docs/design-system.md` for complete variable reference and usage guidelines
 
 ## 📚 Documentation
 
-- `docs/design-system.md` - Design system guidelines and CSS variables reference
-- `docs/components.md` - Component library documentation and usage examples
+- `docs/design-system.md` - **Complete design system reference** with CSS architecture, component library, and development workflow
+- `docs/components.md` - Component usage examples and customization guide
 - `docs/figma-mcp-guide.md` - **Complete Figma MCP integration guide**
 
 ## 🔄 Figma MCP Integration
