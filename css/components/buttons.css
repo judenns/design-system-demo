@@ -23,6 +23,7 @@
   line-height: 1.4;
   min-width: max-content; /* Fit content but ensure minimum size */
   width: auto; /* Allow button to resize based on content */
+  white-space: nowrap; /* Prevent text wrapping to multiple lines */
 }
 
 .btn:focus {
@@ -64,7 +65,7 @@
   background-color: #ffffff;
   color: var(--txt-brand);
   border-color: var(--bd-brand);
-  min-width: 330px; /* Set minimum width for secondary outline buttons */
+  min-width: max-content; /* Allow button to fit content properly */
 }
 
 .btn--secondary-outline:hover:not(:disabled) {

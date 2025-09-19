@@ -23,21 +23,27 @@
 
   <body>
     <!-- Navigation -->
-    <nav class="container">
-      <div class="nav">
-        <div class="nav__logo">
-          <img src="images/logo.svg" alt="FirstPlace" width="120" />
+    <nav class="nav">
+      <div class="nav__logo">
+        <div class="nav__logo-text">
+          <div class="nav__logo-title">STORYLAND</div>
+          <div class="nav__logo-subtitle">FUNERAL HOME & CEMETERY</div>
         </div>
-        <div class="nav__menu">
-          <!-- Navigation menu would go here -->
-        </div>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__icon-btn" aria-label="Search">
+          <i class="ph ph-magnifying-glass"></i>
+        </button>
+        <button class="nav__icon-btn" aria-label="Menu">
+          <i class="ph ph-list"></i>
+        </button>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">A Place<br />to Remember</h1>
+        <h1 class="hero__title">A place to<br />remember</h1>
 
         <div class="search">
           <input
@@ -45,92 +51,29 @@
             class="search__input"
             placeholder="Find an obituary"
           />
-          <div class="search__icon">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.5 25C20.299 25 25 20.299 25 14.5C25 8.70101 20.299 4 14.5 4C8.70101 4 4 8.70101 4 14.5C4 20.299 8.70101 25 14.5 25Z"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M21.925 21.925L28 28"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+          <button class="search__btn" aria-label="Search">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
         </div>
 
-        <div class="hero-card mt-lg">
+        <div class="hero-card">
           <div class="hero-card__icon">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 42C33.9411 42 42 33.9411 42 24C42 14.0589 33.9411 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9411 14.0589 42 24 42Z"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M24 14V24L30 30"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <i class="ph ph-clock"></i>
           </div>
           <div class="hero-card__content">
-            <h3 class="hero-card__title">Immediate Need</h3>
+            <h3 class="hero-card__title">IMMEDIATE NEED</h3>
             <p class="hero-card__description">
               A loved one has passed or is about to pass.
             </p>
           </div>
         </div>
 
-        <div class="hero-card mt-md">
+        <div class="hero-card">
           <div class="hero-card__icon">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M38 12H10C7.79086 12 6 13.7909 6 16V36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V16C42 13.7909 40.2091 12 38 12Z"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M32 40V8C32 6.93913 31.5786 5.92172 30.8284 5.17157C30.0783 4.42143 29.0609 4 28 4H20C18.9391 4 17.9217 4.42143 17.1716 5.17157C16.4214 5.92172 16 6.93913 16 8V40"
-                stroke="#6075A4"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <i class="ph ph-notebook"></i>
           </div>
           <div class="hero-card__content">
-            <h3 class="hero-card__title">Plan for the future</h3>
+            <h3 class="hero-card__title">PLAN FOR THE FUTURE</h3>
             <p class="hero-card__description">
               Planning a funeral or cremation - made easy.
             </p>
@@ -145,12 +88,12 @@
 
     <main>
       <!-- Features Section -->
-      <section class="section bg-brand-lightest">
+      <section class="section bg-brand-white">
         <div class="container">
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Our Services</p>
+            <p class="section-heading__eyebrow">FIND YOUR RESTING PLACE</p>
             <h2 class="section-heading__title">
-              A time to honor, comfort and heal
+              A time to honor, comfort and <span class="text-brand">heal</span>
             </h2>
           </div>
 
@@ -161,17 +104,17 @@
                 <div class="feature-card__icon-bg"></div>
                 <div class="feature-card__icon">
                   <img
-                    src="images/hands-icon.png"
+                    src="images/book 256.png"
                     alt="Hands Icon"
                     width="180"
                     height="180"
                   />
                 </div>
               </div>
-              <h3 class="feature-card__title">One-Stop Convenience</h3>
+              <h3 class="feature-card__title">One-Stop Arrangements</h3>
               <p class="feature-card__description">
-                Everything you need to plan, arrange, and manage memorial
-                services in one simple platform.
+                We provide funeral & cemetery arrangements and strive to make
+                each step of the process seamless and customized to your needs.
               </p>
             </div>
 
@@ -188,12 +131,10 @@
                   />
                 </div>
               </div>
-              <h3 class="feature-card__title">
-                Create Beautiful, Lasting Tributes and Memories
-              </h3>
+              <h3 class="feature-card__title">Unique funerals and tributes</h3>
               <p class="feature-card__description">
-                Share memories, photos, and stories that celebrate the unique
-                life and legacy of your loved one.
+                Every loved one is unique. Celebrate them with ceremonies and
+                tributes that are authentic to the life they lived.
               </p>
             </div>
 
@@ -210,60 +151,65 @@
                   />
                 </div>
               </div>
-              <h3 class="feature-card__title">No Hidden Costs or Complexity</h3>
+              <h3 class="feature-card__title">
+                We'll take care of every detail
+              </h3>
               <p class="feature-card__description">
-                Transparent pricing and simple-to-understand services ensure you
-                know exactly what to expect without surprises or pressure.
+                You're never alone. Our dedicated staff is always available to
+                assist you with making arrangements and finding support.
               </p>
             </div>
           </div>
 
           <div class="text-center mt-lg">
-            <a href="#" class="btn btn--primary">View All Services</a>
+            <a href="#" class="btn btn--secondary-outline"
+              >LEARN MORE ABOUT US</a
+            >
           </div>
         </div>
       </section>
 
       <!-- Services Section -->
-      <section class="section">
+      <section class="section bg-brand-lightest">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-heading__eyebrow">Our Locations</p>
+          <div class="section-heading section-heading--left">
+            <p class="section-heading__eyebrow">explore our facilities</p>
             <h2 class="section-heading__title">
-              The perfect place to hold a meaningful and unique ceremony
+              The perfect place to hold a meaningful and
+              <em class="text-brand">unique ceremony.</em>
             </h2>
           </div>
 
-          <div class="services-showcase">
-            <div class="services-showcase__images">
-              <img
-                src="images/house.png"
-                alt="Chapel"
-                class="services-showcase__image services-showcase__image--active"
-              />
-              <img
-                src="images/room.jpg"
-                alt="Reception Hall"
-                class="services-showcase__image"
-              />
-              <img
-                src="images/main-image.jpg"
-                alt="Memorial Garden"
-                class="services-showcase__image"
-              />
+          <div class="gallery-showcase">
+            <div class="gallery-showcase__container">
+              <!-- Left image -->
+              <div
+                class="gallery-showcase__image gallery-showcase__image--left"
+              >
+                <img src="images/house.png" alt="Chapel exterior" />
+              </div>
+
+              <!-- Center main image -->
+              <div
+                class="gallery-showcase__image gallery-showcase__image--center"
+              >
+                <img src="images/main-image.jpg" alt="Main facility" />
+              </div>
+
+              <!-- Right image -->
+              <div
+                class="gallery-showcase__image gallery-showcase__image--right"
+              >
+                <img src="images/room.jpg" alt="Interior room" />
+              </div>
             </div>
 
-            <div class="services-showcase__nav">
-              <button
-                class="services-showcase__dot services-showcase__dot--active"
-              ></button>
-              <button class="services-showcase__dot"></button>
-              <button class="services-showcase__dot"></button>
+            <!-- Explore button -->
+            <div class="gallery-showcase__cta">
+              <a href="#" class="btn btn--secondary-outline"
+                >EXPLORE OUR LOCATIONS</a
+              >
             </div>
-
-            <a href="#" class="btn btn--secondary-outline mt-lg"
-              >Explore Our Locations</a
-            >
           </div>
         </div>
       </section>
