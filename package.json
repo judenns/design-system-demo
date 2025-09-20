@@ -1,0 +1,32 @@
+{
+  "name": "design-system-demo",
+  "version": "1.0.0",
+  "description": "A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "dev:https": "vite --https",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "preview": "vite preview",
+    "preview:https": "vite preview --https"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judenns/design-system-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judenns/design-system-demo/issues"
+  },
+  "homepage": "https://github.com/judenns/design-system-demo#readme",
+  "devDependencies": {
+    "vite": "^7.1.6"
+  }
+}

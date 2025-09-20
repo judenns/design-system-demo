@@ -6,7 +6,22 @@ A clean, neutral design system built with modern web standards featuring Inter t
 
 - **[Design System Showcase](showcase.html)** - Complete design system documentation and component library
 - **[Landing Page](index.html)** - Main project landing page
-- **View locally**: Open `showcase.html` in your browser or use `python3 -m http.server 8000`
+
+## ⚡ Development Server
+
+**Powered by Vite** - Lightning-fast development with hot module replacement:
+
+```bash
+# Start development server
+npm run dev
+# → http://localhost:3000
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
 
 ## 📚 Documentation
 
@@ -19,6 +34,12 @@ A clean, neutral design system built with modern web standards featuring Inter t
 design-system-demo/
 ├── index.html              # Landing page
 ├── showcase.html           # Component showcase (design system documentation)
+├── package.json            # Node.js dependencies and scripts
+├── vite.config.js          # Vite configuration
+├── dist/                   # Production build output (auto-generated)
+│   ├── index.html
+│   ├── showcase.html
+│   └── assets/            # Optimized CSS/JS bundles
 ├── assets/                 # Static assets
 │   ├── images/            # Image files
 │   ├── icons/             # Icon files
@@ -37,7 +58,7 @@ design-system-demo/
 │       ├── layout.css     # Layout utilities
 │       └── utilities.css  # Helper classes
 ├── scripts/               # JavaScript files
-│   └── main.js           # Main JavaScript
+│   └── main.js           # Main JavaScript (ES modules)
 ├── docs/                 # Documentation
 │   ├── design-system.md  # Design system guide
 │   └── figma-mcp-guide.md # Figma integration guide
@@ -65,7 +86,96 @@ Modern, clean design system built with accessibility and usability in mind:
 
 See **[Design System Guide](docs/design-system.md)** for complete variable reference and usage guidelines.
 
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+**Automatic deployment from GitHub:**
+
+1. Push your code to GitHub repository
+2. Connect repository to [Vercel](https://vercel.com)
+3. Vercel automatically:
+   - Detects Vite configuration
+   - Runs `npm run build`
+   - Deploys `dist/` folder
+   - Provides live URL with automatic updates
+
+**Manual deployment with Vercel CLI:**
+```bash
+npm install -g vercel
+vercel
+```
+
+### Other Platforms
+
+```bash
+# Netlify
+netlify deploy --prod --dir=dist
+
+# GitHub Pages
+npm install --save-dev gh-pages
+npm run build && npx gh-pages -d dist
+
+# Firebase Hosting
+npm install -g firebase-tools
+firebase init hosting  # Set public directory to: dist
+firebase deploy
+```
+
+### Build Optimization
+
+Vite automatically optimizes your production build:
+
+- **CSS Bundling**: All CSS files combined and minified
+- **JavaScript Minification**: ES modules bundled and compressed
+- **Asset Optimization**: Images and fonts optimized for web
+- **Cache Busting**: Automatic hash-based filenames
+- **Gzip Compression**: Reduces file sizes by ~75%
+
+Production build output:
+```
+dist/
+├── index.html           # ~0.8 kB (0.4 kB gzipped)
+├── showcase.html        # Auto-generated
+└── assets/
+    ├── index-[hash].css # ~13.7 kB (3.5 kB gzipped)
+    └── index-[hash].js  # ~0.8 kB (0.5 kB gzipped)
+```
+
 ## 🛠️ Development
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open http://localhost:3000
+```
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot reload |
+| `npm run dev:host` | Development server with network access |
+| `npm run dev:https` | Development server with HTTPS |
+| `npm run build` | Build for production |
+| `npm run build:watch` | Build and watch for changes |
+| `npm run preview` | Preview production build locally |
+| `npm run preview:https` | Preview with HTTPS |
+
+### Development Features
+
+- **⚡ Lightning Fast**: Vite's dev server starts in milliseconds
+- **🔥 Hot Module Replacement**: CSS updates without page refresh
+- **📱 Network Access**: Test on mobile devices with `--host`
+- **🔒 HTTPS Support**: Test secure features locally
+- **🗂️ ES Modules**: Modern JavaScript with import/export
+- **🎯 Source Maps**: Easy debugging with original source files
 
 ### Adding New Components
 
@@ -114,9 +224,22 @@ css/
 
 ### JavaScript Structure
 
+**Modern ES Modules** with Vite support:
+
 - **main.js**: Application initialization and utilities
-- Modular approach for scalability
-- ES6+ features and modern practices
+- **ES6+ Features**: Import/export, async/await, modern syntax
+- **Module System**: Clean dependency management
+- **Hot Module Replacement**: JavaScript updates without page refresh
+
+Example module usage:
+```javascript
+// utils/helpers.js
+export const formatDate = (date) => { /* ... */ }
+export const debounce = (func, delay) => { /* ... */ }
+
+// main.js
+import { formatDate, debounce } from './utils/helpers.js'
+```
 
 
 ## 🔄 Figma MCP Integration
