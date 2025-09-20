@@ -1,11 +1,12 @@
-# template-0
+# Modern Design System
 
-A demo for testing figma mcp with claude code using theme-3 design.
+A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.
 
 ## 🚀 Live Demo
 
-- **[Homepage](https://demo-mcp-eight.vercel.app/)** - PLease view in 1440x900 - Generated with Figma MCP and Claude using our established design system variables
-- **[Design System Styleguide](https://demo-mcp-eight.vercel.app/design-system.html)** - Generated with Figma MCP and Claude Code
+- **[Design System Showcase](showcase.html)** - Complete design system documentation and component library
+- **[Landing Page](index.html)** - Main project landing page
+- **View locally**: Open `showcase.html` in your browser or use `python3 -m http.server 8000`
 
 ## 📚 Documentation
 
@@ -15,37 +16,47 @@ A demo for testing figma mcp with claude code using theme-3 design.
 ## 📁 Project Structure
 
 ```
-template-0/
-├── index.html              # Main HTML file
+design-system-demo/
+├── index.html              # Landing page
+├── showcase.html           # Component showcase (design system documentation)
 ├── assets/                 # Static assets
 │   ├── images/            # Image files
 │   ├── icons/             # Icon files
 │   └── fonts/             # Font files
 ├── css/                   # Stylesheets
 │   ├── reset.css          # CSS Reset (Andy Bell)
-│   ├── variables.css      # CSS Custom Properties
-│   ├── components/        # Component styles
-│   │   └── components.css # UI Components
-│   └── main.css           # Main styles
+│   ├── variables.css      # Design tokens (customizable)
+│   ├── main.css           # Shared base styles
+│   ├── pages/             # Page-specific styles
+│   │   ├── index.css      # Landing page styles
+│   │   └── showcase.css   # Component showcase styles
+│   └── components/        # Component styles
+│       ├── index.css      # Component imports
+│       ├── buttons.css    # Button variants
+│       ├── forms.css      # Form elements
+│       ├── headings.css   # Typography components
+│       ├── layout.css     # Layout utilities
+│       └── utilities.css  # Helper classes
 ├── scripts/               # JavaScript files
 │   └── main.js           # Main JavaScript
 ├── docs/                 # Documentation
 │   ├── design-system.md  # Design system guide
-│   └── components.md     # Components guide
+│   └── figma-mcp-guide.md # Figma integration guide
 ├── .gitignore           # Git ignore file
 └── README.md            # This file
 ```
 
 ## 🎨 Design System
 
-This project features a comprehensive, scalable design system built on CSS custom properties:
+Modern, clean design system built with accessibility and usability in mind:
 
 ### Key Features
 
-- **Two-layer color system**: Primitive color scales (50-900 shades) and semantic variables for consistent usage
-- **Typography system**: 10 predefined font sizes with 6 weight options
-- **Spacing scale**: Consistent rem-based spacing from xs (0.5rem) to 4xl (7.5rem)
-- **Component library**: Pre-built, accessible UI components (buttons, cards, forms, alerts, badges)
+- **Customizable color system**: Semantic CSS variables that can be adapted to any brand
+- **Flexible typography**: Variable font system easily replaceable for different projects
+- **Streamlined components**: Essential UI elements (buttons, forms, layout utilities)
+- **Consistent spacing**: Configurable rem-based spacing scale
+- **Modern component styling**: Clean aesthetics with proper focus states and accessibility
 - **BEM naming convention**: Structured CSS class naming for maintainability
 
 See **[Design System Guide](docs/design-system.md)** for complete variable reference and usage guidelines.
@@ -56,13 +67,19 @@ See **[Design System Guide](docs/design-system.md)** for complete variable refer
 
 1. **Choose the right CSS file** in `css/components/` based on component type:
    - Interactive elements → `buttons.css` or `forms.css`
-   - Content containers → `cards.css`
-   - Feedback/status → `alerts.css`
+   - Text content → `headings.css`
    - Layout utilities → `layout.css`
+   - Helper classes → `utilities.css`
 
-2. **Follow established patterns**: BEM naming, accessibility, responsive design
+2. **Follow design principles**:
+   - Use semantic color variables that can be customized per project
+   - Implement proper hover, focus, and disabled states
+   - Ensure WCAG 2.1 AA accessibility compliance
+   - Use BEM naming convention
+   - Include responsive behavior
+
 3. **Add JavaScript logic** in `scripts/` if needed
-4. **Update documentation** in **[Design System Guide](docs/design-system.md)**
+4. **Update showcase.html** to showcase the component
 
 ### CSS Architecture
 
@@ -71,25 +88,26 @@ Modular CSS structure for better maintainability:
 ```
 css/
 ├── reset.css              # Modern CSS reset
-├── variables.css           # Design tokens and CSS custom properties
-├── main.css               # Base styles and page-specific layout
-└── components/
+├── variables.css          # Design tokens (customizable typography, colors, spacing)
+├── main.css               # Shared base styles for all pages
+├── pages/                 # Page-specific styles
+│   ├── index.css          # Landing page styles
+│   └── showcase.css       # Component showcase styles
+└── components/            # Reusable component styles
     ├── index.css          # Component imports (loaded in HTML)
-    ├── buttons.css        # Button variants and states
-    ├── forms.css          # Form elements (input, select, checkbox, etc.)
-    ├── cards.css          # Card variants (basic, feature, product, etc.)
-    ├── alerts.css         # Alerts, badges, status indicators
-    ├── search.css         # Search components and variants
-    ├── headings.css       # Section headings, breadcrumbs
-    ├── layout.css         # Layout utilities (grid, flex, containers)
-    └── utilities.css      # Helper classes and utilities
+    ├── buttons.css        # Button variants with modern styling
+    ├── forms.css          # Form elements with icon integration
+    ├── headings.css       # Typography components (simplified)
+    ├── layout.css         # Layout utilities (simplified)
+    └── utilities.css      # Essential helper classes (simplified)
 ```
 
 **Benefits**:
 - 🔧 **Maintainable**: Each component type is isolated
 - 📦 **Modular**: Components can be loaded independently
-- 🎯 **Organized**: Easy to find and modify specific styles
-- 🚀 **Scalable**: New components follow established patterns
+- 🎯 **Organized**: Clear separation between pages and components
+- 🚀 **Scalable**: Easy to add new pages with dedicated CSS
+- ✨ **Template-Ready**: Simplified and streamlined for any project
 
 ### JavaScript Structure
 

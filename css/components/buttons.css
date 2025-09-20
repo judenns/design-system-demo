@@ -2,40 +2,36 @@
    BUTTON COMPONENTS
    =================== */
 
-/* Button Base */
+/* Button Base - shadcn/ui inspired */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 72px;
-  font-size: var(--fs-default); /* 20px */
-  font-weight: var(--fw-semibold); /* 600 */
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-default);
+  font-weight: var(--fw-medium);
   font-family: var(--body-font);
   text-decoration: none;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
-  gap: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  height: 80px;
-  line-height: 1.4;
-  min-width: max-content; /* Fit content but ensure minimum size */
-  width: auto; /* Allow button to resize based on content */
-  white-space: nowrap; /* Prevent text wrapping to multiple lines */
+  gap: 0.5rem;
+  height: 2.5rem;
+  line-height: 1;
+  min-width: max-content;
+  width: auto;
+  white-space: nowrap;
 }
 
 .btn:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px var(--bg-default), 0 0 0 4px var(--bd-brand);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bd-default);
 }
 
 .btn:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px var(--bg-default), 0 0 0 4px var(--bd-brand);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bd-default);
 }
 
 .btn:active:not(:disabled) {
@@ -47,39 +43,36 @@
   opacity: 0.4;
 }
 
-/* Button Variants */
+/* Button Variants - shadcn/ui inspired */
 .btn--primary {
-  background-color: var(--bg-brand); /* #6075a4 */
+  background-color: var(--bg-brand);
   color: var(--txt-white);
-  border-color: var(--bd-brand);
-  min-width: 330px; /* Set minimum width for primary buttons */
+  border-color: var(--bg-brand);
 }
 
 .btn--primary:hover:not(:disabled) {
-  background-color: var(--brand-700); /* #455376 */
-  border-color: var(--brand-700);
+  background-color: var(--neutral-800);
+  border-color: var(--neutral-800);
 }
 
 .btn--secondary-fill {
-  background-color: var(--brand-100); /* #ebeef4 */
-  color: var(--txt-brand);
+  background-color: var(--bg-brand-light);
+  color: var(--txt-default);
   border-color: transparent;
-  min-width: 330px; /* Set minimum width for secondary fill buttons */
 }
 
 .btn--secondary-fill:hover:not(:disabled) {
-  background-color: var(--brand-200); /* #d7dce9 */
+  background-color: var(--neutral-200);
 }
 
 .btn--secondary-outline {
-  background-color: var(--bg-default);
-  color: var(--txt-brand);
-  border-color: var(--bd-brand);
-  min-width: max-content; /* Allow button to fit content properly */
+  background-color: transparent;
+  color: var(--txt-default);
+  border-color: var(--bd-default);
 }
 
 .btn--secondary-outline:hover:not(:disabled) {
-  background-color: var(--bg-brand-lightest);
+  background-color: var(--bg-brand-light);
 }
 
 .btn--white {

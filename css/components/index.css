@@ -11,11 +11,8 @@
 
 /* Layout Components */
 @import 'layout.css';
-@import 'cards.css';
 
 /* Interface Components */
-@import 'alerts.css';
-@import 'search.css';
 @import 'headings.css';
 
 /* Utilities (load last to ensure highest specificity) */

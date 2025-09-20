@@ -1,15 +1,16 @@
-# CLAUDE.md - Enhanced Configuration for Figma MCP Showcase
+# CLAUDE.md - Modern Design System Configuration
 
 This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with this repository.
 
 ## Project Overview
 
-**Template-0** is a Claude Code CLI + Figma MCP showcase project featuring:
+**Modern Design System** is a clean, neutral design system showcase featuring:
 
-- **Core Purpose**: Demonstrate rapid design-to-code workflows using Claude Code with Figma MCP integration
+- **Core Purpose**: Demonstrate modern, accessible design system with shadcn/ui inspired components
 - **Architecture**: Vanilla HTML5, CSS3, JavaScript (no build system for rapid prototyping)
-- **Design System**: Comprehensive token-based system with CSS custom properties
-- **Component Library**: Pre-built, accessible UI components following BEM methodology
+- **Design System**: Token-based system with CSS custom properties using Inter typography
+- **Component Library**: Streamlined, accessible UI components following BEM methodology
+- **Brand Color**: Bright blue (#000BFF) used strategically for primary actions and interactive states
 
 ## MCP Integration Setup
 
@@ -37,22 +38,20 @@ npx live-server --port=3000 --open=/index.html
 npx live-server --port=3000 --open=/design-system.html
 ```
 
-## CSS Architecture (Updated)
+## CSS Architecture
 
 **File Structure**:
 ```
 css/
 ├── reset.css              # Modern CSS reset
-├── variables.css           # Design tokens (colors, typography, spacing)
-├── main.css               # Base styles and page-specific layout
+├── variables.css          # Design tokens (colors, typography, spacing)
+├── main.css               # Base styles (body typography only)
+├── design-system.css      # Design system showcase specific styles
 └── components/
     ├── index.css          # Component imports (loaded in HTML)
-    ├── buttons.css        # Button variants and states
-    ├── forms.css          # Form elements (input, select, checkbox, etc.)
-    ├── cards.css          # Card variants (basic, feature, product, etc.)
-    ├── alerts.css         # Alerts, badges, status indicators
-    ├── search.css         # Search components and variants
-    ├── headings.css       # Section headings, breadcrumbs
+    ├── buttons.css        # Button variants and states (shadcn/ui inspired)
+    ├── forms.css          # Form elements (input, select, checkbox, radio)
+    ├── headings.css       # Section headings and text components
     ├── layout.css         # Layout utilities (grid, flex, containers)
     └── utilities.css      # Helper classes and utilities
 ```
@@ -60,20 +59,26 @@ css/
 ## Design System Constraints (CRITICAL)
 
 ### **ALWAYS USE EXISTING SYSTEM**
-- **Colors**: Only use semantic variables (`--txt-brand`, `--bg-light`, etc.)
+- **Colors**: Only use semantic variables (`--txt-dark`, `--txt-default`, `--txt-light`, `--txt-brand`)
 - **Spacing**: Only use spacing scale (`--space-xs` through `--space-3xl`)
 - **Typography**: Only use defined font sizes (`--fs-h1` through `--fs-caption`)
-- **Components**: Extend existing components, don't create from scratch
+- **Font Family**: Inter variable font for all text
+- **Brand Color**: Use `#000BFF` only for primary actions and interactive states
 
 ### **Component Selection Guide**
 When adding new functionality:
 
 1. **Interactive Elements** → Extend `buttons.css` or `forms.css`
-2. **Content Containers** → Extend `cards.css`
-3. **Feedback/Status** → Extend `alerts.css`
-4. **Navigation/Search** → Extend `search.css` or `headings.css`
-5. **Layout Needs** → Use `layout.css` utilities
-6. **Quick Styling** → Use `utilities.css` classes
+2. **Text Content** → Use `headings.css` components
+3. **Layout Needs** → Use `layout.css` utilities
+4. **Quick Styling** → Use `utilities.css` classes
+
+### **Available Components**
+- **Buttons**: Primary, secondary (fill/outline), link, disabled states
+- **Forms**: Input, textarea, select, checkbox, radio with focus/error states
+- **Headings**: Typography hierarchy and text components
+- **Layout**: Grid, flex, container utilities
+- **Utilities**: Helper classes for spacing, colors, etc.
 
 ### **BEM Naming Enforcement**
 - Block: `.component-name`
@@ -81,28 +86,23 @@ When adding new functionality:
 - Modifier: `.component-name--modifier`
 - **Never** use nested selectors deeper than 2 levels
 
-## Figma MCP Workflow
+## Design System Principles
 
-### **Standard Design-to-Code Process** (Documentation-First):
-1. **Documentation Research**: Use Context7 to get latest, version-specific documentation
-   - Verify all APIs, methods, and patterns exist in current version
-   - Get official examples and implementation guidelines
-2. **View Design**: Use `get_screenshot` to see the component
-3. **Extract Specs**: Use `get_metadata` for measurements, colors, spacing
-4. **Get Variables**: Use `get_variable_defs` to sync design tokens
-5. **Generate Verified Code**: Use `get_code` with documentation validation
-   - Cross-reference all code against Context7 documentation
-   - Replace any undocumented or deprecated patterns
-6. **Adapt to System**: Modify generated code to use our design system variables
-7. **Test & Validate**: Ensure accessibility and responsive behavior
+### **Modern Design Approach**:
+- **Neutral First**: Use neutral colors (grays) for most UI elements
+- **Brand Selective**: Apply brand blue (#000BFF) only for primary actions
+- **Typography**: Inter variable font for clean, modern appearance
+- **Spacing**: Consistent spacing scale for visual harmony
+- **Accessibility**: WCAG 2.1 AA compliance with proper focus states
 
 ### **Component Implementation Rules**:
 - **Always** check existing components first
-- **Always** use semantic CSS variables
+- **Always** use semantic CSS variables from `variables.css`
 - **Always** include hover, focus, disabled states
 - **Always** add ARIA attributes for accessibility
 - **Always** test keyboard navigation
 - **Always** ensure responsive behavior
+- **Always** use Phosphor icons when icons are needed
 
 ## Agent Integration
 
@@ -187,27 +187,28 @@ When using this project for demonstrations:
 
 ### **Adding a New Component**
 ```
-1. "Show me the [component] from our Figma design"
-2. "Generate CSS for this component using our design system variables"
-3. "Make sure it follows our BEM naming convention"
-4. "Add hover and focus states"
+1. "Create a [component] using our design system variables"
+2. "Make sure it follows our BEM naming convention"
+3. "Use neutral colors with brand blue for primary actions"
+4. "Add hover and focus states with proper accessibility"
 5. "Test with keyboard navigation"
+6. "Add to the appropriate CSS file (buttons.css, forms.css, etc.)"
 ```
 
 ### **Updating Design Tokens**
 ```
-1. "Extract all color variables from our Figma design system"
-2. "Update variables.css with the new tokens"
-3. "Show me which components use the old colors"
-4. "Update the affected components"
+1. "Update variables.css with the new token values"
+2. "Maintain the neutral color scheme with selective brand usage"
+3. "Test all components with the updated tokens"
+4. "Update design-system.html to show new values"
 ```
 
 ### **Creating Page Layouts**
 ```
-1. "Show me the [page] design from Figma"
-2. "Create the HTML structure using our existing components"
-3. "Use our layout utilities for responsive behavior"
-4. "Ensure semantic HTML and accessibility"
+1. "Create HTML structure using existing components"
+2. "Use layout.css utilities for responsive grid/flex layouts"
+3. "Apply neutral colors with strategic brand color usage"
+4. "Ensure semantic HTML and accessibility compliance"
 ```
 
 ## Troubleshooting

@@ -6,7 +6,10 @@
       "mcp__figma-dev-mode-mcp-server__get_metadata",
       "mcp__figma-dev-mode-mcp-server__get_variable_defs",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__get-library-docs"
+      "mcp__context7__get-library-docs",
+      "Bash(dir css)",
+      "Bash(dir)",
+      "Bash(del cards.css search.css alerts.css)"
     ],
     "deny": [],
     "ask": []

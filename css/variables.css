@@ -4,17 +4,17 @@
      PRIMITIVE VARIABLES
      =================== */
   
-  /* Neutral Colors (50-900) */
+  /* Neutral Colors (50-900) - shadcn/ui inspired */
   --neutral-50: #fafafa;
-  --neutral-100: #f5f5f5;
-  --neutral-200: #e5e5e5;
-  --neutral-300: #d4d4d4;
-  --neutral-400: #a3a3a3;
-  --neutral-500: #737373;
-  --neutral-600: #525252;
-  --neutral-700: #404040;
-  --neutral-800: #262626;
-  --neutral-900: #171717;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
   
   /* Brand Colors (50-900) */
   --brand-50: #f5f6f9;
@@ -69,11 +69,11 @@
      =================== */
   
   /* Text Colors */
-  --txt-dark: #2e4155;
-  --txt-default: #5b647b;
-  --txt-light: #7e879a;
-  --txt-brand: #6075a4;
-  --txt-brand-dark: #455376;
+  --txt-dark: var(--neutral-900);
+  --txt-default: var(--neutral-700);
+  --txt-light: var(--neutral-500);
+  --txt-brand: #000BFF;
+  --txt-brand-dark: #000BFF;
   --txt-white: #ffffff;
   --txt-brand-support: #f9efe4;
   --txt-success: var(--success-600);
@@ -83,21 +83,21 @@
   
   /* Background Colors */
   --bg-default: #ffffff;
-  --bg-brand: #6075a4;
+  --bg-brand: #000BFF;
   --bg-white: #ffffff;
-  --bg-brand-light: var(--brand-100);
-  --bg-brand-lightest: #f5f6f9;
-  --bg-brand-support: #f9efe4; /* Yellow background for icons */
+  --bg-brand-light: var(--neutral-100);
+  --bg-brand-lightest: var(--neutral-50);
+  --bg-brand-support: #f9efe4;
   --bg-success: var(--success-600);
   --bg-warning: var(--warning-600);
   --bg-error: var(--error-600);
   --bg-light: var(--neutral-50);
   
   /* Border Colors */
-  --bd-default: #cacdd3;
+  --bd-default: var(--neutral-200);
   --bd-light: var(--neutral-200);
-  --bd-dark: #a4a9b7;
-  --bd-brand: #6075a4;
+  --bd-dark: var(--neutral-400);
+  --bd-brand: #000BFF;
   --bd-disable: var(--neutral-300);
   --bd-success: var(--success-600);
   --bd-error: var(--error-600);
@@ -105,17 +105,17 @@
   --bd-white: #ffffff;
   
   /* Typography - Font Sizes */
-  --fs-h1: 6rem; /* 96px */
-  --fs-h2: 4.5rem; /* 72px */
-  --fs-h3: 3.5rem; /* 56px */
-  --fs-h4: 2.75rem; /* 44px */
-  --fs-h5: 2rem; /* 32px */
-  --fs-h6: 1.5rem; /* 24px */
-  --fs-default: 1.25rem; /* 20px */
-  --fs-large: 2rem; /* 32px */
-  --fs-small: 1rem; /* 16px */
-  --fs-caption: 0.875rem; /* 14px */
-  --fs-label: 1.125rem; /* 18px */
+  --fs-h1: 2.25rem; /* 36px */
+  --fs-h2: 1.875rem; /* 30px */
+  --fs-h3: 1.5rem; /* 24px */
+  --fs-h4: 1.25rem; /* 20px */
+  --fs-h5: 1.125rem; /* 18px */
+  --fs-h6: 1rem; /* 16px */
+  --fs-default: 0.875rem; /* 14px */
+  --fs-large: 1.125rem; /* 18px */
+  --fs-small: 0.875rem; /* 14px */
+  --fs-caption: 0.75rem; /* 12px */
+  --fs-label: 0.875rem; /* 14px */
   
   /* Typography - Font Weights */
   --fw-default: 400;
@@ -127,13 +127,13 @@
   --fw-black: 900;
   
   /* Font Family */
-  --font-family-base: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  
+  --font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
   /* Typography Font Families */
-  --heading-font: 'Playfair Display', Georgia, serif;
-  --body-font: 'Jost', system-ui, sans-serif;
-  --display-font: 'Playfair Display', Georgia, serif;
+  --heading-font: 'Inter', system-ui, sans-serif;
+  --body-font: 'Inter', system-ui, sans-serif;
+  --display-font: 'Inter', system-ui, sans-serif;
   
   /* Spacing */
   --space-0: 0;
