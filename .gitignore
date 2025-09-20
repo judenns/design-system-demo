@@ -52,8 +52,6 @@ temp/
 # Cache
 .cache/
 .parcel-cache/
-
-# Sass cache
 .sass-cache/
 
 # Optional npm cache directory
@@ -62,14 +60,8 @@ temp/
 # Optional REPL history
 .node_repl_history
 
-# Output of 'npm pack'
-*.tgz
-
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
 
 # Serverless directories
 .serverless
@@ -80,3 +72,16 @@ temp/
 # DynamoDB Local files
 .dynamodb/
 .vercel
+
+# Claude Code settings (keep settings.json, ignore local overrides)
+.claude/settings.local.json
+.claude/agents/*/state.json
+
+# Design system artifacts
+*.sketch
+*.fig
+.figmatoken
+design-tokens.json
+
+# Live reload and local development
+.live-server/

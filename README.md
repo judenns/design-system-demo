@@ -26,7 +26,6 @@ design-system-demo/
 ├── css/                   # Stylesheets
 │   ├── reset.css          # CSS Reset (Andy Bell)
 │   ├── variables.css      # Design tokens (customizable)
-│   ├── main.css           # Shared base styles
 │   ├── pages/             # Page-specific styles
 │   │   ├── index.css      # Landing page styles
 │   │   └── showcase.css   # Component showcase styles
@@ -42,7 +41,12 @@ design-system-demo/
 ├── docs/                 # Documentation
 │   ├── design-system.md  # Design system guide
 │   └── figma-mcp-guide.md # Figma integration guide
+├── .claude/              # Claude Code configuration
+│   ├── agents/          # Specialized agent configurations
+│   ├── settings.json    # Project MCP settings
+│   └── settings.local.json # Local MCP overrides (ignored by git)
 ├── .gitignore           # Git ignore file
+├── CLAUDE.md            # Claude Code project instructions
 └── README.md            # This file
 ```
 
@@ -89,7 +93,6 @@ Modular CSS structure for better maintainability:
 css/
 ├── reset.css              # Modern CSS reset
 ├── variables.css          # Design tokens (customizable typography, colors, spacing)
-├── main.css               # Shared base styles for all pages
 ├── pages/                 # Page-specific styles
 │   ├── index.css          # Landing page styles
 │   └── showcase.css       # Component showcase styles
