@@ -5,7 +5,7 @@
 /* Section Heading Component */
 .section-heading {
   text-align: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 2rem;
 }
 
 .section-heading__title {
@@ -14,7 +14,7 @@
   font-weight: var(--fw-semibold);
   color: var(--txt-dark);
   line-height: 1.2;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 1rem;
 }
 
 .section-heading__description {

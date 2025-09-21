@@ -7,31 +7,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   font-size: var(--fs-default);
   font-weight: var(--fw-medium);
-  font-family: var(--body-font);
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
   gap: 0.5rem;
-  height: 2.5rem;
+  height: 48px;
   line-height: 1;
-  min-width: max-content;
-  width: auto;
-  white-space: nowrap;
+  
 }
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--bd-default);
+  box-shadow: var(--focus-ring);
 }
 
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--bd-default);
+  box-shadow: var(--focus-ring);
 }
 
 .btn:active:not(:disabled) {
@@ -51,28 +48,29 @@
 }
 
 .btn--primary:hover:not(:disabled) {
-  background-color: var(--neutral-800);
-  border-color: var(--neutral-800);
+  background-color: var(--brand-800);
+  border-color: var(--brand-800);
 }
 
-.btn--secondary-fill {
-  background-color: var(--bg-brand-light);
-  color: var(--txt-default);
+.btn--tonal {
+  background-color: var(--brand-100);
+  color: var(--txt-brand);
   border-color: transparent;
 }
 
-.btn--secondary-fill:hover:not(:disabled) {
-  background-color: var(--neutral-200);
+.btn--tonal:hover:not(:disabled) {
+  background-color: var(--brand-200);
 }
 
-.btn--secondary-outline {
+.btn--outline {
   background-color: transparent;
-  color: var(--txt-default);
-  border-color: var(--bd-default);
+  color: var(--txt-brand);
+  border: 2px solid var(--bd-brand);
 }
 
-.btn--secondary-outline:hover:not(:disabled) {
-  background-color: var(--bg-brand-light);
+.btn--outline:hover:not(:disabled) {
+  background-color: var(--brand-100);
+  border-color: transparent;
 }
 
 .btn--white {
@@ -82,7 +80,7 @@
 }
 
 .btn--white:hover:not(:disabled) {
-  background-color: var(--bg-brand-lightest);
+  background-color: var(--brand-50);
 }
 
 .btn--white-outline {
@@ -107,43 +105,25 @@
 }
 
 .btn--link:hover:not(:disabled) {
-  color: var(--txt-brand-dark);
+  color: var(--brand-800);
 }
 
 /* Button Sizes */
-.btn--mobile {
-  height: 60px;
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--fs-small);
-  letter-spacing: 0.02em;
-}
-
 .btn--sm {
-  padding: var(--space-xs) var(--space-sm);
-  font-size: var(--fs-small);
-  border-radius: var(--radius-md);
-  height: auto;
-  min-width: auto;
-}
-
-.btn--md {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--fs-default);
-  border-radius: var(--radius-md);
-  height: auto;
-  min-width: auto;
+  height: 36px;
+  padding: 0 0.75rem;
+  font-size: 14px;
 }
 
 .btn--lg {
-  padding: var(--space-md) var(--space-xl);
+  height: 56px;
+  padding: 0 1.5rem;
   font-size: var(--fs-default);
-  border-radius: var(--radius-lg);
-  height: auto;
 }
 
 .btn--round {
   border-radius: var(--radius-full);
-  padding: var(--space-sm) var(--space-lg);
+  padding: 0 2rem;
 }
 
 /* Button Icons */
@@ -174,6 +154,6 @@
   }
 
   .btn + .btn {
-    margin-top: var(--space-sm);
+    margin-top: 1rem;
   }
 }

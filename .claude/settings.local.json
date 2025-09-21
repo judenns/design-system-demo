@@ -9,7 +9,8 @@
       "mcp__context7__get-library-docs",
       "Bash(dir css)",
       "Bash(dir)",
-      "Bash(del cards.css search.css alerts.css)"
+      "Bash(del cards.css search.css alerts.css)",
+      "Bash(del \"E:\\dev\\design-system-demo\\css\\pages\\index.css\")"
     ],
     "deny": [],
     "ask": []

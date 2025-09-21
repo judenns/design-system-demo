@@ -6,7 +6,7 @@ export default defineConfig({
     port: 3000,           // Custom port (default is 5173)
     host: true,           // Allow external connections
     open: true,           // Auto-open browser
-    // open: '/showcase.html', // Open specific page
+    // open: '/design-system.html', // Open specific page
     strictPort: false,    // Try next port if current is busy
     cors: true,           // Enable CORS
     // https: true,       // Enable HTTPS (uncomment if needed)
@@ -18,6 +18,14 @@ export default defineConfig({
     assetsDir: 'assets',  // Assets directory inside dist
     sourcemap: false,     // No source maps for production
     minify: 'esbuild',    // Use esbuild for faster minification
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor code for better caching
+          vendor: ['phosphor-icons']
+        }
+      }
+    }
   },
 
   // Base path for deployment

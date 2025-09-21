@@ -10,10 +10,13 @@
     "dev": "vite",
     "dev:host": "vite --host",
     "dev:https": "vite --https",
+    "dev:design": "vite --open /design-system.html",
     "build": "vite build",
     "build:watch": "vite build --watch",
+    "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
-    "preview:https": "vite preview --https"
+    "preview:https": "vite preview --https",
+    "clean": "rm -rf dist node_modules/.vite"
   },
   "repository": {
     "type": "git",

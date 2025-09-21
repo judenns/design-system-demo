@@ -4,43 +4,43 @@
      PRIMITIVE VARIABLES
      =================== */
   
-  /* Neutral Colors (50-900) - shadcn/ui inspired */
+  /* Neutral Colors (50-900) - Custom progression matching your updates */
   --neutral-50: #fafafa;
-  --neutral-100: #f4f4f5;
-  --neutral-200: #e4e4e7;
-  --neutral-300: #d4d4d8;
-  --neutral-400: #a1a1aa;
-  --neutral-500: #71717a;
-  --neutral-600: #52525b;
-  --neutral-700: #3f3f46;
-  --neutral-800: #27272a;
-  --neutral-900: #18181b;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #777;
+  --neutral-600: #555;
+  --neutral-700: #444;
+  --neutral-800: #222;
+  --neutral-900: #111;
   
-  /* Brand Colors (50-900) */
-  --brand-50: #f5f6f9;
-  --brand-100: #ebeef4;
-  --brand-200: #d7dce9;
-  --brand-300: #c3cadf;
-  --brand-400: #a9b3d0;
-  --brand-500: #8f9cc2;
-  --brand-600: #6075a4;
-  --brand-700: #455376;
-  --brand-800: #2e4155;
-  --brand-900: #1a2638;
+  /* Brand Colors (50-900) - Tailwind blue hex values with brand-700: #000BFF */
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #000BFF;
+  --brand-800: #030BB5;
+  --brand-900: #05073D;
   
-  /* Success Colors (50-900) */
-  --success-50: #ecfdf5;
-  --success-100: #d1fae5;
-  --success-200: #a7f3d0;
-  --success-300: #6ee7b7;
-  --success-400: #34d399;
-  --success-500: #10b981;
-  --success-600: #059669;
-  --success-700: #047857;
-  --success-800: #065f46;
-  --success-900: #064e3b;
+  /* Success Colors (50-900) - Tailwind green hex values */
+  --success-50: #f0fdf4;
+  --success-100: #dcfce7;
+  --success-200: #bbf7d0;
+  --success-300: #86efac;
+  --success-400: #4ade80;
+  --success-500: #22c55e;
+  --success-600: #16a34a;
+  --success-700: #15803d;
+  --success-800: #166534;
+  --success-900: #14532d;
   
-  /* Warning Colors (50-900) */
+  /* Warning Colors (50-900) - Tailwind amber hex values */
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
   --warning-200: #fde68a;
@@ -52,7 +52,7 @@
   --warning-800: #92400e;
   --warning-900: #78350f;
   
-  /* Error Colors (50-900) */
+  /* Error Colors (50-900) - Tailwind red hex values */
   --error-50: #fef2f2;
   --error-100: #fee2e2;
   --error-200: #fecaca;
@@ -72,54 +72,46 @@
   --txt-dark: var(--neutral-900);
   --txt-default: var(--neutral-700);
   --txt-light: var(--neutral-500);
-  --txt-brand: #000BFF;
-  --txt-brand-dark: #000BFF;
+  --txt-brand: var(--brand-700);
   --txt-white: #ffffff;
-  --txt-brand-support: #f9efe4;
-  --txt-success: var(--success-600);
-  --txt-error: var(--error-600);
-  --txt-warning: var(--warning-600);
+  --txt-success: var(--success-700);
+  --txt-error: var(--error-700);
+  --txt-warning: var(--warning-700);
   --txt-disable: var(--neutral-400);
   
   /* Background Colors */
   --bg-default: #ffffff;
-  --bg-brand: #000BFF;
+  --bg-brand: var(--brand-700);
   --bg-white: #ffffff;
-  --bg-brand-light: var(--neutral-100);
-  --bg-brand-lightest: var(--neutral-50);
-  --bg-brand-support: #f9efe4;
-  --bg-success: var(--success-600);
-  --bg-warning: var(--warning-600);
-  --bg-error: var(--error-600);
+  --bg-brand-light: var(--brand-100);
+  --bg-success: var(--success-700);
+  --bg-warning: var(--warning-700);
+  --bg-error: var(--error-700);
   --bg-light: var(--neutral-50);
   
   /* Border Colors */
   --bd-default: var(--neutral-200);
-  --bd-light: var(--neutral-200);
-  --bd-dark: var(--neutral-400);
-  --bd-brand: #000BFF;
-  --bd-disable: var(--neutral-300);
-  --bd-success: var(--success-600);
-  --bd-error: var(--error-600);
-  --bd-warning: var(--warning-600);
+  --bd-brand: var(--brand-700);
+  --bd-success: var(--success-700);
+  --bd-error: var(--error-700);
+  --bd-warning: var(--warning-700);
   --bd-white: #ffffff;
   
   /* Typography - Font Sizes */
-  --fs-h1: 2.25rem; /* 36px */
-  --fs-h2: 1.875rem; /* 30px */
-  --fs-h3: 1.5rem; /* 24px */
-  --fs-h4: 1.25rem; /* 20px */
-  --fs-h5: 1.125rem; /* 18px */
-  --fs-h6: 1rem; /* 16px */
-  --fs-default: 0.875rem; /* 14px */
-  --fs-large: 1.125rem; /* 18px */
+  --fs-h1: 4.5rem; /* 72px */
+  --fs-h2: 3.75rem; /* 60px */
+  --fs-h3: 3.25rem; /* 52px */
+  --fs-h4: 2.75rem; /* 44px */
+  --fs-h5: 2rem; /* 32px */
+  --fs-h6: 1.5rem; /* 24px */
+  --fs-default: 1rem; /* 16px */
+  --fs-large: 1.25rem; /* 20px */
   --fs-small: 0.875rem; /* 14px */
   --fs-caption: 0.75rem; /* 12px */
   --fs-label: 0.875rem; /* 14px */
   
   /* Typography - Font Weights */
   --fw-default: 400;
-  --fw-italic: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
@@ -127,33 +119,19 @@
   --fw-black: 900;
   
   /* Font Family */
-  --font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
   /* Typography Font Families */
   --heading-font: 'Inter', system-ui, sans-serif;
-  --body-font: 'Inter', system-ui, sans-serif;
+  --default-font: 'Inter', system-ui, sans-serif;
   --display-font: 'Inter', system-ui, sans-serif;
+  --mono-font: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace;
   
-  /* Spacing */
-  --space-0: 0;
-  --space-xs: 0.5rem; /* 8px */
-  --space-sm: 1rem; /* 16px */
-  --space-md: 1.5rem; /* 24px */
-  --space-lg: 2rem; /* 32px */
-  --space-xl: 2.5rem; /* 40px */
-  --space-2xl: 4rem; /* 64px */
-  --space-3xl: 5rem; /* 80px */
-  --space-4xl: 7.5rem; /* 120px */
+  /* Section Spacing */
+  --section-space-default: 10rem;
+  --section-space-lg: 10rem;
+  --section-space-md: 7.5rem;
+  --section-space-sm: 5rem;
 
-  /* Component Spacing */
-  --component-spacing-sm: 1rem; /* 16px */
-  --component-spacing-md: 1.5rem; /* 24px */
-  --component-spacing-lg: 2rem; /* 32px */
-
-  /* Button Spacing */
-  --button-gap: 2rem; /* 32px */
-  
   /* Border Radius */
   --radius-none: 0;
   --radius-sm: 0.25rem;
@@ -167,6 +145,11 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Focus Shadows */
+  --focus-ring: 0 0 0 2px var(--bd-default);
+  --focus-ring-brand: 0 0 0 3px var(--brand-100);
+  --focus-ring-error: 0 0 0 3px var(--error-100);
   
   /* Transitions */
   --transition-fast: 150ms ease-in-out;

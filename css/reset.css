@@ -28,6 +28,7 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  font-family: var(--default-font);
   line-height: 1.5;
 }
 
@@ -65,4 +66,9 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
 }

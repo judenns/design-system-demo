@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/components/index.css" />
+  <link rel="stylesheet" href="/css/pages/design-system.css" />
+</head>
+
+<body>
+  <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 3rem 2rem;">
+
+    <!-- Header -->
+    <header style="text-align: center; margin-bottom: 5rem;">
+      <h1 style="font-size: var(--fs-h1); font-weight: 700; color: var(--txt-dark); margin-bottom: 1.5rem;">
+        Design System
+      </h1>
+      <p style="font-size: var(--fs-large); color: var(--txt-default); max-width: 600px; margin: 0 auto;">
+        Clean, modern design system built with CSS custom properties and semantic tokens.
+      </p>
+    </header>
+
+    <!-- Color Palette -->
+    <section style="margin-bottom: 5rem;">
+      <h2 style="font-size: var(--fs-h2); font-weight: 600; color: var(--txt-dark); margin-bottom: 3rem;">
+        Color Palette
+      </h2>
+
+      <!-- Primitive Colors -->
+      <div style="margin-bottom: 4rem;">
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Primitive Colors</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <!-- Neutral Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Neutral Scale</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--neutral-50); border: 1px solid var(--neutral-200); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">neutral-50</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#fafafa</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--neutral-200); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">neutral-200</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#e5e5e5</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--neutral-500); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">neutral-500</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#777</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--neutral-700); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">neutral-700</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#444</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--neutral-900); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">neutral-900</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#111</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Brand Scale</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--brand-100); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">brand-100</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#dbeafe</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--brand-500); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">brand-500</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#3b82f6</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--brand-700); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem; color: var(--brand-700);">brand-700</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#000BFF</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--brand-800); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">brand-800</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#030BB5</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Success Scale</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--success-50); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">success-50</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#f0fdf4</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--success-500); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">success-500</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#22c55e</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--success-700); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">success-700</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#15803d</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Warning Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Warning Scale</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--warning-50); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">warning-50</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#fffbeb</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--warning-500); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">warning-500</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#f59e0b</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--warning-700); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">warning-700</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#b45309</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Error Scale</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--error-50); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">error-50</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#fef2f2</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--error-500); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">error-500</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#ef4444</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+                <div style="width: 40px; height: 40px; background: var(--error-700); border-radius: 6px;"></div>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.875rem;">error-700</div>
+                  <div style="font-size: 0.75rem; color: var(--txt-light); font-family: var(--mono-font);">#b91c1c</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semantic Color Variables -->
+      <div>
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Semantic Color Variables</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+          <!-- Text Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Text Colors (txt-*)</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-dark); font-weight: 500;">txt-dark</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-900</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-default); font-weight: 500;">txt-default</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-light); font-weight: 500;">txt-light</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-500</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-brand); font-weight: 500;">txt-brand</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">brand-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-white); background: var(--neutral-900); padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 500;">txt-white</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">#ffffff</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-success); font-weight: 500;">txt-success</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">success-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-error); font-weight: 500;">txt-error</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">error-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-warning); font-weight: 500;">txt-warning</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">warning-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="color: var(--txt-disable); font-weight: 500;">txt-disable</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-400</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Background Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Background Colors (bg-*)</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-default); border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="font-weight: 500;">bg-default</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">#ffffff</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-brand); border: 1px solid var(--brand-700); border-radius: 6px;">
+                <span style="color: var(--txt-white); font-weight: 500;">bg-brand</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-white);">brand-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-white); border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="font-weight: 500;">bg-white</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">#ffffff</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-brand-light); border: 1px solid var(--brand-200); border-radius: 6px;">
+                <span style="color: var(--txt-brand); font-weight: 500;">bg-brand-light</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">brand-100</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-success); border: 1px solid var(--success-700); border-radius: 6px;">
+                <span style="color: var(--txt-white); font-weight: 500;">bg-success</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-white);">success-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-warning); border: 1px solid var(--warning-700); border-radius: 6px;">
+                <span style="color: var(--txt-white); font-weight: 500;">bg-warning</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-white);">warning-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-error); border: 1px solid var(--error-700); border-radius: 6px;">
+                <span style="color: var(--txt-white); font-weight: 500;">bg-error</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-white);">error-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--bg-light); border: 1px solid var(--neutral-200); border-radius: 6px;">
+                <span style="font-weight: 500;">bg-light</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-50</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Border Colors -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Border Colors (bd-*)</h4>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 2px solid var(--bd-default); border-radius: 6px;">
+                <span style="font-weight: 500;">bd-default</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">neutral-200</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 2px solid var(--bd-brand); border-radius: 6px;">
+                <span style="color: var(--txt-brand); font-weight: 500;">bd-brand</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">brand-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 2px solid var(--bd-success); border-radius: 6px;">
+                <span style="color: var(--txt-success); font-weight: 500;">bd-success</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">success-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 2px solid var(--bd-error); border-radius: 6px;">
+                <span style="color: var(--txt-error); font-weight: 500;">bd-error</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">error-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border: 2px solid var(--bd-warning); border-radius: 6px;">
+                <span style="color: var(--txt-warning); font-weight: 500;">bd-warning</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-light);">warning-700</code>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--neutral-900); border: 2px solid var(--bd-white); border-radius: 6px;">
+                <span style="color: var(--txt-white); font-weight: 500;">bd-white</span>
+                <code style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-white);">#ffffff</code>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section style="margin-bottom: 5rem;">
+      <h2 style="font-size: var(--fs-h2); font-weight: 600; color: var(--txt-dark); margin-bottom: 3rem;">
+        Typography
+      </h2>
+
+      <!-- Type Scale -->
+      <div style="margin-bottom: 4rem;">
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Type Scale</h3>
+        <div style="display: grid; gap: 2.5rem;">
+
+          <div>
+            <h1 style="font-size: var(--fs-h1); margin: 0; line-height: 1.1; font-weight: 700;">Great design starts with typography</h1>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H1 - 72px - --fs-h1</div>
+          </div>
+
+          <div>
+            <h2 style="font-size: var(--fs-h2); margin: 0; line-height: 1.2; font-weight: 600;">Powerful interface design</h2>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H2 - 60px - --fs-h2</div>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--fs-h3); margin: 0; line-height: 1.3; font-weight: 600;">Modern component system</h3>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H3 - 52px - --fs-h3</div>
+          </div>
+
+          <div>
+            <h4 style="font-size: var(--fs-h4); margin: 0; line-height: 1.4; font-weight: 600;">Clean visual hierarchy</h4>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H4 - 44px - --fs-h4</div>
+          </div>
+
+          <div>
+            <h5 style="font-size: var(--fs-h5); margin: 0; line-height: 1.4; font-weight: 600;">Consistent spacing</h5>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H5 - 32px - --fs-h5</div>
+          </div>
+
+          <div>
+            <h6 style="font-size: var(--fs-h6); margin: 0; line-height: 1.4; font-weight: 600;">Accessible colors</h6>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">H6 - 24px - --fs-h6</div>
+          </div>
+
+          <div>
+            <p style="margin: 0; font-size: var(--fs-large); color: var(--txt-default); line-height: 1.5;">Large body text for important descriptions and introductory paragraphs that need emphasis.</p>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">Large - 20px - --fs-large</div>
+          </div>
+
+          <div>
+            <p style="margin: 0; font-size: var(--fs-default); color: var(--txt-default); line-height: 1.6;">Default body text for regular paragraphs, descriptions, and general content. Optimized for readability across all devices.</p>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">Default - 16px - --fs-default</div>
+          </div>
+
+          <div>
+            <p style="margin: 0; font-size: var(--fs-small); color: var(--txt-default); line-height: 1.5;">Small text for secondary information, helper text, and captions that support main content.</p>
+            <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font); margin-top: 0.5rem;">Small - 14px - --fs-small</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Font Weights & Code -->
+      <div>
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Font Weights & Code Font</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+          <!-- Font Weights -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Font Weights</h4>
+            <div style="display: grid; gap: 1rem;">
+              <div>
+                <div style="font-weight: 400; font-size: var(--fs-large);">Regular weight for body text</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font);">400 - --fw-default</div>
+              </div>
+              <div>
+                <div style="font-weight: 500; font-size: var(--fs-large);">Medium weight for emphasis</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font);">500 - --fw-medium</div>
+              </div>
+              <div>
+                <div style="font-weight: 600; font-size: var(--fs-large);">Semibold for headings</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font);">600 - --fw-semibold</div>
+              </div>
+              <div>
+                <div style="font-weight: 700; font-size: var(--fs-large);">Bold for strong emphasis</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light); font-family: var(--mono-font);">700 - --fw-bold</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Font -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Code Font</h4>
+            <div style="background: var(--neutral-50); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--neutral-200);">
+              <div style="font-family: var(--mono-font); font-size: 0.875rem; color: var(--txt-default); line-height: 1.6;">
+                <div style="margin-bottom: 0.5rem;">JetBrains Mono - 14px minimum</div>
+                <div style="color: var(--txt-brand);">function calculateTotal(items) {</div>
+                <div style="color: var(--txt-default); margin-left: 1rem;">return items.reduce((sum, item) => sum + item.price, 0);</div>
+                <div style="color: var(--txt-brand);">}</div>
+              </div>
+              <div style="font-size: 0.875rem; color: var(--txt-light); margin-top: 1rem;">
+                Used for code blocks, variable names, and technical content
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section style="margin-bottom: 5rem;">
+      <h2 style="font-size: var(--fs-h2); font-weight: 600; color: var(--txt-dark); margin-bottom: 3rem;">
+        Components
+      </h2>
+
+      <!-- Buttons -->
+      <div style="margin-bottom: 4rem;">
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Buttons</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+          <!-- Button Variants -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Variants</h4>
+            <div style="display: grid; gap: 1rem;">
+              <button type="button" class="btn btn--primary">Primary Button</button>
+              <button type="button" class="btn btn--tonal">Tonal Button</button>
+              <button type="button" class="btn btn--outline">Outline Button</button>
+              <button type="button" class="btn btn--link">Link Button</button>
+              <button type="button" class="btn btn--primary" disabled>Disabled Button</button>
+            </div>
+          </div>
+
+          <!-- Button Sizes -->
+          <div>
+            <h4 style="font-size: var(--fs-h5); font-weight: 600; margin-bottom: 1rem; color: var(--txt-dark);">Sizes</h4>
+            <div style="display: grid; gap: 1rem; align-items: flex-start;">
+              <button type="button" class="btn btn--primary btn--sm">Small (36px)</button>
+              <button type="button" class="btn btn--primary">Default (48px)</button>
+              <button type="button" class="btn btn--primary btn--lg">Large (56px)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Elements -->
+      <div>
+        <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 2rem; color: var(--txt-dark);">Form Elements</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+          <div>
+            <div style="display: grid; gap: 1.5rem;">
+              <div class="form-group">
+                <label class="label" for="demo-input">Text Input</label>
+                <input type="text" id="demo-input" class="input" placeholder="Enter text here">
+              </div>
+
+              <div class="form-group">
+                <label class="label" for="demo-textarea">Textarea</label>
+                <textarea id="demo-textarea" class="textarea" placeholder="Enter your message..." rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="label" for="demo-select">Select</label>
+                <select id="demo-select" class="select">
+                  <option>Choose an option</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: grid; gap: 1.5rem;">
+              <div class="checkbox">
+                <input type="checkbox" id="demo-checkbox" class="checkbox__input">
+                <label for="demo-checkbox" class="checkbox__label">Checkbox option</label>
+              </div>
+
+              <div class="radio-group">
+                <div class="radio">
+                  <input type="radio" id="demo-radio1" name="demo-radio" class="radio__input">
+                  <label for="demo-radio1" class="radio__label">Radio option 1</label>
+                </div>
+                <div class="radio">
+                  <input type="radio" id="demo-radio2" name="demo-radio" class="radio__input">
+                  <label for="demo-radio2" class="radio__label">Radio option 2</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Tokens -->
+    <section>
+      <h2 style="font-size: var(--fs-h2); font-weight: 600; color: var(--txt-dark); margin-bottom: 3rem;">
+        Design Tokens
+      </h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
+
+        <!-- Spacing -->
+        <div>
+          <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 1.5rem; color: var(--txt-dark);">Spacing (Sections Only)</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--neutral-50); border-radius: 8px; border: 1px solid var(--neutral-200);">
+              <span style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--section-space-sm</span>
+              <span style="font-size: 0.875rem; color: var(--txt-light);">5rem (80px)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--neutral-50); border-radius: 8px; border: 1px solid var(--neutral-200);">
+              <span style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--section-space-default</span>
+              <span style="font-size: 0.875rem; color: var(--txt-light);">10rem (160px)</span>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--brand-50); border-radius: 8px; font-size: 0.875rem; color: var(--txt-default); border: 1px solid var(--brand-200);">
+            <strong>Note:</strong> Components use direct px/rem values. Section spacing variables are for large layout areas only.
+          </div>
+        </div>
+
+        <!-- Border Radius -->
+        <div>
+          <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 1.5rem; color: var(--txt-dark);">Border Radius</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+              <div style="width: 40px; height: 40px; background: var(--brand-500); border-radius: var(--radius-sm);"></div>
+              <div>
+                <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--radius-sm</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light);">0.25rem (4px)</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+              <div style="width: 40px; height: 40px; background: var(--brand-500); border-radius: var(--radius-md);"></div>
+              <div>
+                <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--radius-md</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light);">0.5rem (8px)</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+              <div style="width: 40px; height: 40px; background: var(--brand-500); border-radius: var(--radius-lg);"></div>
+              <div>
+                <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--radius-lg</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light);">0.75rem (12px)</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border: 1px solid var(--neutral-200); border-radius: 8px;">
+              <div style="width: 40px; height: 40px; background: var(--brand-500); border-radius: var(--radius-full);"></div>
+              <div>
+                <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--radius-full</div>
+                <div style="font-size: 0.875rem; color: var(--txt-light);">9999px (full)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shadows -->
+        <div>
+          <h3 style="font-size: var(--fs-h4); font-weight: 600; margin-bottom: 1.5rem; color: var(--txt-dark);">Shadows</h3>
+          <div style="display: grid; gap: 1rem;">
+            <div style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--shadow-sm</div>
+              <div style="font-size: 0.875rem; color: var(--txt-light);">Subtle elevation</div>
+            </div>
+            <div style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: var(--shadow-md);">
+              <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--shadow-md</div>
+              <div style="font-size: 0.875rem; color: var(--txt-light);">Medium elevation</div>
+            </div>
+            <div style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: var(--shadow-lg);">
+              <div style="font-family: var(--mono-font); font-size: 0.875rem; font-weight: 500;">--shadow-lg</div>
+              <div style="font-size: 0.875rem; color: var(--txt-light);">High elevation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

@@ -6,9 +6,8 @@
 .input {
   display: block;
   width: 100%;
-  padding: var(--space-sm) var(--space-md);
+  padding: 1rem 1.5rem;
   font-size: var(--fs-default);
-  font-family: var(--font-family-base);
   color: var(--txt-default);
   background-color: var(--bg-white);
   border: 1px solid var(--bd-default);
@@ -19,7 +18,7 @@
 .input:focus {
   outline: none;
   border-color: var(--bd-brand);
-  box-shadow: 0 0 0 3px var(--brand-100);
+  box-shadow: var(--focus-ring-brand);
 }
 
 .input:disabled {
@@ -34,7 +33,7 @@
 
 .input--error:focus {
   border-color: var(--bd-error);
-  box-shadow: 0 0 0 3px var(--error-100);
+  box-shadow: var(--focus-ring-error);
 }
 
 /* Label Component */
@@ -43,7 +42,7 @@
   font-size: var(--fs-label);
   font-weight: var(--fw-medium);
   color: var(--txt-dark);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0.5rem;
 }
 
 .label--required::after {
@@ -53,7 +52,7 @@
 
 /* Form Group */
 .form-group {
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.5rem;
 }
 
 /* Textarea Component */
@@ -61,9 +60,8 @@
   display: block;
   width: 100%;
   min-height: 120px;
-  padding: var(--space-sm) var(--space-md);
+  padding: 1rem 1.5rem;
   font-size: var(--fs-default);
-  font-family: var(--font-family-base);
   color: var(--txt-default);
   background-color: var(--bg-white);
   border: 1px solid var(--bd-default);
@@ -75,7 +73,7 @@
 .textarea:focus {
   outline: none;
   border-color: var(--bd-brand);
-  box-shadow: 0 0 0 3px var(--brand-100);
+  box-shadow: var(--focus-ring-brand);
 }
 
 .textarea:disabled {
@@ -89,9 +87,8 @@
 .select {
   display: block;
   width: 100%;
-  padding: var(--space-sm) var(--space-md);
+  padding: 1rem 1.5rem;
   font-size: var(--fs-default);
-  font-family: var(--font-family-base);
   color: var(--txt-default);
   background-color: var(--bg-white);
   border: 1px solid var(--bd-default);
@@ -99,17 +96,17 @@
   cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' fill='%2371717a' viewBox='0 0 256 256'%3e%3cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3e%3c/path%3e%3c/svg%3e");
-  background-position: right var(--space-sm) center;
+  background-position: right 1rem center;
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  padding-right: calc(var(--space-md) + 20px);
+  padding-right: calc(1.5rem + 20px);
   transition: all var(--transition-fast);
 }
 
 .select:focus {
   outline: none;
   border-color: var(--bd-brand);
-  box-shadow: 0 0 0 3px var(--brand-100);
+  box-shadow: var(--focus-ring-brand);
 }
 
 .select:disabled {
@@ -122,7 +119,7 @@
 .checkbox {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-xs);
+  gap: 0.5rem;
 }
 
 .checkbox__input {
@@ -160,7 +157,7 @@
 
 .checkbox__input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--brand-100);
+  box-shadow: var(--focus-ring-brand);
 }
 
 .checkbox__input:disabled {
@@ -184,7 +181,7 @@
 .radio {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-xs);
+  gap: 0.5rem;
 }
 
 .radio__input {
@@ -220,7 +217,7 @@
 
 .radio__input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--brand-100);
+  box-shadow: var(--focus-ring-brand);
 }
 
 .radio__input:disabled {
@@ -244,34 +241,34 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 0.5rem;
 }
 
 .radio-group--horizontal {
   flex-direction: row;
-  gap: var(--space-md);
+  gap: 1.5rem;
 }
 
 /* Form Error Message */
 .form-error {
   font-size: var(--fs-small);
   color: var(--txt-error);
-  margin-top: var(--space-xs);
+  margin-top: 0.5rem;
 }
 
 /* Form Help Text */
 .form-help {
   font-size: var(--fs-small);
   color: var(--txt-light);
-  margin-top: var(--space-xs);
+  margin-top: 0.5rem;
 }
 
 /* Form Actions */
 .form-actions {
   display: flex;
-  gap: var(--space-sm);
+  gap: 1rem;
   justify-content: flex-end;
-  margin-top: var(--space-lg);
+  margin-top: 2rem;
 }
 
 .form-actions--center {
@@ -290,6 +287,6 @@
 
   .radio-group--horizontal {
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 0.5rem;
   }
 }
