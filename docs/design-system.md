@@ -1,118 +1,124 @@
 # Design System & Component Reference
 
-A modern, customizable design system template with semantic CSS variables and flexible theming. This document serves as a reference when building new UI elements and can be adapted to any project's brand requirements.
+A modern, neutral design system built with semantic CSS variables and strategic brand color usage. This system provides a solid foundation that can be customized for any project while maintaining consistency and accessibility.
 
 ## Design System
 
 ### Color System
 
-A flexible semantic color system using CSS custom properties. All colors can be customized by updating the variables in `variables.css` to match your project's brand.
+Semantic color system built with CSS custom properties, emphasizing neutrals with strategic brand color usage.
+
+#### Philosophy
+- **Neutral Foundation**: Grays for 90% of UI elements
+- **Strategic Brand Usage**: Brand blue (#000BFF) for primary actions only
+- **Accessible Contrast**: All color combinations meet WCAG AA standards
+- **Semantic Naming**: Color variables describe usage, not appearance
 
 #### Text Colors
 ```css
---txt-dark: [customizable];         /* Primary headings, bold text */
---txt-default: [customizable];      /* Body text, regular content */
---txt-light: [customizable];        /* Secondary text, subtitles */
---txt-brand: [customizable];        /* Brand text, primary actions */
---txt-brand-dark: [customizable];   /* Dark brand text variations */
---txt-white: [customizable];        /* Text on dark backgrounds */
---txt-success: [customizable];      /* Success messages */
---txt-error: [customizable];        /* Error messages */
---txt-warning: [customizable];      /* Warning messages */
---txt-disable: [customizable];      /* Disabled text */
+--txt-dark: var(--neutral-800);     /* Primary headings, bold text */
+--txt-default: var(--neutral-600);  /* Body text, regular content */
+--txt-light: var(--neutral-500);    /* Secondary text, subtitles */
+--txt-brand: var(--brand-700);      /* Brand text (#000BFF) - primary actions */
+--txt-white: #ffffff;               /* Text on dark backgrounds */
+--txt-success: var(--success-700);  /* Success messages */
+--txt-error: var(--error-700);      /* Error messages */
+--txt-warning: var(--warning-700);  /* Warning messages */
+--txt-disable: var(--neutral-400);  /* Disabled text */
 ```
 
 #### Background Colors
 ```css
---bg-default: [customizable];       /* Default page background */
---bg-white: [customizable];         /* White backgrounds, cards */
---bg-brand: [customizable];         /* Primary brand background */
---bg-brand-light: [customizable];   /* Light brand background */
---bg-brand-lightest: [customizable]; /* Lightest brand background */
---bg-light: [customizable];         /* Light neutral background */
---bg-success: [customizable];       /* Success background */
---bg-warning: [customizable];       /* Warning background */
---bg-error: [customizable];         /* Error background */
+--bg-default: #ffffff;              /* Default page background */
+--bg-white: #ffffff;                /* Cards, modal backgrounds */
+--bg-brand: var(--brand-700);       /* Primary brand background (#000BFF) */
+--bg-brand-light: var(--brand-100); /* Light brand tints */
+--bg-light: var(--neutral-50);      /* Subtle section backgrounds */
+--bg-success: var(--success-700);   /* Success states */
+--bg-warning: var(--warning-700);   /* Warning states */
+--bg-error: var(--error-700);       /* Error states */
 ```
 
 #### Border Colors
 ```css
---bd-default: [customizable];       /* Default border color */
---bd-light: [customizable];         /* Light border color */
---bd-dark: [customizable];          /* Dark border color */
---bd-brand: [customizable];         /* Brand border color */
---bd-error: [customizable];         /* Error border color */
---bd-success: [customizable];       /* Success border color */
---bd-warning: [customizable];       /* Warning border color */
---bd-white: [customizable];         /* White border color */
+--bd-default: var(--neutral-200);   /* Default borders */
+--bd-brand: var(--brand-700);       /* Brand borders (#000BFF) */
+--bd-success: var(--success-700);   /* Success borders */
+--bd-error: var(--error-700);       /* Error borders */
+--bd-warning: var(--warning-700);   /* Warning borders */
+--bd-white: #ffffff;                /* White borders */
 ```
 
 ### Typography
 
 #### Font Families
 ```css
---font-family-base: [customizable];  /* Base font family */
---heading-font: [customizable];      /* Headings font family */
---body-font: [customizable];         /* Body text font family */
+--font-family-base: 'Inter', system-ui, sans-serif;  /* Primary font stack */
+--heading-font: var(--font-family-base);             /* Consistent typography */
+--body-font: var(--font-family-base);                /* Unified font system */
 ```
 
-#### Font Sizes
+#### Font Sizes (Type Scale)
 ```css
---fs-h1: [customizable];      /* Main headings */
---fs-h2: [customizable];      /* Section headings */
---fs-h3: [customizable];      /* Subsection headings */
---fs-h4: [customizable];      /* Card titles */
---fs-h5: [customizable];      /* Small headings */
---fs-h6: [customizable];      /* Minimal headings */
---fs-default: [customizable]; /* Body text */
---fs-large: [customizable];   /* Emphasized text */
---fs-small: [customizable];   /* Secondary text */
---fs-caption: [customizable]; /* Captions, labels */
---fs-label: [customizable];   /* Form labels */
+--fs-h1: 4.5rem;    /* 72px - Hero headings */
+--fs-h2: 3.75rem;   /* 60px - Page headings */
+--fs-h3: 3.25rem;   /* 52px - Section headings */
+--fs-h4: 2.75rem;   /* 44px - Subsection headings */
+--fs-h5: 2rem;      /* 32px - Component headings */
+--fs-h6: 1.5rem;    /* 24px - Small headings */
+--fs-default: 1rem; /* 16px - Body text baseline */
+--fs-large: 1.25rem; /* 20px - Emphasized text */
+--fs-small: 0.875rem; /* 14px - Secondary text */
+--fs-caption: 0.75rem; /* 12px - Captions, metadata */
+--fs-label: 0.875rem; /* 14px - Form labels */
 ```
 
 #### Font Weights
 ```css
---fw-default: [customizable];    /* Normal text */
---fw-italic: [customizable];     /* Italic text */
---fw-medium: [customizable];     /* Slightly emphasized */
---fw-semibold: [customizable];   /* Headings, buttons */
---fw-bold: [customizable];       /* Strong emphasis */
---fw-extrabold: [customizable];  /* Heavy emphasis */
---fw-black: [customizable];      /* Maximum weight */
+--fw-default: 400;    /* Normal body text */
+--fw-medium: 500;     /* Slightly emphasized text */
+--fw-semibold: 600;   /* Headings, buttons */
+--fw-bold: 700;       /* Strong emphasis */
+--fw-extrabold: 800;  /* Heavy emphasis */
+--fw-black: 900;      /* Maximum weight */
 ```
 
-### Spacing
+### Spacing Scale
+
+Consistent spacing system based on rem units for scalability:
 
 ```css
---space-0: [customizable];     /* Zero spacing */
---space-xs: [customizable];    /* Tight spacing */
---space-sm: [customizable];    /* Small spacing */
---space-md: [customizable];    /* Medium spacing */
---space-lg: [customizable];    /* Large spacing */
---space-xl: [customizable];    /* Extra large */
---space-2xl: [customizable];   /* Double extra large */
---space-3xl: [customizable];   /* Triple extra large */
---space-4xl: [customizable];   /* Maximum spacing */
+--space-0: 0;           /* Zero spacing */
+--space-xs: 0.25rem;    /* 4px - Tight spacing */
+--space-sm: 0.5rem;     /* 8px - Small spacing */
+--space-md: 1rem;       /* 16px - Medium spacing (baseline) */
+--space-lg: 1.5rem;     /* 24px - Large spacing */
+--space-xl: 2rem;       /* 32px - Extra large */
+--space-2xl: 3rem;      /* 48px - Double extra large */
+--space-3xl: 4rem;      /* 64px - Triple extra large */
+--space-4xl: 6rem;      /* 96px - Maximum spacing */
 ```
 
 ### Border Radius
 
 ```css
---radius-sm: [customizable];   /* Subtle rounding */
---radius-md: [customizable];   /* Standard rounding */
---radius-lg: [customizable];   /* Prominent rounding */
---radius-xl: [customizable];   /* Large rounding */
---radius-full: [customizable]; /* Pills, circles */
+--radius-none: 0;        /* No rounding */
+--radius-sm: 0.25rem;    /* 4px - Subtle rounding */
+--radius-md: 0.5rem;     /* 8px - Standard rounding */
+--radius-lg: 0.75rem;    /* 12px - Prominent rounding */
+--radius-xl: 1rem;       /* 16px - Large rounding */
+--radius-full: 9999px;   /* Pills, circles */
 ```
 
-### Shadows
+### Elevation (Shadows)
+
+Layered shadow system for depth hierarchy:
 
 ```css
---shadow-sm: [customizable];   /* Subtle shadow */
---shadow-md: [customizable];   /* Standard shadow */
---shadow-lg: [customizable];   /* Prominent shadow */
---shadow-xl: [customizable];   /* Dramatic shadow */
+--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);     /* Subtle elevation */
+--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);    /* Card elevation */
+--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);  /* Modal elevation */
+--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);  /* Floating elevation */
 ```
 
 ## CSS Architecture
@@ -129,16 +135,25 @@ css/components/
 └── utilities.css      # Helper classes and utilities
 ```
 
-**Removed Components**: cards.css, alerts.css, and search.css have been removed to streamline the system.
+**Current Structure**: Streamlined component library with essential UI elements organized by function.
 
 ## Component Library
 
 ### Buttons (`buttons.css`)
 
-**Variants**: primary, secondary-fill, secondary-outline, link
-**Style**: Modern button styling with consistent height and padding
-**States**: normal, hover, focus, disabled
-**Customizable**: All colors and spacing can be adjusted via CSS variables
+Modern button system with comprehensive interactive states and accessibility features.
+
+**Variants**:
+- `btn--primary`: Brand color background (#000BFF), white text
+- `btn--secondary-fill`: Neutral gray background, dark text
+- `btn--secondary-outline`: Transparent background, brand border
+- `btn--link`: Text-only, brand color, no background
+
+**Features**:
+- Consistent 44px minimum height (accessibility)
+- Proper focus indicators with keyboard navigation
+- Disabled state handling
+- Hover and active state feedback
 
 ```html
 <!-- Primary Variants -->
@@ -153,11 +168,24 @@ css/components/
 
 ### Forms (`forms.css`)
 
-**Elements**: input, textarea, select, checkbox, radio, labels
-**Icons**: Configurable icon system via data URIs (easily replaceable with any icon library)
-**States**: normal, error, disabled, required
-**Features**: validation messages, help text, form groups
-**Customizable**: All styling can be adapted to match project requirements
+Comprehensive form system with accessibility, validation states, and Phosphor icon integration.
+
+**Elements**:
+- Text inputs, textareas, select dropdowns
+- Checkboxes and radio buttons with custom styling
+- Form labels, help text, validation messages
+- Form groups for consistent spacing
+
+**Icon System**:
+- Phosphor icons via data URIs for consistency
+- Search, validation, and state indicators
+- Easily replaceable with any icon system
+
+**Features**:
+- WCAG compliant form controls
+- Clear focus indicators
+- Error and validation states
+- Consistent spacing and alignment
 
 ```html
 <!-- Text Input -->
@@ -228,13 +256,17 @@ css/components/
 
 ## Design Principles
 
-1. **Semantic variables first**: Always use CSS custom properties instead of hard-coded values
-2. **Customizable by default**: All colors, fonts, and spacing can be easily adapted per project
-3. **Template approach**: This system serves as a starting point that can be themed for any brand
-4. **Follow BEM naming convention** for all components
-5. **Use established spacing** from the spacing scale
-6. **Ensure all components are accessible** with proper ARIA and focus states
-7. **Modern component styling**: Clean aesthetics with proper interactive states
+### Core Philosophy
+1. **Neutral Foundation**: 90% neutral grays, 10% strategic brand color usage
+2. **Semantic Variables**: CSS custom properties describe usage, not appearance
+3. **Accessibility First**: WCAG 2.1 AA compliance built into every component
+4. **Consistency**: Unified spacing scale, typography, and interaction patterns
+
+### Technical Standards
+5. **BEM Methodology**: Block__Element--Modifier naming convention
+6. **Token-Based**: All values reference design system variables
+7. **Touch-Friendly**: 44px minimum touch targets for mobile accessibility
+8. **Progressive Enhancement**: Works without JavaScript, enhanced with it
 
 ## Component Construction Rules
 
@@ -281,16 +313,32 @@ CSS files are loaded in this specific order via `components/index.css`:
 4. `headings.css` - Typography and text components
 5. `utilities.css` - Helper classes (highest specificity)
 
-## Figma Integration
+## Claude Code Integration
 
-Our design system is synchronized with Figma. Use Claude Code's Figma MCP tools to:
+This design system integrates with **Claude Code** and **MCP (Model Context Protocol)** for streamlined development workflows.
 
-1. **View component screenshots**: `get_screenshot`
-2. **Generate implementation code**: `get_code`
-3. **Extract exact specifications**: `get_metadata`
-4. **Access design tokens and variables**: `get_variable_defs`
+### Figma MCP Integration
+Transform Figma designs into production-ready code:
 
-See `docs/figma-mcp-guide.md` for complete integration documentation.
+1. **`get_screenshot`** - View component designs
+2. **`get_code`** - Generate implementation code using system variables
+3. **`get_metadata`** - Extract design specifications and measurements
+4. **`get_variable_defs`** - Sync design tokens with CSS custom properties
+
+### Context7 Integration
+Documentation-first development approach:
+- Validates APIs and patterns before code generation
+- Ensures up-to-date, version-specific implementation
+- Zero hallucinated code, zero outdated patterns
+
+### Development Workflow
+```bash
+"Create a button component from Figma" → Figma MCP + Context7
+"Update component documentation" → Doc-Writer agent
+"Check accessibility compliance" → QA agent + Context7
+```
+
+See `docs/figma-mcp-guide.md` for complete setup and usage examples.
 
 ## Utility Classes (`utilities.css`)
 

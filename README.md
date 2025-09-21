@@ -5,21 +5,30 @@ A clean, neutral design system built with modern web standards featuring Inter t
 ## Overview
 
 Modern design system showcase featuring:
-- Token-based design system with CSS custom properties
-- Streamlined, accessible UI components using BEM methodology
-- Vanilla HTML5, CSS3, JavaScript (no build system complexity)
-- Brand color (#000BFF) used strategically for primary actions
+- **Token-based system**: CSS custom properties with semantic variables
+- **Component library**: Accessible UI components using BEM methodology
+- **Vite build system**: Fast development with hot reload and optimized production builds
+- **Brand color**: Strategic use of brand blue (#000BFF) for primary actions
+- **Documentation-first**: Context7 MCP integration for reliable, up-to-date patterns
 
-## Essential Commands
+## Quick Start
 
 ```bash
-# Development
-npm run dev                 # Start dev server (localhost:3000)
-npm run build              # Build for production
+# Install dependencies
+npm install
+
+# Development server with hot reload
+npm run dev                 # http://localhost:3000
+npm run dev:design         # Opens design system showcase
+
+# Production build
+npm run build              # Build to dist/
 npm run preview            # Preview production build
 
-# Alternative development
-python3 -m http.server 8000  # Quick local server
+# Additional development options
+npm run dev:host           # External access
+npm run dev:https          # HTTPS development
+npm run clean              # Clean build artifacts
 ```
 
 ## Documentation
@@ -32,71 +41,74 @@ python3 -m http.server 8000  # Quick local server
 ```
 design-system-demo/
 ├── index.html              # Landing page
-├── design-system.html      # Component showcase
+├── design-system.html      # Component showcase/documentation
+├── vite.config.js          # Vite build configuration
 ├── package.json            # Dependencies and scripts
-├── css/                    # Stylesheets
-│   ├── reset.css          # CSS reset
-│   ├── variables.css      # Design tokens
-│   ├── main.css           # Base styles
-│   ├── design-system.css  # Showcase styles
-│   └── components/        # Component styles
-│       ├── index.css      # Component imports
-│       ├── buttons.css    # Button variants
-│       ├── forms.css      # Form elements
-│       ├── headings.css   # Typography
-│       ├── layout.css     # Layout utilities
-│       └── utilities.css  # Helper classes
+├── css/                    # Stylesheets (foundation → components → pages)
+│   ├── reset.css          # CSS reset foundation
+│   ├── variables.css      # Design tokens (semantic variables)
+│   ├── components/        # Component library
+│   │   ├── index.css      # Component imports
+│   │   ├── buttons.css    # Interactive elements
+│   │   ├── forms.css      # Form controls
+│   │   ├── headings.css   # Typography components
+│   │   ├── layout.css     # Layout utilities
+│   │   └── utilities.css  # Helper classes
+│   └── pages/             # Page-specific styles
+│       └── design-system.css # Showcase page styles
 ├── scripts/               # JavaScript
-│   └── main.js           # Main JS
+│   └── main.js           # Core functionality
+├── assets/                # Static assets (fonts, icons, images)
 ├── docs/                  # Documentation
-├── .claude/              # Claude Code config
-├── CLAUDE.md            # Project instructions
+│   ├── design-system.md   # Component reference
+│   └── figma-mcp-guide.md # Figma integration guide
+├── .claude/              # Claude Code configuration
+├── CLAUDE.md            # Project instructions for Claude
+├── dist/                 # Production build output (generated)
 └── README.md            # This file
 ```
 
-## Figma MCP Integration
+## Claude Code Integration
 
-Transform Figma designs into production-ready code with natural language:
+This project showcases **Claude Code** (claude.ai/code) capabilities with **MCP (Model Context Protocol)** integrations:
 
-```
+### Design-to-Code Workflow
+Transform Figma designs into production-ready code using natural language:
+
+```bash
 "Show me the button component from Figma"
 "Generate CSS using our design system variables"
-"Extract color tokens from Figma"
+"Extract design tokens and sync with CSS"
 ```
 
-**Available Tools:**
+### MCP Servers
+
+**🎨 Figma MCP** - Design-to-code workflows:
 - `get_screenshot` - View Figma designs
 - `get_code` - Generate implementation code
 - `get_metadata` - Extract design specifications
 - `get_variable_defs` - Access design tokens
 
-**Documentation-First Workflow:**
-Context7 MCP ensures reliable code generation with up-to-date documentation, zero hallucinated APIs.
-
-See **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** for complete setup and usage.
-
-## MCP Servers
-
-**Context7** - Documentation-first development:
-- Fetches up-to-date, version-specific documentation from official sources
+**📚 Context7** - Documentation-first development:
+- Up-to-date, version-specific documentation from official sources
 - Validates APIs and patterns before code generation
 - Ensures zero hallucinated code, zero outdated patterns
 
-**Figma MCP** - Design-to-code workflows:
-- Direct Figma access for screenshots, metadata, code generation
-- Design token synchronization with CSS custom properties
-- Pixel-perfect implementation with accessibility built-in
+### Specialized Agents
 
-## Specialized Agents
+Natural language commands automatically activate appropriate agents:
 
-**Front-End Agent** - Uses Context7 for verified, current code generation
-**Figma Integration Agent** - Handles MCP workflows and design token sync
-**Doc-Writer Agent** - Maintains documentation and component examples
-**QA Agent** - Validates accessibility, performance, and design system compliance
+- **Front-End Agent**: Creates components using Context7 for verified patterns
+- **Figma Integration Agent**: Handles design-to-code workflows and token sync
+- **Doc-Writer Agent**: Maintains documentation and component examples
+- **QA Agent**: Validates accessibility, performance, and design system compliance
 
-**Usage:** Natural language commands automatically activate appropriate agents:
-```
+### Usage Examples
+```bash
 "Create a component from Figma" → Figma + Front-End agents
 "Update documentation" → Doc-Writer agent
-"Check accessibility" → QA agent
+"Check accessibility compliance" → QA agent
+"Optimize performance" → Front-End + QA agents
 ```
+
+See **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** for complete setup and usage.
