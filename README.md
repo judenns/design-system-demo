@@ -57,14 +57,42 @@ npm run clean              # Clean artifacts
 ```
 
 ### Usage Examples
-```bash
-# Apply your theme
-npm run theme
 
-# Different contexts
-"color": "#1E40AF"  # Corporate blue
-"color": "#E54D2E"  # Marketing red
-"color": "#7C3AED"  # SaaS purple
+**Corporate Theme**:
+```json
+{
+  "brand": { "color": "#1E40AF" },
+  "colors": {
+    "text-dark": "#1f2937",
+    "bg-default": "#f8fafc"
+  }
+}
+```
+
+**Marketing Theme**:
+```json
+{
+  "brand": { "color": "#E54D2E" },
+  "colors": {
+    "text-dark": "#18181b",
+    "bg-default": "#fefefe"
+  }
+}
+```
+
+**SaaS Product Theme**:
+```json
+{
+  "brand": { "color": "#7C3AED" },
+  "typography": {
+    "headings": { "h1": "3.5rem", "h2": "2.25rem" }
+  }
+}
+```
+
+```bash
+# Apply your theme configuration
+npm run theme
 ```
 
 **What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, component styles - everything stays consistent across all components.
@@ -100,36 +128,81 @@ npm install -g @figma/mcp-server
 
 ## 🤖 Specialized Agents
 
-Claude Code automatically activates the right agent for your task:
+Claude Code automatically activates the right agent based on your request. Each agent follows a specific workflow to ensure quality and consistency.
 
-**🎨 Front-End Agent** - Component development
+### 🎨 Front-End Agent
+**What it does**: Creates UI components following your design system patterns
+**Workflow**:
+1. **Context7 Lookup** (MANDATORY) - Gets latest documentation from official sources
+2. **Discover System** - Finds existing CSS variables and components
+3. **Figma Reference** - Uses design screenshots/metadata if available
+4. **Implement** - Creates code using BEM naming and CSS variables
+5. **Validate** - Ensures accessibility and responsive design
+
 ```bash
 "Create a card component with hover effects"
-"Build a responsive navigation bar"
+"Build a responsive navigation bar using our design tokens"
+"Add a pricing table with three tiers"
 ```
 
-**🎯 Figma Integration Agent** - Design-to-code workflows
+### 🎯 Figma Integration Agent
+**What it does**: Converts Figma designs into code that matches your design system
+**Workflow**:
+1. **Extract Design** - Gets screenshots, measurements, and design tokens from Figma
+2. **Check System** - Compares with existing CSS variables and theme config
+3. **Propose Updates** - Suggests theme.config.json changes instead of direct CSS edits
+4. **Generate Code** - Creates components using your established patterns
+5. **Map Components** - Links Figma designs to code components
+
 ```bash
 "Convert this Figma button to CSS"
-"Sync design tokens from Figma to variables"
+"Extract color tokens and update our theme config"
+"Generate code from selected Figma frame"
 ```
 
-**📚 Doc-Writer Agent** - Documentation maintenance
+### 📚 Doc-Writer Agent
+**What it does**: Keeps documentation current with your codebase changes
+**Workflow**:
+1. **Discover Changes** - Scans for new components or system updates
+2. **Verify Examples** - Tests that all code examples actually work
+3. **Update Docs** - Syncs documentation with current codebase
+4. **Simple Language** - Uses clear explanations for all skill levels
+5. **Version Check** - Ensures all references match current setup
+
 ```bash
-"Update the component documentation"
-"Generate usage examples"
+"Update the component documentation with new button variants"
+"Create usage examples for the theme configuration system"
+"Document the MCP integration workflow"
 ```
 
-**✅ QA Agent** - Quality assurance
+### ✅ QA Agent
+**What it does**: Validates code quality, accessibility, and design system consistency
+**Workflow**:
+1. **System Scan** - Uses tools to find potential issues in CSS/HTML
+2. **Theme Validation** - Checks theme.config.json sync with CSS variables
+3. **Accessibility Audit** - Validates WCAG compliance and keyboard navigation
+4. **Performance Check** - Reviews load times and asset optimization
+5. **Standards Compliance** - Ensures BEM naming and component consistency
+
 ```bash
-"Check accessibility compliance"
-"Audit performance issues"
+"Check accessibility compliance for the new form components"
+"Audit performance issues and suggest optimizations"
+"Validate that all components use CSS variables correctly"
 ```
 
-**⚙️ General-Purpose Agent** - Complex multi-step tasks
+### ⚙️ General-Purpose Agent
+**What it does**: Handles complex multi-step tasks and research
+**Workflow**:
+1. **Task Analysis** - Breaks down complex requests into steps
+2. **Research** - Gathers information using Context7 and web search
+3. **Plan Creation** - Develops structured approach
+4. **Implementation** - Executes plan using appropriate tools
+5. **Validation** - Verifies results and suggests improvements
+
 ```bash
-"Research and implement authentication"
-"Optimize build configuration"
+"Research and implement user authentication"
+"Optimize build configuration for better performance"
+"Set up automated testing for components"
 ```
 
 ## 📁 Project Structure

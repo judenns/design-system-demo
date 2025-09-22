@@ -9,11 +9,8 @@
       "disabled": false
     },
     "figma-dev-mode-mcp-server": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@figma/mcp-server@latest"
-      ],
+      "transport": "http",
+      "url": "http://127.0.0.1:3845/mcp",
       "disabled": false
     }
   }
