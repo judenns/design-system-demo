@@ -1,13 +1,13 @@
 /* Button Components */
 
-/* Button Base - shadcn/ui inspired */
+/* Button Base */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
   font-size: var(--fs-default);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
@@ -140,4 +140,3 @@
   width: 20px;
   height: 20px;
 }
-
