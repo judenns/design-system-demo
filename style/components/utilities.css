@@ -47,12 +47,6 @@
 .bg-brand { background-color: var(--bg-brand); }
 .bg-light { background-color: var(--bg-light); }
 
-/* Border */
-.border { border: 1px solid var(--bd-default); }
-.border-brand { border: 1px solid var(--bd-brand); }
-.rounded-md { border-radius: var(--radius-md); }
-.rounded-lg { border-radius: var(--radius-lg); }
-.rounded-full { border-radius: var(--radius-full); }
 
 /* Transitions */
 .transition { transition: all var(--transition-fast); }
@@ -76,32 +70,3 @@
 .p-2 { padding: 2rem; }
 .p-3 { padding: 3rem; }
 
-/* Gap */
-.gap-1 { gap: 1rem; }
-.gap-2 { gap: 2rem; }
-.gap-3 { gap: 3rem; }
-
-/* Grid Template Columns */
-.grid-cols-auto-fit { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.grid-cols-auto-fit-lg { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.grid-cols-auto-fit-xl { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
-
-/* Max Width */
-.max-w-sm { max-width: 600px; }
-.max-w-md { max-width: 768px; }
-.max-w-lg { max-width: 1024px; }
-.max-w-xl { max-width: 1280px; }
-
-/* Margin Auto */
-.mx-auto { margin-left: auto; margin-right: auto; }
-
-/* Font Family */
-.font-mono {
-  font-family: var(--mono-font);
-}
-
-/* Flex utilities */
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.flex-shrink-0 { flex-shrink: 0; }
