@@ -5,62 +5,23 @@ Production-ready design system template with Claude Code + MCP integration for s
 ## 🚀 Quick Start
 
 ```bash
-# 1. Clone & Install
+# Clone & Install
 git clone <repo-url>
 cd design-system-demo
 npm install
 
-# 2. Start Development
+# Start Development
 npm run dev                 # http://localhost:3000
 npm run dev:design         # Component showcase
 ```
 
-## 🔧 MCP Setup (Optional)
-
-### Context7 - Documentation Server
-```bash
-# Install globally
-npm install -g @context7/mcp-server
-
-# Add to .claude/settings.json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["@context7/mcp-server"]
-    }
-  }
-}
-```
-
-### Figma MCP - Design Integration
-```bash
-# Install globally
-npm install -g @figma/mcp-server
-
-# Get Figma token: Account Settings > Personal Access Tokens
-
-# Add to .claude/settings.local.json (gitignored)
-{
-  "mcpServers": {
-    "figma-dev-mode-mcp-server": {
-      "command": "npx",
-      "args": ["figma-dev-mode-mcp-server"],
-      "env": {
-        "FIGMA_PERSONAL_ACCESS_TOKEN": "your-token"
-      }
-    }
-  }
-}
-```
-
-## 📋 Essential Commands
+## 📋 Development Commands
 
 ```bash
 # Development
-npm run dev                 # Dev server
+npm run dev                 # Dev server (http://localhost:3000)
 npm run dev:host           # External access
-npm run dev:https          # HTTPS dev
+npm run dev:https          # HTTPS dev server
 
 # Production
 npm run build              # Build to dist/
@@ -71,212 +32,154 @@ npm run theme              # Apply theme.config.json
 npm run clean              # Clean artifacts
 ```
 
-## Theme Configuration
+## 🎨 Theme Configuration - Instant Brand Adaptation
 
-Adapt this template to any project context with `theme.config.json`:
+**How it works**: `theme.config.json` → `npm run theme` → All CSS variables updated automatically
 
-### Corporate Website
+### Quick Start
 ```json
 {
   "colors": {
-    "txtBrand": "#1E40AF",     // Corporate blue
-    "bgBrand": "#1E40AF"
+    "txtBrand": "#7C3AED",        // Your brand color
+    "bgDefault": "#FAFAFA"        // Background shade
+  },
+  "typography": {
+    "headings": { "h1": "3.5rem" } // Custom sizing
   }
 }
 ```
-
-### SaaS Dashboard
-```json
-{
-  "colors": {
-    "txtBrand": "#7C3AED",     // Modern purple
-    "bgDefault": "#FAFAFA"     // Soft background
-  }
-}
-```
-
-### Marketing Landing
-```json
-{
-  "colors": {
-    "txtBrand": "#DC2626",     // Action red
-    "typography": {
-      "headings": { "h1": "5rem" }  // Large headlines
-    }
-  }
-}
-```
-
-Run `npm run theme` to instantly apply your brand. See **[Theme Configuration Guide](docs/theme-config-guide.md)** for all options.
-
-## Documentation
-
-- **[Design System Guide](docs/design-system.md)** - Complete design system reference
-- **[Figma MCP Integration](docs/figma-mcp-guide.md)** - Design-to-code workflow guide
-- **[Theme Configuration Guide](docs/theme-config-guide.md)** - Detailed theme customization
-
-## Project Structure
-
-```
-design-system-demo/
-├── index.html              # Landing page
-├── design-system.html      # Component showcase/documentation
-├── vite.config.js          # Vite build configuration
-├── package.json            # Dependencies and scripts
-├── style/                  # Stylesheets (foundation → components → pages)
-│   ├── reset.css          # CSS reset foundation
-│   ├── global.css         # Global CSS setup and defaults
-│   ├── variables/         # Design tokens (modular)
-│   │   ├── variables.css  # Import all token files
-│   │   ├── colors.css     # Color system
-│   │   ├── typography.css # Typography tokens
-│   │   ├── spacing.css    # Spacing & layout tokens
-│   │   └── breakpoints.css# Responsive breakpoints
-│   ├── components/        # Component library
-│   │   ├── components.css # Component imports
-│   │   ├── buttons.css    # Interactive elements
-│   │   ├── forms.css      # Form controls
-│   │   ├── headings.css   # Typography components
-│   │   ├── layout.css     # Layout utilities
-│   │   └── utilities.css  # Helper classes
-│   └── pages/             # Page-specific styles
-│       ├── design-system.css # Showcase page styles
-│       └── index.css      # Landing page styles
-├── scripts/               # JavaScript
-│   └── main.js           # Core functionality
-├── assets/                # Static assets (fonts, icons, images)
-├── docs/                  # Documentation
-│   ├── design-system.md   # Component reference
-│   └── figma-mcp-guide.md # Figma integration guide
-├── .claude/              # Claude Code configuration
-├── CLAUDE.md            # Project instructions for Claude
-├── dist/                 # Production build output (generated)
-└── README.md            # This file
-```
-
-## Claude Code Integration
-
-This project showcases **Claude Code** (claude.ai/code) capabilities with **MCP (Model Context Protocol)** integrations:
-
-### Design-to-Code Workflow
-Transform Figma designs into production-ready code using natural language:
-
-```bash
-"Show me the button component from Figma"
-"Generate CSS using our design system variables"
-"Extract design tokens and sync with CSS"
-```
-
-### MCP Servers
-
-**🎨 Figma MCP** - Design-to-code workflows:
-- `get_screenshot` - View Figma designs
-- `get_code` - Generate implementation code
-- `get_metadata` - Extract design specifications
-- `get_variable_defs` - Access design tokens
-
-**📚 Context7** - Documentation-first development:
-- Up-to-date, version-specific documentation from official sources
-- Validates APIs and patterns before code generation
-- Ensures zero hallucinated code, zero outdated patterns
-
-### Setting up MCP Servers with Claude Code
-
-#### Adding Context7 MCP Server
-
-1. **Install Context7 MCP**:
-```bash
-npm install -g @context7/mcp-server
-```
-
-2. **Configure in Claude Code**:
-   - Open Claude Code settings (`.claude/settings.json` or `.claude/settings.local.json`)
-   - Add Context7 to your MCP servers:
-```json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["@context7/mcp-server"],
-      "env": {}
-    }
-  }
-}
-```
-
-3. **Usage in Claude Code**:
-```bash
-# Get documentation for any library
-"Get React hooks documentation using Context7"
-"Show me the latest Next.js routing patterns"
-"Find CSS Grid examples from MDN"
-```
-
-#### Adding Figma MCP Server
-
-1. **Install Figma MCP**:
-```bash
-npm install -g @figma/mcp-server
-```
-
-2. **Get Figma Access Token**:
-   - Go to Figma → Account Settings → Personal Access Tokens
-   - Generate a new token with read access
-   - Copy the token value
-
-3. **Configure in Claude Code**:
-   - Add Figma MCP to `.claude/settings.local.json` (for security):
-```json
-{
-  "mcpServers": {
-    "figma-dev-mode-mcp-server": {
-      "command": "npx",
-      "args": ["figma-dev-mode-mcp-server"],
-      "env": {
-        "FIGMA_PERSONAL_ACCESS_TOKEN": "your-figma-token-here"
-      }
-    }
-  }
-}
-```
-
-4. **Usage in Claude Code**:
-```bash
-# Extract designs from Figma
-"Show me the button component from Figma file [URL]"
-"Get the design tokens from our Figma design system"
-"Generate CSS from this Figma component"
-```
-
-#### Best Practices
-
-- **Security**: Always store API tokens in `.claude/settings.local.json` (gitignored)
-- **Workflow**: Use Context7 for documentation → Figma for designs → Implementation
-- **Validation**: Let Context7 verify APIs before code generation
-- **Consistency**: Sync Figma tokens with CSS variables regularly
-
-### Essential Dependencies
-
-**Ultra-Clean Package Structure**:
-- **Only dependency**: `vite@^7.1.6` (dev dependency)
-- **Zero runtime dependencies**: Pure vanilla HTML, CSS, JavaScript
-- **Optimized bundle**: All platform-specific binaries are optional and only installed as needed
-
-### Specialized Agents
-
-Natural language commands automatically activate appropriate agents:
-
-- **Front-End Agent**: Creates components using Context7 for verified patterns
-- **Figma Integration Agent**: Handles design-to-code workflows and token sync
-- **Doc-Writer Agent**: Maintains documentation and component examples
-- **QA Agent**: Validates accessibility, performance, and design system compliance
 
 ### Usage Examples
 ```bash
-"Create a component from Figma" → Figma + Front-End agents
-"Update documentation" → Doc-Writer agent
-"Check accessibility compliance" → QA agent
-"Optimize performance" → Front-End + QA agents
+# Apply your theme
+npm run theme
+
+# Different contexts
+"txtBrand": "#1E40AF"  # Corporate blue
+"txtBrand": "#7C3AED"  # SaaS purple
+"txtBrand": "#DC2626"  # Marketing red
 ```
 
-See **[Figma MCP Integration Guide](docs/figma-mcp-guide.md)** for complete setup and usage.
+**What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, spacing - everything stays consistent across all components.
+
+See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
+
+## 🔧 MCP Integration - Supercharge Your Workflow
+
+**Why MCP?** Transform natural language into production code with zero hallucinations:
+- **Context7**: Access latest docs from official sources (React, Next.js, Tailwind, etc.)
+- **Figma MCP**: Convert designs to code instantly with design token sync
+- **Claude Code**: Natural language → validated patterns → clean implementation
+
+### Setup with Claude Code (No Tokens Required)
+
+```bash
+# Let Claude install and configure MCP servers for you
+"Install Context7 MCP server and configure it"
+"Set up Figma MCP integration with my token"
+"Help me configure MCP servers in Claude settings"
+```
+
+**Manual Setup** (if preferred):
+
+```bash
+# Context7 - Documentation Server
+npm install -g @context7/mcp-server
+
+# Figma MCP - Design Integration
+npm install -g @figma/mcp-server
+# Token: Figma → Account Settings → Personal Access Tokens
+```
+
+## 🤖 Specialized Agents
+
+Claude Code automatically activates the right agent for your task:
+
+**🎨 Front-End Agent** - Component development
+```bash
+"Create a card component with hover effects"
+"Build a responsive navigation bar"
+```
+
+**🎯 Figma Integration Agent** - Design-to-code workflows
+```bash
+"Convert this Figma button to CSS"
+"Sync design tokens from Figma to variables"
+```
+
+**📚 Doc-Writer Agent** - Documentation maintenance
+```bash
+"Update the component documentation"
+"Generate usage examples"
+```
+
+**✅ QA Agent** - Quality assurance
+```bash
+"Check accessibility compliance"
+"Audit performance issues"
+```
+
+**⚙️ General-Purpose Agent** - Complex multi-step tasks
+```bash
+"Research and implement authentication"
+"Optimize build configuration"
+```
+
+## 📁 Project Structure
+
+```
+style/
+├── reset.css & global.css     # Foundation
+├── variables/                 # Design tokens
+├── components/               # UI components
+└── pages/                   # Page-specific styles
+
+docs/                         # Guides and documentation
+.claude/                     # Claude Code configuration
+```
+
+## 🎯 Real-World Use Cases
+
+### Context7 MCP - Documentation-First Development
+```bash
+# Get verified, up-to-date patterns
+"Get the latest CSS Grid documentation"
+"Show me React 19 hook patterns from official docs"
+"Find accessibility best practices for buttons"
+
+# Zero hallucinations - always current official docs
+```
+
+### Figma MCP - Design-to-Code Pipeline
+```bash
+# From Figma URL to production code
+"Show me the header component from [figma-url]"
+"Extract color tokens from our design system"
+"Generate CSS matching this Figma button exactly"
+"Sync spacing values between Figma and CSS variables"
+
+# Perfect design-developer handoff
+```
+
+### Claude Code - Natural Language Interface
+```bash
+"Create a responsive dashboard layout using our variables"
+"Add dark mode support to all components"
+"Optimize this page for mobile accessibility"
+
+# Multi-step tasks handled automatically
+```
+
+## 📚 Documentation
+
+- **[Design System Guide](docs/design-system.md)** - Component reference
+- **[Figma MCP Guide](docs/figma-mcp-guide.md)** - Design-to-code workflow
+- **[Theme Configuration](docs/theme-config-guide.md)** - Customization options
+
+## 🛠 Architecture
+
+**Clean & Modern**:
+- Pure vanilla HTML5, CSS3, JavaScript
+- Vite build system with hot reload
+- Zero runtime dependencies
+- Token-based design system
