@@ -126,16 +126,29 @@ Layered shadow system for depth hierarchy:
 Our CSS is organized into modular component files for better maintainability and scalability:
 
 ```
-css/components/
-├── index.css          # Main import file
-├── buttons.css        # Button variants and states (shadcn/ui inspired)
-├── forms.css          # Form elements with Phosphor icons
-├── headings.css       # Section headings, page headers, breadcrumbs
-├── layout.css         # Layout utilities (containers, grids, flex)
-└── utilities.css      # Helper classes and utilities
+style/
+├── reset.css              # CSS reset foundation
+├── global.css            # Global CSS setup and defaults
+├── variables/            # Design tokens (modular)
+│   ├── variables.css     # Import all token files
+│   ├── colors.css        # Color system
+│   ├── typography.css    # Typography tokens
+│   ├── spacing.css       # Spacing & layout tokens
+│   └── breakpoints.css   # Responsive breakpoints
+├── components/           # Reusable UI components
+│   ├── buttons.css       # Interactive elements
+│   ├── forms.css         # Form controls
+│   ├── headings.css      # Typography components
+│   ├── layout.css        # Layout utilities
+│   └── utilities.css     # Helper classes
+└── pages/               # Page-specific styles
+    ├── design-system.css # Component showcase
+    └── index.css        # Landing page
 ```
 
-**Current Structure**: Streamlined component library with essential UI elements organized by function.
+**Current Structure**: Fully modular architecture with separated design tokens in the `variables/` directory, reusable components, and page-specific styles for maximum maintainability and scalability.
+
+**Build System**: Powered by **Vite** for instant development server startup, hot module reloading, and optimized production builds with zero configuration.
 
 ## Component Library
 
@@ -272,20 +285,28 @@ Comprehensive form system with accessibility, validation states, and Phosphor ic
 
 When building new components:
 
-1. Use existing **semantic variables** for consistency across projects
-2. Follow **BEM methodology** (.block__element--modifier)
-3. Include **all interactive states** (hover, focus, active, disabled)
-4. Use **consistent spacing** from the spacing scale
-5. Provide **appropriate ARIA attributes** for accessibility
-6. Test with **keyboard navigation** and **screen readers**
-7. Verify **color contrast** meets WCAG AA standards (customizable per brand)
-8. Ensure **touch targets** are at least 44×44px
+1. **Use existing semantic variables** from `variables/` directory for consistency
+2. **Follow BEM methodology** (.block__element--modifier)
+3. **Include all interactive states** (hover, focus, active, disabled)
+4. **Use consistent spacing** from the spacing scale (`variables/spacing.css`)
+5. **Provide appropriate ARIA attributes** for accessibility
+6. **Test with keyboard navigation** and screen readers
+7. **Verify color contrast** meets WCAG AA standards (4.5:1 minimum)
+8. **Ensure touch targets** are at least 44×44px for mobile accessibility
+
+### Essential Dependencies
+
+**Ultra-Clean Package Structure**:
+- **Only dependency**: `vite@^7.1.6` (dev dependency)
+- **Zero runtime dependencies**: Pure vanilla HTML, CSS, JavaScript
+- **Optimized bundle**: Platform-specific binaries are optional, only installed as needed
+- **Build performance**: Sub-second dev server startup, instant hot reload
 
 ## Development Workflow
 
 ### Adding New Components
 
-1. **Choose the appropriate CSS file** based on component type:
+1. **Choose the appropriate CSS file** in `style/components/` based on component type:
    - Interactive elements → `buttons.css` or `forms.css`
    - Text content → `headings.css`
    - Layout utilities → `layout.css`
@@ -294,18 +315,24 @@ When building new components:
 2. **Follow the established patterns**:
    - Use BEM naming convention
    - Include all interactive states
-   - Add responsive behavior
+   - Add responsive behavior using `variables/breakpoints.css`
    - Ensure accessibility compliance
 
-3. **Test the component**:
-   - Verify color contrast (WCAG AA)
-   - Test keyboard navigation
+3. **Update imports**:
+   - Add new component to `components/components.css`
+   - Maintain proper loading order
+
+4. **Test the component**:
+   - `npm run dev` - Start development server
+   - Verify color contrast (WCAG AA: 4.5:1 minimum)
+   - Test keyboard navigation and focus states
    - Check screen reader compatibility
-   - Validate responsive behavior
+   - Validate responsive behavior across breakpoints
+   - `npm run build` - Test production build
 
 ### File Loading Order
 
-CSS files are loaded in this specific order via `components/index.css`:
+CSS files are loaded in this specific order via `components/components.css`:
 
 1. `buttons.css` - Interactive elements
 2. `forms.css` - Form components with Phosphor icons

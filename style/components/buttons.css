@@ -1,6 +1,4 @@
-/* ===================
-   BUTTON COMPONENTS
-   =================== */
+/* Button Components */
 
 /* Button Base - shadcn/ui inspired */
 .btn {
@@ -18,7 +16,6 @@
   gap: 0.5rem;
   height: 48px;
   line-height: 1;
-  
 }
 
 .btn:focus {
@@ -40,7 +37,7 @@
   opacity: 0.4;
 }
 
-/* Button Variants - shadcn/ui inspired */
+/* Button Variants */
 .btn--primary {
   background-color: var(--bg-brand);
   color: var(--txt-white);
@@ -123,7 +120,7 @@
 
 .btn--round {
   border-radius: var(--radius-full);
-  padding: 0 2rem;
+  padding: var(--space-sm) var(--space-lg);
 }
 
 /* Button Icons */
@@ -144,16 +141,3 @@
   height: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .btn {
-    width: 100%;
-    justify-content: center;
-    min-width: 100%; /* Override min-width on mobile */
-    padding: 20px 32px; /* Smaller padding on mobile */
-  }
-
-  .btn + .btn {
-    margin-top: 1rem;
-  }
-}

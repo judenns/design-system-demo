@@ -44,18 +44,25 @@ design-system-demo/
 ├── design-system.html      # Component showcase/documentation
 ├── vite.config.js          # Vite build configuration
 ├── package.json            # Dependencies and scripts
-├── css/                    # Stylesheets (foundation → components → pages)
+├── style/                  # Stylesheets (foundation → components → pages)
 │   ├── reset.css          # CSS reset foundation
-│   ├── variables.css      # Design tokens (semantic variables)
+│   ├── global.css         # Global CSS setup and defaults
+│   ├── variables/         # Design tokens (modular)
+│   │   ├── variables.css  # Import all token files
+│   │   ├── colors.css     # Color system
+│   │   ├── typography.css # Typography tokens
+│   │   ├── spacing.css    # Spacing & layout tokens
+│   │   └── breakpoints.css# Responsive breakpoints
 │   ├── components/        # Component library
-│   │   ├── index.css      # Component imports
+│   │   ├── components.css # Component imports
 │   │   ├── buttons.css    # Interactive elements
 │   │   ├── forms.css      # Form controls
 │   │   ├── headings.css   # Typography components
 │   │   ├── layout.css     # Layout utilities
 │   │   └── utilities.css  # Helper classes
 │   └── pages/             # Page-specific styles
-│       └── design-system.css # Showcase page styles
+│       ├── design-system.css # Showcase page styles
+│       └── index.css      # Landing page styles
 ├── scripts/               # JavaScript
 │   └── main.js           # Core functionality
 ├── assets/                # Static assets (fonts, icons, images)
@@ -93,6 +100,13 @@ Transform Figma designs into production-ready code using natural language:
 - Up-to-date, version-specific documentation from official sources
 - Validates APIs and patterns before code generation
 - Ensures zero hallucinated code, zero outdated patterns
+
+### Essential Dependencies
+
+**Ultra-Clean Package Structure**:
+- **Only dependency**: `vite@^7.1.6` (dev dependency)
+- **Zero runtime dependencies**: Pure vanilla HTML, CSS, JavaScript
+- **Optimized bundle**: All platform-specific binaries are optional and only installed as needed
 
 ### Specialized Agents
 

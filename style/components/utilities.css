@@ -1,6 +1,4 @@
-/* ===================
-   UTILITY CLASSES
-   =================== */
+/* Utility Classes */
 
 /* Accessibility */
 .sr-only {
@@ -65,3 +63,45 @@
 .focus-ring:focus { outline: none; box-shadow: var(--focus-ring); }
 .focus-ring-brand:focus { outline: none; box-shadow: var(--focus-ring-brand); }
 .focus-ring-error:focus { outline: none; box-shadow: var(--focus-ring-error); }
+
+/* Spacing */
+.m-0 { margin: 0; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 4rem; }
+.mb-5 { margin-bottom: 5rem; }
+
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; }
+.p-3 { padding: 3rem; }
+
+/* Gap */
+.gap-1 { gap: 1rem; }
+.gap-2 { gap: 2rem; }
+.gap-3 { gap: 3rem; }
+
+/* Grid Template Columns */
+.grid-cols-auto-fit { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-cols-auto-fit-lg { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.grid-cols-auto-fit-xl { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+
+/* Max Width */
+.max-w-sm { max-width: 600px; }
+.max-w-md { max-width: 768px; }
+.max-w-lg { max-width: 1024px; }
+.max-w-xl { max-width: 1280px; }
+
+/* Margin Auto */
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Font Family */
+.font-mono {
+  font-family: var(--mono-font);
+}
+
+/* Flex utilities */
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.flex-shrink-0 { flex-shrink: 0; }

@@ -1,10 +1,8 @@
-/* CSS Custom Properties (Variables) */
+/* Design System Colors */
 :root {
-  /* ===================
-     PRIMITIVE VARIABLES
-     =================== */
-  
-  /* Neutral Colors (50-900) - Custom progression matching your updates */
+  /* Primitive Colors */
+
+  /* Neutral Colors (50-900) - Custom progression */
   --neutral-50: #fafafa;
   --neutral-100: #f5f5f5;
   --neutral-200: #e5e5e5;
@@ -15,7 +13,7 @@
   --neutral-700: #444;
   --neutral-800: #222;
   --neutral-900: #111;
-  
+
   /* Brand Colors (50-900) - Tailwind blue hex values with brand-700: #000BFF */
   --brand-50: #eff6ff;
   --brand-100: #dbeafe;
@@ -27,7 +25,7 @@
   --brand-700: #000BFF;
   --brand-800: #030BB5;
   --brand-900: #05073D;
-  
+
   /* Success Colors (50-900) - Tailwind green hex values */
   --success-50: #f0fdf4;
   --success-100: #dcfce7;
@@ -39,7 +37,7 @@
   --success-700: #15803d;
   --success-800: #166534;
   --success-900: #14532d;
-  
+
   /* Warning Colors (50-900) - Tailwind amber hex values */
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
@@ -51,7 +49,7 @@
   --warning-700: #b45309;
   --warning-800: #92400e;
   --warning-900: #78350f;
-  
+
   /* Error Colors (50-900) - Tailwind red hex values */
   --error-50: #fef2f2;
   --error-100: #fee2e2;
@@ -63,11 +61,9 @@
   --error-700: #b91c1c;
   --error-800: #991b1b;
   --error-900: #7f1d1d;
-  
-  /* ===================
-     SEMANTIC VARIABLES
-     =================== */
-  
+
+  /* Semantic Colors */
+
   /* Text Colors */
   --txt-dark: var(--neutral-900);
   --txt-default: var(--neutral-700);
@@ -78,7 +74,7 @@
   --txt-error: var(--error-700);
   --txt-warning: var(--warning-700);
   --txt-disable: var(--neutral-400);
-  
+
   /* Background Colors */
   --bg-default: #ffffff;
   --bg-brand: var(--brand-700);
@@ -88,7 +84,7 @@
   --bg-warning: var(--warning-700);
   --bg-error: var(--error-700);
   --bg-light: var(--neutral-50);
-  
+
   /* Border Colors */
   --bd-default: var(--neutral-200);
   --bd-brand: var(--brand-700);
@@ -96,63 +92,4 @@
   --bd-error: var(--error-700);
   --bd-warning: var(--warning-700);
   --bd-white: #ffffff;
-  
-  /* Typography - Font Sizes */
-  --fs-h1: 4.5rem; /* 72px */
-  --fs-h2: 3.75rem; /* 60px */
-  --fs-h3: 3.25rem; /* 52px */
-  --fs-h4: 2.75rem; /* 44px */
-  --fs-h5: 2rem; /* 32px */
-  --fs-h6: 1.5rem; /* 24px */
-  --fs-default: 1rem; /* 16px */
-  --fs-large: 1.25rem; /* 20px */
-  --fs-small: 0.875rem; /* 14px */
-  --fs-caption: 0.75rem; /* 12px */
-  --fs-label: 0.875rem; /* 14px */
-  
-  /* Typography - Font Weights */
-  --fw-default: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
-  
-  /* Font Family */
-
-  /* Typography Font Families */
-  --heading-font: 'Inter', system-ui, sans-serif;
-  --default-font: 'Inter', system-ui, sans-serif;
-  --display-font: 'Inter', system-ui, sans-serif;
-  --mono-font: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace;
-  
-  /* Section Spacing */
-  --section-space-default: 10rem;
-  --section-space-lg: 10rem;
-  --section-space-md: 7.5rem;
-  --section-space-sm: 5rem;
-
-  /* Border Radius */
-  --radius-none: 0;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-full: 9999px;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-
-  /* Focus Shadows */
-  --focus-ring: 0 0 0 2px var(--bd-default);
-  --focus-ring-brand: 0 0 0 3px var(--brand-100);
-  --focus-ring-error: 0 0 0 3px var(--error-100);
-  
-  /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-base: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
 }

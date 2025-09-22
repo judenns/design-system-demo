@@ -43,6 +43,17 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 - CSS preprocessing and minification
 - Asset optimization and bundling
 
+## Essential Dependencies
+
+**Ultra-Clean Package Structure**:
+- **Only dependency**: `vite@^7.1.6` (dev dependency)
+- **Zero runtime dependencies**: Pure vanilla HTML, CSS, JavaScript
+- **Optimized bundle**: Platform-specific binaries are optional, only installed as needed
+- **Build performance**: Sub-second dev server startup, instant hot reload
+
+**Why the large package-lock.json?**
+All those @esbuild and @rollup entries are optional cross-platform binaries that Vite uses internally. Only your platform's version gets installed - the rest are just metadata.
+
 ## Development Commands
 
 ```bash
@@ -66,32 +77,37 @@ npx live-server --port=3000 --open=/design-system.html
 
 **Structure Principles**:
 
-- **Foundation Layer**: `reset.css` → `variables.css` (always first)
+- **Foundation Layer**: `reset.css` → `global.css` → `variables/` (always first)
 - **Components Layer**: Reusable UI components in `components/` directory
 - **Pages Layer**: Page-specific styles in `pages/` directory
-- **Entry Point**: `components/index.css` imports all component files
+- **Entry Point**: `components/components.css` imports all component files
 
 **Current Organization**:
 ```
-css/
+style/
 ├── reset.css              # CSS reset foundation
-├── variables.css          # Design tokens (always load first)
-├── main.css               # Base styles (optional)
-├── components/            # Reusable UI components
-│   ├── index.css          # Component imports
-│   ├── buttons.css        # Interactive elements
-│   ├── forms.css          # Form controls
-│   ├── headings.css       # Typography components
-│   ├── layout.css         # Layout utilities
-│   └── utilities.css      # Helper classes
-└── pages/                 # Page-specific styles
-    └── [page-name].css    # Styles for specific pages
+├── global.css            # Global CSS setup and defaults
+├── variables/            # Design tokens (modular)
+│   ├── variables.css     # Import all token files
+│   ├── colors.css        # Color system
+│   ├── typography.css    # Typography tokens
+│   ├── spacing.css       # Spacing & layout tokens
+│   └── breakpoints.css   # Responsive breakpoints
+├── components/           # Reusable UI components
+│   ├── buttons.css       # Interactive elements
+│   ├── forms.css         # Form controls
+│   ├── headings.css      # Typography components
+│   ├── layout.css        # Layout utilities
+│   └── utilities.css     # Helper classes
+└── pages/               # Page-specific styles
+    ├── design-system.css # Component showcase
+    └── index.css        # Landing page
 ```
 
 **Flexible Guidelines**:
 - Add new components as separate files in `components/`
 - Create page-specific CSS files in `pages/` as needed
-- Update `components/index.css` when adding new component files
+- Update `components/components.css` when adding new component files
 - Maintain the foundation → components → pages import order
 
 ## Design System Constraints (CRITICAL)
@@ -120,9 +136,9 @@ css/
 
 **Adding New Components**:
 1. Create new CSS file in `components/` directory
-2. Import in `components/index.css`
+2. Import in `components/components.css`
 3. Follow BEM naming convention
-4. Use existing design tokens from `variables.css`
+4. Use existing design tokens from `variables/` directory
 
 ### **BEM Naming Enforcement**
 
@@ -143,7 +159,7 @@ css/
 ### **Component Implementation Rules**:
 
 - **Always** check existing components first
-- **Always** use semantic CSS variables from `variables.css`
+- **Always** use semantic CSS variables from `variables/` directory
 - **Always** include hover, focus, disabled states
 - **Always** add ARIA attributes for accessibility
 - **Always** test keyboard navigation
@@ -191,7 +207,7 @@ css/
 
 **Page Creation Guidelines**:
 - Follow consistent HTML5 structure and semantics
-- Use same CSS import pattern: reset → variables → components → page-specific
+- Use same CSS import pattern: reset → global → variables → components → page-specific
 - Include proper meta tags, accessibility attributes, and Inter font loading
 - Create corresponding CSS file in `pages/` directory if page-specific styles needed
 
@@ -199,24 +215,27 @@ css/
 
 **Required Foundation** (always in this order):
 ```html
-<link rel="stylesheet" href="/css/reset.css" />
-<link rel="stylesheet" href="/css/variables.css" />
-<link rel="stylesheet" href="/css/components/index.css" />
+<link rel="stylesheet" href="/style/reset.css" />
+<link rel="stylesheet" href="/style/global.css" />
+<link rel="stylesheet" href="/style/variables/variables.css" />
+<!-- Component files as needed -->
+<link rel="stylesheet" href="/style/components/buttons.css" />
 ```
 
 **Optional Additions**:
 ```html
 <!-- Page-specific styles (if needed) -->
-<link rel="stylesheet" href="/css/pages/[page-name].css" />
+<link rel="stylesheet" href="/style/pages/[page-name].css" />
 
-<!-- Additional base styles (if needed) -->
-<link rel="stylesheet" href="/css/main.css" />
+<!-- Individual variable files (if needed) -->
+<link rel="stylesheet" href="/style/variables/colors.css" />
+<link rel="stylesheet" href="/style/variables/typography.css" />
 ```
 
 **Import Principles**:
 - Foundation files must always load first
 - Page-specific CSS comes after components
-- Vite handles absolute paths (`/css/`) in all environments
+- Vite handles absolute paths (`/style/`) in all environments
 - Maintain cascading order for proper style inheritance
 
 ### **JavaScript Structure**
@@ -274,7 +293,7 @@ When using this project for demonstrations:
 ### **Updating Design Tokens**
 
 ```
-1. "Update variables.css with the new token values"
+1. "Update the appropriate file in variables/ directory with new token values"
 2. "Maintain the neutral color scheme with selective brand usage"
 3. "Test all components with the updated tokens"
 4. "Update design-system.html to show new values"
@@ -296,7 +315,7 @@ When using this project for demonstrations:
 - **MCP Connection**: Check `.claude/settings.local.json` permissions
 - **Vite Dev Server**: Port conflicts resolved automatically (strictPort: false)
 - **CSS Conflicts**: Verify import order in HTML
-- **Design System Drift**: Always validate against `variables.css`
+- **Design System Drift**: Always validate against `variables/` directory
 - **Build Issues**: Check `dist/` output after `npm run build`
 - **Accessibility Issues**: Test with keyboard and screen reader
 

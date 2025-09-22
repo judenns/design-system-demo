@@ -1,0 +1,93 @@
+/* Design System Page Styles */
+
+/* Page-specific components for design system documentation */
+
+/* Documentation Card Component */
+.ds-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+}
+
+.ds-card--dark {
+  background: var(--neutral-900);
+  border: 2px solid var(--bd-white);
+}
+
+/* Color Swatch Component */
+.ds-color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.ds-color-swatch--bordered {
+  border: 1px solid var(--neutral-200);
+}
+
+/* Code Text Styles */
+.ds-code-text {
+  font-family: var(--mono-font);
+  font-size: 0.75rem;
+  color: var(--txt-light);
+}
+
+.ds-code-label {
+  font-family: var(--mono-font);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Documentation Grid Layouts */
+.ds-color-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Section Separator */
+.ds-separator {
+  height: 1px;
+  background: var(--neutral-200);
+  margin: 2rem 0;
+  border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+
+  /* Stack grid items on mobile */
+  .grid-cols-auto-fit,
+  .grid-cols-auto-fit-lg,
+  .grid-cols-auto-fit-xl {
+    grid-template-columns: 1fr;
+  }
+
+  /* Better spacing for mobile */
+  .gap-2 {
+    gap: 0.75rem;
+  }
+
+  .gap-3 {
+    gap: 1rem;
+  }
+}
