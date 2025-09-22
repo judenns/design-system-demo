@@ -5,12 +5,15 @@ Production-ready design system template with Claude Code + MCP integration for s
 ## 🚀 Quick Start
 
 ```bash
-# Clone & Install
-git clone https://github.com/judenns/design-system-demo.git
-cd design-system-demo
-npm install
+# Clone & Rename
+git clone https://github.com/judenns/design-system-demo.git my-design-system
+cd my-design-system
 
-# Start Development
+# Update remote origin (optional - for your own repo)
+git remote set-url origin https://github.com/yourusername/my-design-system.git
+
+# Install & Start
+npm install
 npm run dev                 # http://localhost:5173
 npm run dev:style           # Component showcase
 ```
