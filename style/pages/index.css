@@ -1,9 +1,1 @@
-/* Foundation Layer - Design System Core */
-
-/* Import foundation files in order */
-@import './reset.css';
-@import './colors.css';
-@import './typography.css';
-@import './spacing.css';
-@import './breakpoints.css';
-@import './global.css';
+/* Page-specific styles for index.html */

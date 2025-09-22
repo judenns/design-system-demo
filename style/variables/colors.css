@@ -65,29 +65,29 @@
   /* Semantic Colors */
 
   /* Text Colors */
-  --txt-dark: var(--neutral-900);
-  --txt-default: var(--neutral-700);
-  --txt-light: var(--neutral-500);
-  --txt-brand: var(--brand-700);
+  --txt-dark: #111;
+  --txt-default: #444;
+  --txt-light: #777;
+  --txt-brand: #000BFF;
   --txt-white: #ffffff;
   --txt-success: var(--success-700);
   --txt-error: var(--error-700);
   --txt-warning: var(--warning-700);
-  --txt-disable: var(--neutral-400);
+  --txt-disable: #a3a3a3;
 
   /* Background Colors */
   --bg-default: #ffffff;
-  --bg-brand: var(--brand-700);
+  --bg-brand: #000BFF;
   --bg-white: #ffffff;
-  --bg-brand-light: var(--brand-100);
+  --bg-brand-light: #dbeafe;
   --bg-success: var(--success-700);
   --bg-warning: var(--warning-700);
   --bg-error: var(--error-700);
-  --bg-light: var(--neutral-50);
+  --bg-light: #fafafa;
 
   /* Border Colors */
-  --bd-default: var(--neutral-200);
-  --bd-brand: var(--brand-700);
+  --bd-default: #e5e5e5;
+  --bd-brand: #000BFF;
   --bd-success: var(--success-700);
   --bd-error: var(--error-700);
   --bd-warning: var(--warning-700);

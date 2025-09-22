@@ -19,12 +19,7 @@ export default defineConfig({
     sourcemap: false,     // No source maps for production
     minify: 'esbuild',    // Use esbuild for faster minification
     rollupOptions: {
-      output: {
-        manualChunks: {
-          // Split vendor code for better caching
-          vendor: ['phosphor-icons']
-        }
-      }
+      // Configure rollup options as needed
     }
   },
 

@@ -2,6 +2,7 @@
   "name": "design-system-demo",
   "version": "1.0.0",
   "description": "A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.",
+  "type": "module",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -16,7 +17,10 @@
     "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
     "preview:https": "vite preview --https",
-    "clean": "rm -rf dist node_modules/.vite"
+    "clean": "rm -rf dist node_modules/.vite",
+    "theme": "node scripts/update-theme.js",
+    "dev:theme": "npm run theme && vite --open /design-system.html",
+    "build:theme": "npm run theme && vite build"
   },
   "repository": {
     "type": "git",

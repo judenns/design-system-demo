@@ -15,7 +15,7 @@
   transition: all var(--transition-fast);
   gap: 0.5rem;
   height: 48px;
-  line-height: 1;
+  line-height: 48px;
 }
 
 .btn:focus {
@@ -39,35 +39,37 @@
 
 /* Button Variants */
 .btn--primary {
-  background-color: var(--bg-brand);
-  color: var(--txt-white);
-  border-color: var(--bg-brand);
+  background-color: #000BFF;
+  color: #ffffff;
+  border-color: #000BFF;
 }
 
 .btn--primary:hover:not(:disabled) {
-  background-color: var(--brand-800);
-  border-color: var(--brand-800);
+  background-color: #030BB5;
+  border-color: #030BB5;
 }
 
 .btn--tonal {
-  background-color: var(--brand-100);
-  color: var(--txt-brand);
+  background-color: #dbeafe;
+  color: #000BFF;
   border-color: transparent;
 }
 
 .btn--tonal:hover:not(:disabled) {
-  background-color: var(--brand-200);
+  background-color: #bfdbfe;
+  border-color: transparent;
 }
 
 .btn--outline {
   background-color: transparent;
-  color: var(--txt-brand);
+  color: #000BFF;
   border: 2px solid var(--bd-brand);
+  border-color: #000BFF;
 }
 
 .btn--outline:hover:not(:disabled) {
-  background-color: var(--brand-100);
-  border-color: transparent;
+  background-color: #dbeafe;
+  border-color: #030BB5;
 }
 
 .btn--white {
@@ -92,7 +94,7 @@
 
 .btn--link {
   background-color: transparent;
-  color: var(--txt-brand);
+  color: #000BFF;
   border-color: transparent;
   padding: 0;
   height: auto;
@@ -102,7 +104,9 @@
 }
 
 .btn--link:hover:not(:disabled) {
-  color: var(--brand-800);
+  color: #030BB5;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 /* Button Sizes */

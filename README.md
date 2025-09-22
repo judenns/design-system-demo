@@ -1,15 +1,15 @@
-# Modern Design System
+# Modern Design System - Starter Template
 
-A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.
+A production-ready design system starter template for websites, SPAs, and web applications. Customize once, deploy anywhere.
 
 ## Overview
 
-Modern design system showcase featuring:
-- **Token-based system**: CSS custom properties with semantic variables
-- **Component library**: Accessible UI components using BEM methodology
-- **Vite build system**: Fast development with hot reload and optimized production builds
-- **Brand color**: Strategic use of brand blue (#000BFF) for primary actions
-- **Documentation-first**: Context7 MCP integration for reliable, up-to-date patterns
+**Universal starter template** featuring:
+- **Multi-project ready**: Use for marketing sites, dashboards, SaaS apps, portfolios
+- **Theme customization**: Single JSON config adapts to any brand or context
+- **Token-based system**: CSS variables for consistent theming across projects
+- **Zero dependencies**: Pure HTML/CSS/JS with Vite for optimal performance
+- **Component library**: Accessible, reusable UI components with BEM methodology
 
 ## Quick Start
 
@@ -29,12 +29,54 @@ npm run preview            # Preview production build
 npm run dev:host           # External access
 npm run dev:https          # HTTPS development
 npm run clean              # Clean build artifacts
+
+# Theme customization
+npm run theme              # Apply theme.config.json changes
 ```
+
+## Theme Configuration
+
+Adapt this template to any project context with `theme.config.json`:
+
+### Corporate Website
+```json
+{
+  "colors": {
+    "txtBrand": "#1E40AF",     // Corporate blue
+    "bgBrand": "#1E40AF"
+  }
+}
+```
+
+### SaaS Dashboard
+```json
+{
+  "colors": {
+    "txtBrand": "#7C3AED",     // Modern purple
+    "bgDefault": "#FAFAFA"     // Soft background
+  }
+}
+```
+
+### Marketing Landing
+```json
+{
+  "colors": {
+    "txtBrand": "#DC2626",     // Action red
+    "typography": {
+      "headings": { "h1": "5rem" }  // Large headlines
+    }
+  }
+}
+```
+
+Run `npm run theme` to instantly apply your brand. See **[Theme Configuration Guide](docs/theme-config-guide.md)** for all options.
 
 ## Documentation
 
 - **[Design System Guide](docs/design-system.md)** - Complete design system reference
 - **[Figma MCP Integration](docs/figma-mcp-guide.md)** - Design-to-code workflow guide
+- **[Theme Configuration Guide](docs/theme-config-guide.md)** - Detailed theme customization
 
 ## Project Structure
 

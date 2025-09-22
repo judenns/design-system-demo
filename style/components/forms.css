@@ -57,7 +57,7 @@
 .textarea {
   display: block;
   width: 100%;
-  min-height: 120px;
+  min-height: 48px;
   padding: 1rem 1.5rem;
   font-size: var(--fs-default);
   color: var(--txt-default);
