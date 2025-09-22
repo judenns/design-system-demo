@@ -76,7 +76,7 @@
 }
 
 .ds-showcase-title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h4);
   font-weight: var(--fw-bold);
   color: var(--txt-dark);
   margin: 0 0 2rem 0;
@@ -93,7 +93,7 @@
 }
 
 .ds-color-section-title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h6);
   font-weight: var(--fw-bold);
   color: var(--txt-dark);
   margin: 0 0 1rem 0;
@@ -168,7 +168,7 @@
 }
 
 .ds-semantic-title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h6);
   font-weight: var(--fw-bold);
   color: var(--txt-dark);
   margin-bottom: 0.5rem;
