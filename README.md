@@ -101,6 +101,81 @@ Transform Figma designs into production-ready code using natural language:
 - Validates APIs and patterns before code generation
 - Ensures zero hallucinated code, zero outdated patterns
 
+### Setting up MCP Servers with Claude Code
+
+#### Adding Context7 MCP Server
+
+1. **Install Context7 MCP**:
+```bash
+npm install -g @context7/mcp-server
+```
+
+2. **Configure in Claude Code**:
+   - Open Claude Code settings (`.claude/settings.json` or `.claude/settings.local.json`)
+   - Add Context7 to your MCP servers:
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["@context7/mcp-server"],
+      "env": {}
+    }
+  }
+}
+```
+
+3. **Usage in Claude Code**:
+```bash
+# Get documentation for any library
+"Get React hooks documentation using Context7"
+"Show me the latest Next.js routing patterns"
+"Find CSS Grid examples from MDN"
+```
+
+#### Adding Figma MCP Server
+
+1. **Install Figma MCP**:
+```bash
+npm install -g @figma/mcp-server
+```
+
+2. **Get Figma Access Token**:
+   - Go to Figma → Account Settings → Personal Access Tokens
+   - Generate a new token with read access
+   - Copy the token value
+
+3. **Configure in Claude Code**:
+   - Add Figma MCP to `.claude/settings.local.json` (for security):
+```json
+{
+  "mcpServers": {
+    "figma-dev-mode-mcp-server": {
+      "command": "npx",
+      "args": ["figma-dev-mode-mcp-server"],
+      "env": {
+        "FIGMA_PERSONAL_ACCESS_TOKEN": "your-figma-token-here"
+      }
+    }
+  }
+}
+```
+
+4. **Usage in Claude Code**:
+```bash
+# Extract designs from Figma
+"Show me the button component from Figma file [URL]"
+"Get the design tokens from our Figma design system"
+"Generate CSS from this Figma component"
+```
+
+#### Best Practices
+
+- **Security**: Always store API tokens in `.claude/settings.local.json` (gitignored)
+- **Workflow**: Use Context7 for documentation → Figma for designs → Implementation
+- **Validation**: Let Context7 verify APIs before code generation
+- **Consistency**: Sync Figma tokens with CSS variables regularly
+
 ### Essential Dependencies
 
 **Ultra-Clean Package Structure**:
