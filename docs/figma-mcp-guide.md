@@ -203,3 +203,22 @@ claude-code mcp reconnect figma-dev-mode-mcp-server
 **Need Help?** Just ask Claude: "Help me set up Figma integration" or "Show me how to extract colors from Figma"
 
 **Last Updated:** September 2024
+
+## Integration with Theme System
+
+This design system includes automated theme configuration. When generating code from Figma:
+
+**Smart Variable Usage**: Claude Code automatically uses CSS variables instead of hard-coded values:
+```css
+/* Instead of hard-coded: */
+background-color: #E54D2E;
+
+/* Claude generates: */
+background-color: var(--brand-700);
+```
+
+**Theme Workflow**: Design → Extract → Generate → Customize
+1. "Show me the button from Figma"
+2. "Generate CSS using our design system variables"
+3. "Update theme.config.json with these colors"
+4. "Apply theme changes: npm run theme"

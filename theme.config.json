@@ -2,25 +2,28 @@
   "project": {
     "name": "Modern Design System"
   },
-  
+
+  "brand": {
+    "color": "#E54D2E"
+  },
+
   "colors": {
-    "txtDark": "#111",
-    "txtDefault": "#444", 
-    "txtLight": "#777",
-    "txtBrand": "#000BFF",
-    "txtDisable": "#a3a3a3",
-    "bgDefault": "#ffffff",
-    "bgBrand": "#000BFF",
-    "bgLight": "#fafafa",
-    "bgWhite": "#ffffff",
-    "bgBrandLight": "#dbeafe",
-    "bdDefault": "#e5e5e5",
-    "bdLight": "#f5f5f5", 
-    "bdBrand": "#000BFF"
+    "text-dark": "#1f1f1f",
+    "text-default": "#525252",
+    "text-light": "#8c8c8c",
+    "text-disable": "#bbb",
+    "bg-default": "#ffffff",
+    "bg-light": "#fafafa",
+    "bg-white": "#ffffff",
+    "bg-brand-light": "#FFF8F7",
+    "border-default": "#bbb",
+    "border-light": "#e1e1e1"
   },
   
   "typography": {
-    "fontFamily": "Inter",
+    "heading-font": "Inter",
+    "body-font": "Inter",
+    "display-font": "Inter",
     "headings": {
       "h1": "4.5rem",
       "h2": "3.75rem",
@@ -34,57 +37,67 @@
       "default": "1rem",
       "small": "0.875rem"
     },
-    "label": "0.875rem",
+    "label": "0.75rem",
     "caption": "0.75rem"
   },
   
   "components": {
     "button": {
-      "heightSmall": "36px",
-      "heightDefault": "48px",
-      "heightLarge": "56px",
-      
+      "size": {
+        "small": {
+          "height": "44px",
+          "font-size": "0.875rem"
+        },
+        "default": {
+          "height": "56px",
+          "font-size": "1rem"
+        },
+        "large": {
+          "height": "64px",
+          "font-size": "1rem"
+        }
+      },
+
       "primary": {
-        "textColor": "#ffffff",
-        "backgroundColor": "#000BFF",
-        "borderColor": "#000BFF",
-        "hoverTextColor": "#ffffff",
-        "hoverBackgroundColor": "#030BB5",
-        "hoverBorderColor": "#030BB5"
+        "text-color": "#ffffff",
+        "hover-text-color": "#ffffff"
       },
-      
+
       "tonal": {
-        "textColor": "#000BFF",
-        "backgroundColor": "#dbeafe",
-        "borderColor": "transparent",
-        "hoverTextColor": "#030BB5",
-        "hoverBackgroundColor": "#bfdbfe",
-        "hoverBorderColor": "transparent"
+        "background-color": "#FEEBE7",
+        "border-color": "transparent",
+        "hover-background-color": "#FFDCD3",
+        "hover-border-color": "transparent"
       },
-      
+
       "outline": {
-        "textColor": "#000BFF",
-        "backgroundColor": "transparent",
-        "borderColor": "#000BFF",
-        "hoverTextColor": "#030BB5",
-        "hoverBackgroundColor": "#dbeafe",
-        "hoverBorderColor": "#030BB5"
+        "background-color": "transparent",
+        "hover-background-color": "#FFDCD3"
       },
-      
+
       "link": {
-        "textColor": "#000BFF",
-        "backgroundColor": "transparent",
-        "borderColor": "transparent",
-        "hoverTextColor": "#030BB5",
-        "hoverBackgroundColor": "transparent",
-        "hoverBorderColor": "transparent"
+        "background-color": "transparent",
+        "border-color": "transparent",
+        "hover-background-color": "transparent",
+        "hover-border-color": "transparent"
       }
     },
-    
+
     "input": {
-      "heightSmall": "36px", 
-      "heightDefault": "48px",
-      "heightLarge": "56px"
+      "size": {
+        "small": {
+          "height": "44px",
+          "font-size": "0.875rem"
+        },
+        "default": {
+          "height": "56px",
+          "font-size": "1rem"
+        },
+        "large": {
+          "height": "64px",
+          "font-size": "1rem"
+        }
+      }
     }
   }
 }

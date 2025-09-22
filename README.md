@@ -6,29 +6,33 @@ Production-ready design system template with Claude Code + MCP integration for s
 
 ```bash
 # Clone & Install
-git clone <repo-url>
+git clone https://github.com/judenns/design-system-demo.git
 cd design-system-demo
 npm install
 
 # Start Development
-npm run dev                 # http://localhost:3000
-npm run dev:design         # Component showcase
+npm run dev                 # http://localhost:5173
+npm run dev:design          # Component showcase
 ```
 
 ## 📋 Development Commands
 
 ```bash
 # Development
-npm run dev                 # Dev server (http://localhost:3000)
+npm run dev                 # Dev server (http://localhost:5173)
 npm run dev:host           # External access
 npm run dev:https          # HTTPS dev server
+npm run dev:design         # Open component showcase
 
 # Production
 npm run build              # Build to dist/
+npm run build:watch        # Watch mode build
 npm run preview            # Preview build
 
 # Theme
 npm run theme              # Apply theme.config.json
+npm run dev:theme          # Apply theme and preview
+npm run build:theme        # Apply theme and build
 npm run clean              # Clean artifacts
 ```
 
@@ -39,12 +43,15 @@ npm run clean              # Clean artifacts
 ### Quick Start
 ```json
 {
+  "brand": {
+    "color": "#E54D2E"          // Your brand color
+  },
   "colors": {
-    "txtBrand": "#7C3AED",        // Your brand color
-    "bgDefault": "#FAFAFA"        // Background shade
+    "text-dark": "#1f1f1f",     // Heading text
+    "bg-default": "#ffffff"      // Background
   },
   "typography": {
-    "headings": { "h1": "3.5rem" } // Custom sizing
+    "headings": { "h1": "4.5rem" } // Custom sizing
   }
 }
 ```
@@ -55,12 +62,12 @@ npm run clean              # Clean artifacts
 npm run theme
 
 # Different contexts
-"txtBrand": "#1E40AF"  # Corporate blue
-"txtBrand": "#7C3AED"  # SaaS purple
-"txtBrand": "#DC2626"  # Marketing red
+"color": "#1E40AF"  # Corporate blue
+"color": "#E54D2E"  # Marketing red
+"color": "#7C3AED"  # SaaS purple
 ```
 
-**What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, spacing - everything stays consistent across all components.
+**What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, component styles - everything stays consistent across all components.
 
 See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
 
@@ -131,11 +138,18 @@ Claude Code automatically activates the right agent for your task:
 style/
 ├── reset.css & global.css     # Foundation
 ├── variables/                 # Design tokens
+│   ├── colors.css            # Color system
+│   ├── typography.css        # Type scale
+│   └── spacing.css           # Spacing tokens
 ├── components/               # UI components
+│   ├── buttons.css           # Button variants
+│   ├── forms.css             # Form controls
+│   └── layout.css            # Layout utilities
 └── pages/                   # Page-specific styles
 
 docs/                         # Guides and documentation
 .claude/                     # Claude Code configuration
+scripts/                     # Theme automation
 ```
 
 ## 🎯 Real-World Use Cases
@@ -180,6 +194,7 @@ docs/                         # Guides and documentation
 
 **Clean & Modern**:
 - Pure vanilla HTML5, CSS3, JavaScript
-- Vite build system with hot reload
-- Zero runtime dependencies
-- Token-based design system
+- Vite 7.x build system with instant hot reload
+- Zero runtime dependencies (only `vite` dev dependency)
+- Token-based design system with automated theme updates
+- BEM methodology for consistent CSS architecture

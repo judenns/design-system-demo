@@ -11,7 +11,9 @@
       "Bash(dir)",
       "Bash(del cards.css search.css alerts.css)",
       "Bash(del \"E:\\dev\\design-system-demo\\css\\pages\\index.css\")",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(node:*)",
+      "Bash(npm run theme:*)"
     ],
     "deny": [],
     "ask": []

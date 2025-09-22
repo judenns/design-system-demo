@@ -10,9 +10,21 @@ Semantic color system built with CSS custom properties, emphasizing neutrals wit
 
 #### Philosophy
 - **Neutral Foundation**: Grays for 90% of UI elements
-- **Strategic Brand Usage**: Brand blue (#000BFF) for primary actions only
+- **Strategic Brand Usage**: Brand color (`var(--brand-700)`) for primary actions only
 - **Accessible Contrast**: All color combinations meet WCAG AA standards
 - **Semantic Naming**: Color variables describe usage, not appearance
+- **Layered Variables**: Primitive colors → semantic variables → components
+- **Theme Automation**: All colors update automatically via `theme.config.json`
+
+#### CSS Variable Architecture
+
+**Three-Layer System**:
+
+1. **Primitive Variables**: Base color palette (`--brand-700: #E54D2E`, `--neutral-500: #8c8c8c`)
+2. **Semantic Variables**: Usage-based references (`--txt-brand: var(--brand-700)`, `--bg-light: var(--neutral-50)`)
+3. **Component Variables**: Component-specific values that reference semantic variables
+
+This architecture ensures that theme updates cascade properly: when you change `brand.color` in `theme.config.json`, it updates the primitive `--brand-700`, which automatically updates all semantic variables that reference it (`--txt-brand`, `--bg-brand`, `--bd-brand`), which in turn updates all components.
 
 #### Text Colors
 ```css

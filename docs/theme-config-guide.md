@@ -12,16 +12,19 @@ The theme configuration system lets you customize the entire design system throu
 
 ```json
 {
+  "brand": {
+    "color": "#E54D2E"          // Primary brand color
+  },
   "colors": {
-    "txtBrand": "#000BFF",      // Primary brand color
-    "txtDark": "#111",          // Headings & emphasis
-    "txtDefault": "#444",       // Body text
-    "txtLight": "#777",         // Secondary text
-    "bgDefault": "#ffffff",     // Main background
-    "bdDefault": "#e5e5e5"      // Default borders
+    "text-dark": "#1f1f1f",     // Headings & emphasis
+    "text-default": "#525252",  // Body text
+    "text-light": "#8c8c8c",    // Secondary text
+    "bg-default": "#ffffff",    // Main background
+    "border-default": "#bbb"    // Default borders
   },
   "typography": {
-    "fontFamily": "Inter",      // Global font
+    "heading-font": "Inter",    // Heading font
+    "body-font": "Inter",       // Body font
     "headings": {
       "h1": "4.5rem",          // Display size
       "h2": "3.75rem"          // Page titles
@@ -29,10 +32,11 @@ The theme configuration system lets you customize the entire design system throu
   },
   "components": {
     "button": {
-      "heightDefault": "48px",   // Standard button height
-      "primary": {
-        "backgroundColor": "#000BFF",
-        "hoverBackgroundColor": "#030BB5"
+      "size": {
+        "default": {
+          "height": "56px",      // Standard button height
+          "font-size": "1rem"
+        }
       }
     }
   }
@@ -50,27 +54,26 @@ The `npm run theme` command updates CSS variables in:
 
 ## Example Customizations
 
-### Change Brand Color to Red
+### Change Brand Color to Blue
 ```json
 {
-  "colors": {
-    "txtBrand": "#DC2626",
-    "bgBrand": "#DC2626", 
-    "bdBrand": "#DC2626"
+  "brand": {
+    "color": "#1E40AF"         // Changes all brand variables
+  }
+}
+```
+
+### Full Brand Color Customization
+```json
+{
+  "brand": {
+    "color": "#DC2626"         // Primary brand color
   },
   "components": {
     "button": {
-      "primary": {
-        "backgroundColor": "#DC2626",
-        "hoverBackgroundColor": "#B91C1C"
-      },
       "tonal": {
-        "textColor": "#DC2626",
-        "hoverTextColor": "#B91C1C"
-      },
-      "outline": {
-        "textColor": "#DC2626",
-        "borderColor": "#DC2626"
+        "background-color": "#FEE2E2",      // Light red tint
+        "hover-background-color": "#FECACA" // Darker on hover
       }
     }
   }
@@ -81,7 +84,8 @@ The `npm run theme` command updates CSS variables in:
 ```json
 {
   "typography": {
-    "fontFamily": "Roboto"
+    "heading-font": "Roboto",
+    "body-font": "Roboto"
   }
 }
 ```
@@ -91,31 +95,48 @@ The `npm run theme` command updates CSS variables in:
 {
   "components": {
     "button": {
-      "heightSmall": "40px",
-      "heightDefault": "52px", 
-      "heightLarge": "60px"
+      "size": {
+        "small": {
+          "height": "48px"
+        },
+        "default": {
+          "height": "60px"
+        },
+        "large": {
+          "height": "68px"
+        }
+      }
     }
   }
 }
 ```
 
+## How Theme Updates Work
+
+**Cascade System**: Theme changes flow through the CSS variable architecture:
+
+1. `theme.config.json` values update primitive variables (`--brand-700`, `--neutral-500`)
+2. Semantic variables automatically inherit changes (`--txt-brand: var(--brand-700)`)
+3. Components use semantic variables, staying in sync automatically
+
 ## Button Variant Configuration
 
 Each button variant (primary, tonal, outline, link) can be customized with:
 
-- `textColor`: Text color for normal state
-- `backgroundColor`: Background color for normal state  
-- `borderColor`: Border color for normal state
-- `hoverTextColor`: Text color when hovering
-- `hoverBackgroundColor`: Background color when hovering
-- `hoverBorderColor`: Border color when hovering
+- `text-color`: Text color for normal state
+- `background-color`: Background color for normal state
+- `border-color`: Border color for normal state
+- `hover-text-color`: Text color when hovering
+- `hover-background-color`: Background color when hovering
+- `hover-border-color`: Border color when hovering
 
 ## Tips
 
-1. **Keep colors consistent**: Make sure `txtBrand`, `bgBrand`, and `bdBrand` use the same color value
+1. **Brand Color Simplicity**: Just change `brand.color` - all brand variables update automatically
 2. **Test after changes**: Always run `npm run dev:theme` to see your changes
 3. **Backup your config**: The `theme.config.json` file contains all your customizations
 4. **Hover colors**: Usually make hover colors 10-15% darker than the default colors
+5. **Variable Architecture**: The system uses primitive → semantic → component variables for consistency
 
 ## Troubleshooting
 
