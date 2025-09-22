@@ -1,37 +1,74 @@
 # Modern Design System - Starter Template
 
-A production-ready design system starter template for websites, SPAs, and web applications. Customize once, deploy anywhere.
+Production-ready design system template with Claude Code + MCP integration for seamless design-to-code workflows.
 
-## Overview
-
-**Universal starter template** featuring:
-- **Multi-project ready**: Use for marketing sites, dashboards, SaaS apps, portfolios
-- **Theme customization**: Single JSON config adapts to any brand or context
-- **Token-based system**: CSS variables for consistent theming across projects
-- **Zero dependencies**: Pure HTML/CSS/JS with Vite for optimal performance
-- **Component library**: Accessible, reusable UI components with BEM methodology
-
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
-# Install dependencies
+# 1. Clone & Install
+git clone <repo-url>
+cd design-system-demo
 npm install
 
-# Development server with hot reload
+# 2. Start Development
 npm run dev                 # http://localhost:3000
-npm run dev:design         # Opens design system showcase
+npm run dev:design         # Component showcase
+```
 
-# Production build
-npm run build              # Build to dist/
-npm run preview            # Preview production build
+## 🔧 MCP Setup (Optional)
 
-# Additional development options
+### Context7 - Documentation Server
+```bash
+# Install globally
+npm install -g @context7/mcp-server
+
+# Add to .claude/settings.json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["@context7/mcp-server"]
+    }
+  }
+}
+```
+
+### Figma MCP - Design Integration
+```bash
+# Install globally
+npm install -g @figma/mcp-server
+
+# Get Figma token: Account Settings > Personal Access Tokens
+
+# Add to .claude/settings.local.json (gitignored)
+{
+  "mcpServers": {
+    "figma-dev-mode-mcp-server": {
+      "command": "npx",
+      "args": ["figma-dev-mode-mcp-server"],
+      "env": {
+        "FIGMA_PERSONAL_ACCESS_TOKEN": "your-token"
+      }
+    }
+  }
+}
+```
+
+## 📋 Essential Commands
+
+```bash
+# Development
+npm run dev                 # Dev server
 npm run dev:host           # External access
-npm run dev:https          # HTTPS development
-npm run clean              # Clean build artifacts
+npm run dev:https          # HTTPS dev
 
-# Theme customization
-npm run theme              # Apply theme.config.json changes
+# Production
+npm run build              # Build to dist/
+npm run preview            # Preview build
+
+# Theme
+npm run theme              # Apply theme.config.json
+npm run clean              # Clean artifacts
 ```
 
 ## Theme Configuration
