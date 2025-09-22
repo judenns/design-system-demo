@@ -11,7 +11,7 @@
     "dev": "vite",
     "dev:host": "vite --host",
     "dev:https": "vite --https",
-    "dev:design": "vite --open /design-system.html",
+    "dev:style": "vite --open /design-system.html",
     "build": "vite build",
     "build:watch": "vite build --watch",
     "build:analyze": "vite build --mode analyze",

@@ -12,7 +12,7 @@ npm install
 
 # Start Development
 npm run dev                 # http://localhost:5173
-npm run dev:design          # Component showcase
+npm run dev:style           # Component showcase
 ```
 
 ## 📋 Development Commands
@@ -22,7 +22,7 @@ npm run dev:design          # Component showcase
 npm run dev                 # Dev server (http://localhost:5173)
 npm run dev:host           # External access
 npm run dev:https          # HTTPS dev server
-npm run dev:design         # Open component showcase
+npm run dev:style          # Open component showcase
 
 # Production
 npm run build              # Build to dist/

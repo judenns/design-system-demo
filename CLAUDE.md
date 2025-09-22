@@ -21,6 +21,7 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 - **Build**: `npm run build` (optimized production)
 - **Theme**: `npm run theme` (apply config changes)
 - **Theme Dev**: `npm run dev:theme` (theme + dev server)
+- **Style Dev**: `npm run dev:style` (design system page)
 
 ## Dependencies
 
@@ -41,6 +42,7 @@ npm run dev          # Dev server (localhost:3000)
 npm run build        # Production build
 npm run theme        # Apply theme config
 npm run dev:theme    # Theme + dev server
+npm run dev:style    # Design system page
 ```
 
 ## CSS Architecture
