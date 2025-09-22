@@ -76,7 +76,7 @@
 }
 
 .ds-showcase-title {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h5);
   font-weight: var(--fw-bold);
   color: var(--txt-dark);
   margin: 0 0 2rem 0;
@@ -213,7 +213,6 @@
 
 .ds-type-example {
   color: var(--txt-dark);
-  font-weight: inherit;
 }
 
 .ds-type-info {
@@ -233,7 +232,7 @@
 }
 
 .ds-component-title {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h6);
   font-weight: var(--fw-bold);
   color: var(--txt-dark);
   margin: 0 0 1rem 0;
