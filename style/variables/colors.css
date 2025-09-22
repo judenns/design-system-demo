@@ -14,7 +14,7 @@
   --neutral-800: #222;
   --neutral-900: #111;
 
-  /* Brand Colors (50-900) - Tailwind blue hex values with brand-700: #000BFF */
+  /* Brand Colors (50-900) */
   --brand-50: #eff6ff;
   --brand-100: #dbeafe;
   --brand-200: #bfdbfe;
@@ -22,11 +22,11 @@
   --brand-400: #60a5fa;
   --brand-500: #3b82f6;
   --brand-600: #2563eb;
-  --brand-700: #000BFF;
-  --brand-800: #030BB5;
-  --brand-900: #05073D;
+  --brand-700: #000bff;
+  --brand-800: #030bb5;
+  --brand-900: #05073d;
 
-  /* Success Colors (50-900) - Tailwind green hex values */
+  /* Success Colors (50-900) */
   --success-50: #f0fdf4;
   --success-100: #dcfce7;
   --success-200: #bbf7d0;
@@ -38,7 +38,7 @@
   --success-800: #166534;
   --success-900: #14532d;
 
-  /* Warning Colors (50-900) - Tailwind amber hex values */
+  /* Warning Colors (50-900) */
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
   --warning-200: #fde68a;
@@ -50,7 +50,7 @@
   --warning-800: #92400e;
   --warning-900: #78350f;
 
-  /* Error Colors (50-900) - Tailwind red hex values */
+  /* Error Colors (50-900) */
   --error-50: #fef2f2;
   --error-100: #fee2e2;
   --error-200: #fecaca;
