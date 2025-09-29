@@ -2,6 +2,17 @@
 
 This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with this repository.
 
+## ⚠️ CRITICAL RULES (IMMEDIATE ENFORCEMENT)
+
+These rules are **NON-NEGOTIABLE** and apply to ALL operations:
+
+1. **Context7 Protocol**: MUST use `mcp__context7__resolve-library-id` → `mcp__context7__get-library-docs` BEFORE implementing ANY external library
+2. **Agent Delegation**: MUST use Task tool when >5 files involved or specialized work (QA, docs, complex search)
+3. **Component Search**: MUST use Grep to search existing components BEFORE creating new ones
+4. **Variable Verification**: MUST use Read to verify CSS variables exist BEFORE using them
+
+**Violation = INVALID CODE**
+
 ## Project Overview
 
 **Modern Design System** - Theme-configurable design system with Vite, vanilla web technologies, and Figma MCP integration.
@@ -10,10 +21,32 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 - **Component Library**: Accessible components with BEM naming and size variants
 - **Brand Strategy**: Neutral-first with strategic brand color usage
 
-## MCP Integration
+## MCP Integration (STRICT ENFORCEMENT)
 
-- **Context7**: MANDATORY before coding - `resolve-library-id` → `get-library-docs` → implement
-- **Figma**: Get designs via `get_screenshot`, `get_code`, `get_metadata`
+### Context7 - MANDATORY Protocol
+
+**RULE**: You MUST use Context7 before implementing ANY external library, framework, or API.
+
+**Workflow (REQUIRED)**:
+1. `mcp__context7__resolve-library-id` with library name
+2. `mcp__context7__get-library-docs` with resolved ID and topic
+3. Implement using official documentation patterns
+
+**Auto-Trigger Keywords**: import, require, install, library, framework, API, package
+**Failure**: Any code using external dependencies WITHOUT Context7 lookup is INVALID
+
+**Example**:
+```
+User: "Add a chart component"
+Claude: [MUST call resolve-library-id for "chart.js" → get-library-docs → implement]
+```
+
+### Figma - Design Reference Protocol
+
+**RULE**: Use Figma MCP when user provides Figma URLs or mentions designs
+
+**Tools**: `get_screenshot`, `get_code`, `get_metadata`, `get_variable_defs`
+**Auto-Trigger**: Figma URL detected, "design", "mockup", "Figma" mentioned
 
 ## Build System (Vite)
 
@@ -110,22 +143,70 @@ style/
 - **Layout**: Grid, flexbox utilities, containers
 - **Utilities**: Spacing, display, alignment helper classes
 
-## Implementation Rules
+## Implementation Rules (STRICT ENFORCEMENT)
 
-- Check existing components first
-- Use semantic CSS variables only
-- Include all interactive states
-- Add ARIA attributes
-- Test keyboard navigation
-- Ensure responsive design
-- WCAG 2.1 AA compliance
+### Mandatory Checks (MUST DO FIRST)
 
-## Agent Guidelines
+1. **Check Existing Components**: Use Grep to search for similar components BEFORE creating new ones
+2. **Context7 Lookup**: If using external libraries, MUST use Context7 protocol (see MCP Integration)
+3. **Variable Validation**: Use Read to verify CSS variables exist BEFORE using them
+4. **Agent Delegation**: If >5 files involved, MUST use Task tool with appropriate agent
 
-**Front-End**: MANDATORY Context7 lookup before coding → Figma reference → implement
-**Figma Integration**: Extract designs, sync tokens with theme config
-**Doc-Writer**: Keep docs updated with component changes
-**QA**: Validate accessibility, design system consistency, performance
+### Code Quality Requirements (NON-NEGOTIABLE)
+
+- **CSS Variables**: ONLY use semantic variables from `variables.css` (--txt-*, --bg-*, --bd-*)
+- **Interactive States**: MUST include hover, focus, active, disabled for all interactive elements
+- **ARIA Attributes**: MUST add aria-label, aria-describedby, role where applicable
+- **Keyboard Nav**: MUST test tab order and focus indicators
+- **Touch Targets**: MUST be minimum 44px for all clickable elements
+- **WCAG 2.1 AA**: MUST meet 4.5:1 contrast ratio, semantic HTML, keyboard accessibility
+
+### Validation Workflow
+
+```
+1. Grep existing components → 2. Context7 library docs → 3. Read CSS variables → 4. Implement → 5. Validate accessibility
+```
+
+**Failure**: Code that skips mandatory checks or violates requirements is INVALID
+
+## Agent Usage (STRICT ENFORCEMENT)
+
+### When to Use Task Tool (Sub-Agents)
+
+**RULE**: Use Task tool for multi-file operations or specialized workflows
+
+**Auto-Trigger Conditions**:
+- **File Count**: >5 files need analysis/modification
+- **Specialized Work**: QA validation, accessibility audit, documentation generation
+- **Complex Search**: Open-ended codebase searches across multiple directories
+
+**Available Agents**:
+- `front-end-agent`: UI components, accessibility, design system integration
+- `qa-agent`: Accessibility testing, performance checks, design consistency
+- `doc-writer-agent`: Documentation generation, README updates
+
+**Example**:
+```
+User: "Audit all components for accessibility"
+Claude: [MUST use Task tool with qa-agent for comprehensive audit]
+```
+
+### Agent-Specific Rules
+
+**front-end-agent**:
+- MUST use Context7 before implementing external libraries
+- MUST reference Figma designs when available
+- MUST validate against design system variables
+
+**qa-agent**:
+- MUST check WCAG 2.1 AA compliance
+- MUST verify design system consistency
+- MUST test keyboard navigation and touch targets
+
+**doc-writer-agent**:
+- MUST keep docs synchronized with code changes
+- MUST update component documentation when CSS changes
+- MUST maintain CLAUDE.md accuracy
 
 ## File Organization
 
