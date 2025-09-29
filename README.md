@@ -18,6 +18,10 @@ git remote set-url origin https://github.com/yourusername/my-design-system.git
 npm install
 npm run dev                 # http://localhost:5173
 npm run dev:style           # Component showcase
+
+# Install MCP Servers (recommended for Claude Code workflow)
+claude mcp add --transport http context7 https://mcp.context7.com/mcp
+claude mcp add --transport http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp
 ```
 
 ## 📋 Development Commands
@@ -65,7 +69,7 @@ See `theme.config.json` for available configuration options:
 - **Typography**: Font families, sizes, scales
 - **Components**: Component-specific sizing and styling
 
-**Theme Examples**: See [Theme Guide](docs/theme-config-guide.md) for preset examples and advanced customization.
+**Theme Examples**: See [Theme System Guide](docs/theme-system.md) for complete configuration reference and customization.
 
 ### Workflow
 
@@ -240,21 +244,17 @@ ls docs/
 
 ## 📚 Documentation
 
-**Available Guides**: Check `docs/` directory for current documentation
+**Available Guides**:
+- [Component Reference](docs/components.md) - Complete component library documentation
+- [Theme System](docs/theme-system.md) - Theme configuration and customization guide
 
 ```bash
-# List all documentation
-ls docs/
+# View component reference
+cat docs/components.md
 
-# View specific guide
-cat docs/[guide-name].md
+# View theme configuration guide
+cat docs/theme-system.md
 ```
-
-**Common Guides**:
-- Design system and component reference
-- Figma MCP integration workflow
-- Theme configuration and customization
-- Development workflows and best practices
 
 ## 🛠 Architecture
 

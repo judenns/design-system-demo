@@ -1,290 +1,147 @@
-# CLAUDE.md - Modern Design System Configuration
+# CLAUDE.md - Design System Configuration
 
-This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with this repository.
+Claude Code configuration for this modern design system repository.
 
-## ⚠️ CRITICAL RULES (IMMEDIATE ENFORCEMENT)
+## ⚠️ Critical Rules
 
-These rules are **NON-NEGOTIABLE** and apply to ALL operations:
+**NON-NEGOTIABLE** rules for ALL operations:
 
-1. **Context7 Protocol**: MUST use `mcp__context7__resolve-library-id` → `mcp__context7__get-library-docs` BEFORE implementing ANY external library
-2. **Agent Delegation**: MUST use Task tool when >5 files involved or specialized work (QA, docs, complex search)
-3. **Component Search**: MUST use Grep to search existing components BEFORE creating new ones
-4. **Variable Verification**: MUST use Read to verify CSS variables exist BEFORE using them
-
-**Violation = INVALID CODE**
+1. **Context7 Protocol**: Use MCP Context7 BEFORE implementing external libraries
+2. **Agent Delegation**: Use Task tool when >5 files or specialized work needed
+3. **Component Search**: Grep existing components BEFORE creating new ones
+4. **Variable Verification**: Read CSS variables BEFORE using them
 
 ## Project Overview
 
-**Modern Design System** - Theme-configurable design system with Vite, vanilla web technologies, and Figma MCP integration.
+**Modern Design System** - Theme-configurable system with Vite, vanilla web tech, Figma MCP integration.
 
-- **Theme System**: `theme.config.json` → automated CSS variable updates
-- **Component Library**: Accessible components with BEM naming and size variants
-- **Brand Strategy**: Neutral-first with strategic brand color usage
+- **Theme**: `theme.config.json` → `npm run theme` → auto-updates CSS variables
+- **Components**: Accessible, BEM naming, size variants
+- **Colors**: Neutral-first with strategic brand usage
 
-## 📖 Reference-Based Documentation Philosophy
+## Documentation Philosophy
 
-**IMPORTANT**: This project uses reference-based documentation. Instead of hard-coded values, always check source files.
+**Reference-based documentation** - Always check source files, not hard-coded docs.
 
-**Why Reference-Based?**
-- Documentation stays synchronized with code
-- Single source of truth (the actual codebase)
-- No stale or outdated documentation
-- Forces verification before implementation
+**Why?** Single source of truth, stays synchronized, no stale docs.
 
-**How to Use**:
-1. **Check Source**: Always read actual files before using values
-2. **Verify Current State**: Use `grep`, `cat`, `ls` to discover current structure
-3. **Follow Trails**: Documentation points to files → read those files
-4. **Update Source**: Changes go in source files (package.json, theme.config.json, CSS) not docs
+**Workflow**: Documentation points to files → read actual files → use current values
 
-**Example Workflow**:
-```bash
-# Documentation says: "See theme.config.json for sizes"
-# You do: cat theme.config.json | grep -A5 "size"
-# Then: Use actual values found in the file
-```
+## MCP Integration
 
-## MCP Integration (STRICT ENFORCEMENT)
+### Context7 (MANDATORY)
 
-### Context7 - MANDATORY Protocol
+**MUST** use before implementing ANY external library:
+1. `resolve-library-id` with library name
+2. `get-library-docs` with resolved ID
+3. Implement using official patterns
 
-**RULE**: You MUST use Context7 before implementing ANY external library, framework, or API.
+### Figma
 
-**Workflow (REQUIRED)**:
-1. `mcp__context7__resolve-library-id` with library name
-2. `mcp__context7__get-library-docs` with resolved ID and topic
-3. Implement using official documentation patterns
-
-**Auto-Trigger Keywords**: import, require, install, library, framework, API, package
-**Failure**: Any code using external dependencies WITHOUT Context7 lookup is INVALID
-
-**Example**:
-```
-User: "Add a chart component"
-Claude: [MUST call resolve-library-id for "chart.js" → get-library-docs → implement]
-```
-
-### Figma - Design Reference Protocol
-
-**RULE**: Use Figma MCP when user provides Figma URLs or mentions designs
-
-**Tools**: `get_screenshot`, `get_code`, `get_metadata`, `get_variable_defs`
-**Auto-Trigger**: Figma URL detected, "design", "mockup", "Figma" mentioned
+Use when Figma URLs provided: `get_screenshot`, `get_code`, `get_metadata`, `get_variable_defs`
 
 ## Build System
 
-**Build Tool**: See `package.json` → `devDependencies` for current version
-**Port**: Default Vite dev server port (check Vite config or console output)
-
-**Available Scripts**: See `package.json` → `scripts` for all commands
-- Dev server: `npm run dev`
-- Build: `npm run build`
-- Theme: `npm run theme`
-
-## Dependencies
-
-**Dev Dependencies**: See `package.json` → `devDependencies`
-**Runtime**: Pure vanilla HTML, CSS, JavaScript (zero runtime dependencies)
+- **Tool**: Vite (see `package.json` → `devDependencies`)
+- **Scripts**: See `package.json` → `scripts`
+- **Key commands**: `npm run dev`, `npm run build`, `npm run theme`
 
 ## Theme System
 
 **Config**: `theme.config.json` → `npm run theme` → CSS variables updated
 
 **Structure**: Brand color, semantic colors, typography, component sizes
-**Workflow**: Edit config → run theme script → components auto-update
 
-## Commands
-
-**Reference**: See `package.json` → `scripts` for complete command list
-
-**Key Commands**:
-- **Development**: Commands starting with `dev:`
-- **Production**: Commands starting with `build:` or `preview:`
-- **Theme**: Commands with `theme` in the name
-- **Utilities**: Other utility scripts
-
-Run `npm run` to see all available scripts with descriptions.
-
-## CSS Architecture
-
-**Load Order**: `reset.css` → `global.css` → `variables.css` → components
-
-**Directory Structure**: See actual `style/` directory for current organization
-- **`variables/`**: Design tokens (theme-configurable, auto-generated by theme script)
-- **`components/`**: BEM components (check `components.css` for imports)
-- **`pages/`**: Page-specific styles
-
-**Discovery**:
+**Available Variables**: Check actual files first
 ```bash
-# List all CSS files
-ls style/**/*.css
-
-# Check component imports
-cat style/components/components.css
-
-# View variable definitions
-cat style/variables/variables.css
-```
-
-**Rules**: Use CSS variables, follow BEM naming, extend existing components
-
-## Design System Rules
-
-**Theme Source**: `theme.config.json` → use `npm run theme` to apply changes
-
-**Available Variables**: **ALWAYS** check actual CSS files first
-```bash
-# View all CSS variables
+# View CSS variables
 grep -r "^  --" style/variables/
 
 # Check theme config
 cat theme.config.json
 ```
 
-**Variable Discovery Workflow**:
-1. Check `style/variables/variables.css` for generated variables
-2. Reference `theme.config.json` for theme structure
-3. Search component CSS files for usage patterns: `grep -r "var(--" style/components/`
+## CSS Architecture
 
-**Naming Patterns**:
-- **Text**: `--txt-*` (dark, default, light, brand, disable)
-- **Background**: `--bg-*` (default, brand, light, white)
-- **Border**: `--bd-*` (default, light, brand)
-- **Typography**: `--fs-*` (h1-h6, body, label, caption)
-- **Component Sizes**: See `theme.config.json` → `components` → size definitions
+**Load Order**: `reset.css` → `global.css` → `variables.css` → components
 
-**BEM Naming**: `.block__element--modifier`
-**Brand Strategy**: See `theme.config.json` → `brand` and component color definitions
+**Structure**:
+- `style/variables/`: Design tokens (auto-generated)
+- `style/components/`: BEM components
+- `style/pages/`: Page-specific styles
+
+**Rules**: Use CSS variables, BEM naming, extend existing components
+
+## Design System Rules
+
+**Variable Naming**:
+- Text: `--txt-*` (dark, default, light, brand, disable)
+- Background: `--bg-*` (default, brand, light, white)
+- Border: `--bd-*` (default, light, brand)
+- Typography: `--fs-*` (h1-h6, body, label, caption)
+
+**Variable Discovery**:
+1. Check `style/variables/variables.css`
+2. Reference `theme.config.json`
+3. Search usage: `grep -r "var(--" style/components/`
 
 ## Component Guidelines
 
 **Adding Components**:
-1. **Search existing**: `grep -l "component-name" style/components/*.css`
-2. Create CSS file in `style/components/`
+1. Search existing: `grep -l "component-name" style/components/*.css`
+2. Create CSS in `style/components/`
 3. Import in `style/components/components.css`
-4. Use BEM naming (`.block__element--modifier`)
-5. Use existing CSS variables (verify with `grep` first)
+4. Use BEM naming
+5. Use existing CSS variables
 6. Include hover/focus/disabled states
 7. Ensure accessibility (ARIA, keyboard nav)
 
-**Discover Available Components**:
-```bash
-# List all component files
-ls style/components/*.css
+## Implementation Rules
 
-# View component imports
-cat style/components/components.css
+### Mandatory Checks
+1. Grep existing components BEFORE creating
+2. Context7 lookup for external libraries
+3. Read CSS variables BEFORE using
+4. Task tool if >5 files
 
-# Search for specific patterns
-grep -r "class=" *.html | grep "btn"
-```
+### Quality Requirements
+- **CSS Variables**: ONLY semantic variables from `variables.css`
+- **Interactive States**: hover, focus, active, disabled required
+- **ARIA**: Proper labels and roles required
+- **Keyboard Nav**: Tab order and focus indicators required
+- **Touch Targets**: Minimum 44px required
+- **WCAG 2.1 AA**: 4.5:1 contrast, semantic HTML, keyboard access required
 
-**Component Structure Reference**: Check existing files in `style/components/` for patterns
+## Agent Usage
 
-## Implementation Rules (STRICT ENFORCEMENT)
+### When to Use Task Tool
 
-### Mandatory Checks (MUST DO FIRST)
+**Auto-trigger**:
+- File count >5 files
+- Specialized work: QA validation, accessibility audit, docs
+- Complex search across multiple directories
 
-1. **Check Existing Components**: Use Grep to search for similar components BEFORE creating new ones
-2. **Context7 Lookup**: If using external libraries, MUST use Context7 protocol (see MCP Integration)
-3. **Variable Validation**: Use Read to verify CSS variables exist BEFORE using them
-4. **Agent Delegation**: If >5 files involved, MUST use Task tool with appropriate agent
-
-### Code Quality Requirements (NON-NEGOTIABLE)
-
-- **CSS Variables**: ONLY use semantic variables from `variables.css` (--txt-*, --bg-*, --bd-*)
-- **Interactive States**: MUST include hover, focus, active, disabled for all interactive elements
-- **ARIA Attributes**: MUST add aria-label, aria-describedby, role where applicable
-- **Keyboard Nav**: MUST test tab order and focus indicators
-- **Touch Targets**: MUST be minimum 44px for all clickable elements
-- **WCAG 2.1 AA**: MUST meet 4.5:1 contrast ratio, semantic HTML, keyboard accessibility
-
-### Validation Workflow
-
-```
-1. Grep existing components → 2. Context7 library docs → 3. Read CSS variables → 4. Implement → 5. Validate accessibility
-```
-
-**Failure**: Code that skips mandatory checks or violates requirements is INVALID
-
-## Agent Usage (STRICT ENFORCEMENT)
-
-### When to Use Task Tool (Sub-Agents)
-
-**RULE**: Use Task tool for multi-file operations or specialized workflows
-
-**Auto-Trigger Conditions**:
-- **File Count**: >5 files need analysis/modification
-- **Specialized Work**: QA validation, accessibility audit, documentation generation
-- **Complex Search**: Open-ended codebase searches across multiple directories
-
-**Available Agents**:
-- `front-end-agent`: UI components, accessibility, design system integration
-- `qa-agent`: Accessibility testing, performance checks, design consistency
-- `doc-writer-agent`: Documentation generation, README updates
-
-**Example**:
-```
-User: "Audit all components for accessibility"
-Claude: [MUST use Task tool with qa-agent for comprehensive audit]
-```
-
-### Agent-Specific Rules
-
-**front-end-agent**:
-- MUST use Context7 before implementing external libraries
-- MUST reference Figma designs when available
-- MUST validate against design system variables
-
-**qa-agent**:
-- MUST check WCAG 2.1 AA compliance
-- MUST verify design system consistency
-- MUST test keyboard navigation and touch targets
-
-**doc-writer-agent**:
-- MUST keep docs synchronized with code changes
-- MUST update component documentation when CSS changes
-- MUST maintain CLAUDE.md accuracy
+**Agents**:
+- `front-end-agent`: UI components, accessibility
+- `qa-agent`: Testing, accessibility, design consistency
+- `doc-writer-agent`: Documentation generation
 
 ## File Organization
 
-**HTML Import Order**: reset → global → variables → components → page-specific
-
-**Discover Structure**:
-```bash
-# List all HTML pages
-ls *.html
-
-# List all scripts
-ls scripts/*.js
-
-# View current file structure
-tree -L 2  # or use 'dir /s' on Windows
-```
-
 **Key Directories**:
-- `style/`: All CSS files (variables, components, pages)
-- `scripts/`: JavaScript files (check directory for available scripts)
-- Root: HTML pages (use glob to discover: `*.html`)
+- `style/`: All CSS (variables, components, pages)
+- `scripts/`: JavaScript and automation
+- `docs/`: Documentation
+- Root: HTML pages
+
+**Discover**: Use `ls`, `grep`, `cat` to explore current structure
 
 ## Quality Standards
 
-- **Semantic HTML**: Proper landmarks, heading hierarchy
-- **WCAG 2.1 AA**: Keyboard nav, ARIA labels, 4.5:1 contrast
-- **Touch Targets**: See `theme.config.json` → `components` → size definitions (minimum size requirements)
+- **Semantic HTML**: Landmarks, heading hierarchy
+- **WCAG 2.1 AA**: Keyboard nav, ARIA, 4.5:1 contrast
+- **Touch Targets**: 44px minimum (see `theme.config.json`)
 - **Performance**: Optimized assets, minimal requests
-
-**Reference**: Check existing components for implementation examples of these standards
-
-## Demo Flow
-
-1. Show Figma design → 2. Use Claude Code natural language → 3. Demonstrate MCP workflow → 4. Show component consistency → 5. Highlight speed and quality
-
-## Common Patterns
-
-**New Component**: "Create [component] using design system variables, BEM naming, with hover/focus states"
-**Update Theme**: "Update theme.config.json → npm run theme → test components"
-**Page Layout**: "Use existing components, layout utilities, semantic HTML"
 
 ## Troubleshooting
 
@@ -292,5 +149,3 @@ tree -L 2  # or use 'dir /s' on Windows
 - **CSS Issues**: Verify import order
 - **Theme Not Applied**: Run `npm run theme`
 - **Build Issues**: Check `dist/` output
-
-**Debug Steps**: `npm run dev` → browser dev tools → validate HTML → test states → accessibility audit
