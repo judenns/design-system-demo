@@ -124,9 +124,8 @@ See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
 # Context7 - Documentation Server
 claude mcp add --transport http context7 https://mcp.context7.com/mcp
 
-# Figma MCP - Design Integration
-claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp
-# Token: Figma → Account Settings → Personal Access Tokens
+# Figma MCP Local Server  - Design Integration
+claude mcp add --transport http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp
 ```
 
 ## 🤖 Specialized Agents
