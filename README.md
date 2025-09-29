@@ -4,6 +4,25 @@ Your organization's design system pre-configured and ready to use. Clone this te
 
 > **What's included**: Brand colors, typography, spacing, and UI components following company standards. Just configure and build.
 
+## 📚 Documentation
+
+### Essential Guides
+
+- **[Design System Guide](docs/design-system.md)** - Complete system architecture, components, and usage examples
+- **[Theme Customization Guide](docs/theme-guide.md)** - Customize colors, fonts, and components for your brand
+- **[Figma MCP Guide](docs/figma-mcp-guide.md)** - Design-to-code workflow with Figma integration
+
+### Quick Help
+
+**View components**: Run `npm run dev:style` to see all available components in action
+
+**Ask Claude Code**:
+```
+"Show me how to use the button component"
+"What CSS variables are available for colors?"
+"How do I customize typography?"
+```
+
 ## 🚀 Quick Start Guide
 
 ### Step 1: Clone & Setup
@@ -198,25 +217,6 @@ This template works for any web project:
 - **Microsites** - Event pages, promotional sites
 
 All with your company's design system built in.
-
-## 📚 Documentation
-
-### Essential Guides
-
-- **[Design System Guide](docs/design-system.md)** - Complete system architecture, components, and usage examples
-- **[Theme Customization Guide](docs/theme-guide.md)** - Customize colors, fonts, and components for your brand
-- **[Figma MCP Guide](docs/figma-mcp-guide.md)** - Design-to-code workflow with Figma integration
-
-### Quick Help
-
-**View components**: Run `npm run dev:style` to see all available components in action
-
-**Ask Claude Code**:
-```
-"Show me how to use the button component"
-"What CSS variables are available for colors?"
-"How do I customize typography?"
-```
 
 ## 🛠 Technical Details
 
