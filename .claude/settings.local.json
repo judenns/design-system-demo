@@ -17,7 +17,8 @@
       "Bash(git log:*)",
       "Bash(node:*)",
       "Bash(npm run theme:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
