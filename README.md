@@ -122,10 +122,10 @@ See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
 
 ```bash
 # Context7 - Documentation Server
-npm install -g @context7/mcp-server
+claude mcp add --transport http context7 https://mcp.context7.com/mcp
 
 # Figma MCP - Design Integration
-npm install -g @figma/mcp-server
+claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp
 # Token: Figma → Account Settings → Personal Access Tokens
 ```
 
