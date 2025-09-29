@@ -17,7 +17,7 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 
 ## Build System (Vite)
 
-- **Dev**: `npm run dev` (port 3000 with hot reload)
+- **Dev**: `npm run dev` (port 5173 with hot reload)
 - **Build**: `npm run build` (optimized production)
 - **Theme**: `npm run theme` (apply config changes)
 - **Theme Dev**: `npm run dev:theme` (theme + dev server)
@@ -38,11 +38,19 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 ## Commands
 
 ```bash
-npm run dev          # Dev server (localhost:3000)
+npm run dev          # Dev server (localhost:5173)
+npm run dev:host     # Dev server with network access
+npm run dev:https    # Dev server with HTTPS
+npm run dev:style    # Design system page (localhost:5173/design-system.html)
+npm run dev:theme    # Apply theme + open design system page
 npm run build        # Production build
-npm run theme        # Apply theme config
-npm run dev:theme    # Theme + dev server
-npm run dev:style    # Design system page
+npm run build:watch  # Production build with watch mode
+npm run build:analyze # Production build with bundle analysis
+npm run build:theme  # Apply theme + production build
+npm run preview      # Preview production build
+npm run preview:https # Preview production build with HTTPS
+npm run theme        # Apply theme config changes
+npm run clean        # Clean build artifacts and cache
 ```
 
 ## CSS Architecture
@@ -52,11 +60,21 @@ npm run dev:style    # Design system page
 ```
 style/
 ├── variables/           # Design tokens (theme-configurable)
+│   ├── variables.css    # Main CSS variables (generated)
 │   ├── colors.css       # Color system
 │   ├── typography.css   # Typography tokens
-│   └── spacing.css      # Spacing tokens
+│   ├── spacing.css      # Spacing tokens
+│   └── breakpoints.css  # Responsive breakpoints
 ├── components/          # BEM components
+│   ├── components.css   # Component imports
+│   ├── buttons.css      # Button variants
+│   ├── forms.css        # Form elements
+│   ├── headings.css     # Heading styles
+│   ├── layout.css       # Layout utilities
+│   └── utilities.css    # Utility classes
 └── pages/              # Page-specific styles
+    ├── index.css        # Homepage styles
+    └── design-system.css # Design system page styles
 ```
 
 **Rules**: Use CSS variables, follow BEM naming, extend existing components
@@ -85,6 +103,13 @@ style/
 5. Include hover/focus/disabled states
 6. Ensure accessibility (ARIA, keyboard nav)
 
+**Available Components**:
+- **Buttons**: Primary, tonal, outline, link variants with size options
+- **Forms**: Input fields, textareas with validation states
+- **Headings**: Typography scale with consistent styling
+- **Layout**: Grid, flexbox utilities, containers
+- **Utilities**: Spacing, display, alignment helper classes
+
 ## Implementation Rules
 
 - Check existing components first
@@ -106,7 +131,7 @@ style/
 
 **HTML Import Order**: reset → global → variables → components → page-specific
 **Pages**: `index.html`, `design-system.html`
-**Scripts**: `main.js` (core), `update-theme.js` (theme automation)
+**Scripts**: `scripts/main.js` (core), `scripts/update-theme.js` (theme automation)
 
 ## Quality Standards
 
