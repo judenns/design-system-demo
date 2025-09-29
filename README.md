@@ -2,6 +2,8 @@
 
 Production-ready design system template with Claude Code + MCP integration for seamless design-to-code workflows.
 
+> **📖 Note**: This project uses reference-based documentation. Commands, paths, and values reference source files (package.json, theme.config.json, etc.) rather than hard-coded examples. Always check the actual files for current values.
+
 ## 🚀 Quick Start
 
 ```bash
@@ -20,87 +22,57 @@ npm run dev:style           # Component showcase
 
 ## 📋 Development Commands
 
+See `package.json` → `scripts` for the complete command list. Run `npm run` to view all available commands.
+
+**Command Categories**:
+- **Development**: `dev`, `dev:*` - Development servers and workflows
+- **Production**: `build`, `build:*`, `preview` - Production builds and previews
+- **Theme**: `theme`, `*:theme` - Theme configuration and automation
+- **Utilities**: Other helper scripts
+
+**Quick Reference**:
 ```bash
-# Development
-npm run dev                 # Dev server (http://localhost:5173)
-npm run dev:host           # External access
-npm run dev:https          # HTTPS dev server
-npm run dev:style          # Open component showcase
-
-# Production
-npm run build              # Build to dist/
-npm run build:watch        # Watch mode build
-npm run preview            # Preview build
-
-# Theme
-npm run theme              # Apply theme.config.json
-npm run dev:theme          # Apply theme and preview
-npm run build:theme        # Apply theme and build
-npm run clean              # Clean artifacts
+npm run dev          # Start development server
+npm run build        # Production build
+npm run theme        # Apply theme configuration
 ```
 
 ## 🎨 Theme Configuration - Instant Brand Adaptation
 
 **How it works**: `theme.config.json` → `npm run theme` → All CSS variables updated automatically
 
-### Quick Start
-```json
-{
-  "brand": {
-    "color": "#E54D2E"          // Your brand color
-  },
-  "colors": {
-    "text-dark": "#1f1f1f",     // Heading text
-    "bg-default": "#ffffff"      // Background
-  },
-  "typography": {
-    "headings": { "h1": "4.5rem" } // Custom sizing
-  }
-}
-```
+### Current Configuration
 
-### Usage Examples
+View the active theme: `cat theme.config.json`
 
-**Corporate Theme**:
-```json
-{
-  "brand": { "color": "#1E40AF" },
-  "colors": {
-    "text-dark": "#1f2937",
-    "bg-default": "#f8fafc"
-  }
-}
-```
-
-**Marketing Theme**:
-```json
-{
-  "brand": { "color": "#E54D2E" },
-  "colors": {
-    "text-dark": "#18181b",
-    "bg-default": "#fefefe"
-  }
-}
-```
-
-**SaaS Product Theme**:
-```json
-{
-  "brand": { "color": "#7C3AED" },
-  "typography": {
-    "headings": { "h1": "3.5rem", "h2": "2.25rem" }
-  }
-}
-```
-
+**Theme Structure Reference**:
 ```bash
-# Apply your theme configuration
+# View current theme settings
+cat theme.config.json
+
+# Check generated CSS variables
+cat style/variables/variables.css
+
+# Apply theme changes
 npm run theme
 ```
 
-**What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, component styles - everything stays consistent across all components.
+### Customizable Properties
 
-See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
+See `theme.config.json` for available configuration options:
+- **Brand**: Brand color and identity
+- **Colors**: Text, background, border color palette
+- **Typography**: Font families, sizes, scales
+- **Components**: Component-specific sizing and styling
+
+**Theme Examples**: See [Theme Guide](docs/theme-config-guide.md) for preset examples and advanced customization.
+
+### Workflow
+
+1. Edit `theme.config.json` with your values
+2. Run `npm run theme` to apply changes
+3. All CSS variables in `style/variables/` auto-update
+4. All components automatically inherit new theme
 
 ## 🔧 MCP Integration - Supercharge Your Workflow
 
@@ -209,23 +181,30 @@ Claude Code automatically activates the right agent based on your request. Each 
 
 ## 📁 Project Structure
 
-```
-style/
-├── reset.css & global.css     # Foundation
-├── variables/                 # Design tokens
-│   ├── colors.css            # Color system
-│   ├── typography.css        # Type scale
-│   └── spacing.css           # Spacing tokens
-├── components/               # UI components
-│   ├── buttons.css           # Button variants
-│   ├── forms.css             # Form controls
-│   └── layout.css            # Layout utilities
-└── pages/                   # Page-specific styles
+**Discover Current Structure**:
+```bash
+# View directory structure
+tree -L 2               # Unix/Mac
+dir /s /b              # Windows
 
-docs/                         # Guides and documentation
-.claude/                     # Claude Code configuration
-scripts/                     # Theme automation
+# List CSS organization
+ls -R style/
+
+# Find all HTML pages
+ls *.html
+
+# Check documentation
+ls docs/
 ```
+
+**Key Directories**:
+- `style/` - All CSS files (use `ls -R style/` to explore)
+  - `variables/` - Design tokens (auto-generated from `theme.config.json`)
+  - `components/` - UI components (check `components.css` for imports)
+  - `pages/` - Page-specific styles
+- `scripts/` - Automation scripts (check `package.json` scripts for usage)
+- `docs/` - Documentation and guides
+- `.claude/` - Claude Code configuration
 
 ## 🎯 Real-World Use Cases
 
@@ -261,15 +240,40 @@ scripts/                     # Theme automation
 
 ## 📚 Documentation
 
-- **[Design System Guide](docs/design-system.md)** - Component reference
-- **[Figma MCP Guide](docs/figma-mcp-guide.md)** - Design-to-code workflow
-- **[Theme Configuration](docs/theme-config-guide.md)** - Customization options
+**Available Guides**: Check `docs/` directory for current documentation
+
+```bash
+# List all documentation
+ls docs/
+
+# View specific guide
+cat docs/[guide-name].md
+```
+
+**Common Guides**:
+- Design system and component reference
+- Figma MCP integration workflow
+- Theme configuration and customization
+- Development workflows and best practices
 
 ## 🛠 Architecture
 
-**Clean & Modern**:
-- Pure vanilla HTML5, CSS3, JavaScript
-- Vite 7.x build system with instant hot reload
-- Zero runtime dependencies (only `vite` dev dependency)
+**Technology Stack**: See `package.json` for current versions and dependencies
+
+**Core Principles**:
+- Pure vanilla HTML5, CSS3, JavaScript (zero runtime dependencies)
+- Modern build system (check `package.json` → `devDependencies`)
 - Token-based design system with automated theme updates
 - BEM methodology for consistent CSS architecture
+
+**Verify Setup**:
+```bash
+# Check dependencies
+cat package.json | grep dependencies
+
+# View build configuration
+cat vite.config.js  # if exists
+
+# Check for runtime dependencies (should be empty)
+cat package.json | grep -A5 '"dependencies"'
+```
